@@ -24,6 +24,8 @@ public class MainApp extends Application {
         showMenuPanel();
                 
         //showUserProfilePanel();
+        
+        //showAddNewUserPanel()
     }
     
     /**
@@ -70,6 +72,20 @@ public class MainApp extends Application {
             // Load user profile panel.
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(MainApp.class.getResource("view/UserProfilePanel.fxml"));
+            AnchorPane menuPanel = (AnchorPane) loader.load();
+            
+            // Set user profile panel into the center of root layout.
+            rootLayout.setCenter(menuPanel);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    
+    public void showAddNewUserPanel() {
+        try {
+            // Load user profile panel.
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(MainApp.class.getResource("view/AddNewUserPanel.fxml"));
             AnchorPane menuPanel = (AnchorPane) loader.load();
             
             // Set user profile panel into the center of root layout.
