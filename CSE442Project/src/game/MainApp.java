@@ -25,7 +25,7 @@ public class MainApp extends Application {
                 
         //showUserProfilePanel();
         
-        //showAddNewUserPanel()
+        //showAddNewUserPanel();
     }
     
     /**
