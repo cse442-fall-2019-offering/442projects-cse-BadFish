@@ -23,9 +23,9 @@ public class MainApp extends Application {
 
         showMenuPanel();
         
-        showUserProfilePanel();
+        //showUserProfilePanel();
         
-        showAddNewUserPanel();
+        //showAddNewUserPanel();
         
     }
     
