@@ -22,10 +22,11 @@ public class MainApp extends Application {
         initRootLayout();
 
         showMenuPanel();
-                
-        //showUserProfilePanel();
         
-        //showAddNewUserPanel();
+        showUserProfilePanel();
+        
+        showAddNewUserPanel();
+        
     }
     
     /**
