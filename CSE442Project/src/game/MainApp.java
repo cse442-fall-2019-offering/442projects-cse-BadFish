@@ -55,6 +55,7 @@ public class MainApp extends Application {
         try {
             // Load menu panel.
             FXMLLoader loader = new FXMLLoader();
+            FXMLLoader.setDefaultClassLoader(Thread.currentThread().getContextClassLoader());
             loader.setLocation(MainApp.class.getResource("view/MenuPanel.fxml"));
             AnchorPane menuPanel = (AnchorPane) loader.load();
             
