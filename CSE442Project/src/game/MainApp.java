@@ -22,6 +22,8 @@ public class MainApp extends Application {
         initRootLayout();
 
         showMenuPanel();
+        
+        showGameProgress();
                 
         //showUserProfilePanel();
     }
@@ -78,6 +80,22 @@ public class MainApp extends Application {
             e.printStackTrace();
         }
     }
+    
+    public void showGameProgress() {
+        try {
+            // Load menu panel.
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(MainApp.class.getResource("view/gameProgress.fxml"));
+            AnchorPane menuPanel = (AnchorPane) loader.load();
+            
+            // Set menu panel into the center of root layout.
+            rootLayout.setCenter(menuPanel);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    
+    
     
     /**
      * Returns the main stage.

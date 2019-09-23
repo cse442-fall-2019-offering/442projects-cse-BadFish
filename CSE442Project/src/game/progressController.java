@@ -6,10 +6,10 @@ import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 
 public class progressController {
+	@FXML
 	public void showGame(ActionEvent event) {
-	    @FXML
-	    private ImageView image;	
-		image.setImage(arg0);
+	    ImageView image;	
+
 		
 	}
 }
