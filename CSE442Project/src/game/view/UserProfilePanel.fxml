@@ -7,7 +7,10 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="600.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="600.0" prefWidth="750.0" 
+xmlns="http://javafx.com/javafx/8" 
+xmlns:fx="http://javafx.com/fxml/1"
+  fx:controller = "game.trackprogresscontroller">
    <children>
       <HBox alignment="CENTER" layoutX="75.0" layoutY="50.0" prefHeight="500.0" prefWidth="600.0">
          <children>
@@ -29,7 +32,13 @@
                         <Insets bottom="40.0" />
                      </VBox.margin>
                   </Button>
-                  <Button layoutX="50.0" layoutY="357.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="90.0" text="Delete" />
+                  <Button layoutX="50.0" layoutY="357.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="90.0" text="Delete">
+                     <VBox.margin>
+                        <Insets bottom="40.0" />
+                     </VBox.margin></Button>
+                  <Button 
+                  fx:id = "trackbutton1"
+                   mnemonicParsing="false" onAction="#trackprogress" prefHeight="101.0" prefWidth="162.0" text="Track my progress!" />
                </children>
             </VBox>
             <VBox alignment="CENTER" prefHeight="500.0" prefWidth="170.0">
@@ -47,13 +56,20 @@
                         <Insets bottom="40.0" />
                      </VBox.margin>
                   </Button>
-                  <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="90.0" text="Delete" />
+                  <Button layoutX="50.0" layoutY="357.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="90.0" text="Delete">
+                     <VBox.margin>
+                        <Insets bottom="40.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button
+                   fx:id = "trackbutton2"
+                   mnemonicParsing="false" onAction="#trackprogress" prefHeight="101.0" prefWidth="162.0" text="Track my progress!" />
                </children>
-            </VBox>
-            <VBox alignment="CENTER" prefHeight="500.0" prefWidth="170.0">
                <HBox.margin>
-                  <Insets left="45.0" />
+                  <Insets right="45.0" />
                </HBox.margin>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="500.0" prefWidth="170.0">
                <children>
                   <ImageView fitHeight="260.0" fitWidth="170.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -68,7 +84,14 @@
                         <Insets bottom="40.0" />
                      </VBox.margin>
                   </Button>
-                  <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="90.0" text="Delete" />
+                  <Button layoutX="50.0" layoutY="357.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="90.0" text="Delete">
+                     <VBox.margin>
+                        <Insets bottom="40.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button
+                   fx:id = "trackbutton3"
+                   mnemonicParsing="false" onAction="#trackprogress" prefHeight="101.0" prefWidth="162.0" text="Track my progress!" />
                </children>
             </VBox>
          </children>
