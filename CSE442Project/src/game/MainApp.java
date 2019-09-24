@@ -3,6 +3,8 @@ package game;
 import java.io.IOException;
 
 import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
@@ -16,18 +18,23 @@ public class MainApp extends Application {
 
     @Override
     public void start(Stage primaryStage) {
+
+    	primaryStage.setWidth(750);
+    	primaryStage.setHeight(600);
+    	primaryStage.setResizable(false);
         this.primaryStage = primaryStage;
         this.primaryStage.setTitle("Coding Game");
-
+        
         initRootLayout();
 
-        showMenuPanel();
-        
-        showGameProgress();
+        //showMenuPanel();
                 
-        //showUserProfilePanel();
+        showUserProfilePanel();
+        
+        //showAddNewUserPanel();
+        
     }
-    
+   
     /**
      * Initializes the root layout.
      */
@@ -80,23 +87,23 @@ public class MainApp extends Application {
             e.printStackTrace();
         }
     }
-    
-    public void showGameProgress() {
+   
+    public void showAddNewUserPanel() {
         try {
-            // Load menu panel.
+            // Load user profile panel.
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(MainApp.class.getResource("view/gameProgress.fxml"));
+            loader.setLocation(MainApp.class.getResource("view/AddNewUserPanel.fxml"));
             AnchorPane menuPanel = (AnchorPane) loader.load();
             
-            // Set menu panel into the center of root layout.
+            // Set user profile panel into the center of root layout.
             rootLayout.setCenter(menuPanel);
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
     
-    
-    
+
+  
     /**
      * Returns the main stage.
      * @return
