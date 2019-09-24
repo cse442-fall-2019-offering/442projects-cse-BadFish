@@ -18,6 +18,9 @@ public class MainApp extends Application {
 
     @Override
     public void start(Stage primaryStage) {
+    	primaryStage.setWidth(750);
+    	primaryStage.setHeight(600);
+    	primaryStage.setResizable(false);
         this.primaryStage = primaryStage;
         this.primaryStage.setTitle("Coding Game");
 
