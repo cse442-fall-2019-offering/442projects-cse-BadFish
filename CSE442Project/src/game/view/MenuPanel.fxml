@@ -9,9 +9,8 @@
 
 <AnchorPane prefHeight="600.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
 fx:controller = "game.menucontroller">
-   
    <children>
-      <VBox prefHeight="465.0" prefWidth="255.0">
+      <VBox>
          <children>
             <Button fx:id = "newplayer" onAction = "#adduser" layoutX="10.0" layoutY="20.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="230.0" text="New Player">
                <VBox.margin>
