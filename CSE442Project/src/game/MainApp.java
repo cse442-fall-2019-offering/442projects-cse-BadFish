@@ -27,9 +27,9 @@ public class MainApp extends Application {
         
         initRootLayout();
 
-        //showMenuPanel();
+        showMenuPanel();
                 
-        showUserProfilePanel();
+        //showUserProfilePanel();
         
         //showAddNewUserPanel();
         
