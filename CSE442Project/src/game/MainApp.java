@@ -87,7 +87,7 @@ public class MainApp extends Application {
             e.printStackTrace();
         }
     }
-    
+   
     public void showAddNewUserPanel() {
         try {
             // Load user profile panel.
@@ -102,6 +102,8 @@ public class MainApp extends Application {
         }
     }
     
+
+  
     /**
      * Returns the main stage.
      * @return
