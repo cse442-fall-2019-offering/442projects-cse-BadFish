@@ -29,6 +29,8 @@ public class MainApp extends Application {
 
         showMenuPanel();
                 
+        DataAccess x = new DataAccess();
+        
         //showUserProfilePanel();
         
         //showAddNewUserPanel();
