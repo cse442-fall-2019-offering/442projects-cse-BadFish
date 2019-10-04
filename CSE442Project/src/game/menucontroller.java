@@ -13,51 +13,47 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
-public class menucontroller implements Initializable{
-@FXML
-private Button newplayer;
+public class menucontroller implements Initializable {
+	@FXML
+	private Button newplayer;
 
-@FXML
-private Button userprofile;
-
+	@FXML
+	private Button userprofile;
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		// TODO Auto-generated method stub
-	 
-		 newplayer.setOnAction(this::adduser);
-         userprofile.setOnAction(this::showuser);
-	 }
-			 
-			 
-			
-public void adduser(ActionEvent event) {
-	Parent root;
-	try {
-		root = FXMLLoader.load(getClass().getResource("view/AddNewUserPanel.fxml"));
-	    Stage stage = new Stage();
-	    stage.setScene(new Scene(root));
-	    stage.show();
-	}
-	catch(IOException e) {
-		e.printStackTrace();
-	}	
-}
-	
 
-public void showuser(ActionEvent event) {
-	Parent root;
-	try {
-		root = FXMLLoader.load(getClass().getResource("view/UserProfilePanel.fxml"));
-	    Stage stage = new Stage();
-	    stage.setScene(new Scene(root));
-	    stage.show();
+		newplayer.setOnAction(this::adduser);
+		userprofile.setOnAction(this::showuser);
 	}
-	catch(IOException e) {
-		e.printStackTrace();
-	}	
-}
 
-	
-	
+	public void adduser(ActionEvent event) {
+		Parent root;
+		try {
+			root = FXMLLoader.load(getClass().getResource("view/AddNewUserPanel.fxml"));
+			Stage stage = new Stage();
+			stage.setScene(new Scene(root));
+			stage.show();
+			Stage oldstage = (Stage) newplayer.getScene().getWindow();
+			oldstage.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void showuser(ActionEvent event) {
+		Parent root;
+		try {
+			root = FXMLLoader.load(getClass().getResource("view/UserProfilePanel.fxml"));
+			Stage stage = new Stage();
+			stage.setScene(new Scene(root));
+			stage.show();
+			Stage oldstage = (Stage) userprofile.getScene().getWindow();
+			oldstage.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
 }
