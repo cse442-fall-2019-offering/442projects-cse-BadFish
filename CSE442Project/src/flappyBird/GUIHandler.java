@@ -5,10 +5,6 @@ import java.awt.GridBagLayout;
 
 import javax.swing.JFrame;
 
-import javafx.fxml.FXML;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
-
 public class GUIHandler implements Runnable{
 	private FlappyGame 			game;
 	private JFrame 				frame;
@@ -45,9 +41,4 @@ public class GUIHandler implements Runnable{
 		
 	}
 
-	@FXML
-	public void displayImage(Image i) {
-		ImageView imv=new ImageView();
-		
-	}
 }

@@ -58,6 +58,31 @@ public void showuser(ActionEvent event) {
 	}	
 }
 
+public void showGameSelectionPanel(ActionEvent event) {
+	Parent root;
+	try {
+		root=FXMLLoader.load(getClass().getResource("view/gameSelectionPanel.fxml"));
+		Stage stage=new Stage();
+		stage.setScene(new Scene(root));
+		stage.show();
+	}
+	catch(IOException e) {
+		e.printStackTrace();
+	}
+}
 	
-	
+public void exitGameSelectionPanel(ActionEvent event) {
+	Parent root;
+	try {
+		root=FXMLLoader.load(getClass().getResource("view/gameSelectionPanel.fxml"));
+		Stage stage=new Stage();
+		stage.setScene(new Scene(root));
+		stage.close();
+	}
+	catch(IOException e) {
+		e.printStackTrace();
+	}
+}
+
+
 }

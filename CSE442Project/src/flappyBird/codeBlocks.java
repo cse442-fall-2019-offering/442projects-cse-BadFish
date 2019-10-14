@@ -21,9 +21,6 @@ public class codeBlocks<E> {
 	 */
 	ArrayList<Integer[]> clickArr=new ArrayList<>();
 	
-	
-	
-	
 	public Integer end() {
 		return 1;
 	}
