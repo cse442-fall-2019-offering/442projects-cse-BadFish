@@ -1,29 +1,25 @@
 package game;
 
+import org.junit.jupiter.api.Test;
+
 public class DataAccessTestCases {
 	
+	@Test
+	public void WritingTest() {
+		DataAccess x = new DataAccess();
+	}
+	
+	@Test
+	public void AccessTest() {
+	    
+	}
+	
+	@Test
+	public void ReadingTest() {
+	    
+	}
+	
 	public static void main(String[] args) {
-	
-	DataAccess x = new DataAccess();
-	System.out.println(x.getProfile(0).getNickName());
-	x.getProfile(0).setGameStatus(1, true);
-	x.getProfile(0).setGameStatus(2, true);
-	x.getProfile(0).setGameStatus(3, true);
-	x.saveData();
-	
-	DataAccess y = new DataAccess();
-	System.out.println(x.getProfile(0).getNickName());
-	x.getProfile(0).setGameStatus(1, true);
-	x.getProfile(0).setGameStatus(2, true);
-	x.getProfile(0).setGameStatus(3, true);
-	x.saveData();
-	
-	DataAccess z = new DataAccess();
-	System.out.println(x.getProfile(0).getNickName());
-	x.getProfile(0).setGameStatus(1, true);
-	x.getProfile(0).setGameStatus(2, true);
-	x.getProfile(0).setGameStatus(3, true);
-	x.saveData();
 	
 	
 	}

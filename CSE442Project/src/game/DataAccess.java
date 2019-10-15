@@ -70,6 +70,9 @@ public class DataAccess {
 		}
 
 		Profiles = new Profile[3];
+		Profiles[0] = null;
+		Profiles[1] = null;
+		Profiles[2] = null;
 
 		// Read file and output data
 
@@ -82,7 +85,7 @@ public class DataAccess {
 					CurrentFileLine = bufferedReader.readLine();
 					int count = 0;
 					while (CurrentFileLine.contains(">>Start - User<<")) {
-						String[] temp = new String[7];
+						String[] temp = new String[11];
 						CurrentFileLine = bufferedReader.readLine();
 						boolean hitEnd = false;
 						if (!CurrentFileLine.contains(">>End - User<<")) {
@@ -118,13 +121,33 @@ public class DataAccess {
 						if (!CurrentFileLine.contains(">>End - User<<")) {
 							// Profile Input 7
 							temp[6] = CurrentFileLine;
+							CurrentFileLine = bufferedReader.readLine();
+						}
+						if (!CurrentFileLine.contains(">>End - User<<")) {
+							// Profile Input 8
+							temp[7] = CurrentFileLine;
+							CurrentFileLine = bufferedReader.readLine();
+						}
+						if (!CurrentFileLine.contains(">>End - User<<")) {
+							// Profile Input 9
+							temp[8] = CurrentFileLine;
+							CurrentFileLine = bufferedReader.readLine();
+						}
+						if (!CurrentFileLine.contains(">>End - User<<")) {
+							// Profile Input 10
+							temp[9] = CurrentFileLine;
+							CurrentFileLine = bufferedReader.readLine();
+						}
+						if (!CurrentFileLine.contains(">>End - User<<")) {
+							// Profile Input 11
+							temp[10] = CurrentFileLine;
 							hitEnd = true;
 							CurrentFileLine = bufferedReader.readLine();
 						}
 						if (hitEnd) {
 							Profiles[count] = new Profile(temp[0], temp[1], temp[2], Integer.parseInt(temp[3]),
-									Boolean.parseBoolean(temp[4]), Boolean.parseBoolean(temp[5]),
-									Boolean.parseBoolean(temp[6]));
+									Boolean.parseBoolean(temp[4]), Integer.parseInt(temp[5]), Boolean.parseBoolean(temp[6]), Integer.parseInt(temp[7]), 
+									Boolean.parseBoolean(temp[8]), Integer.parseInt(temp[9]), Integer.parseInt(temp[10]));
 						}
 						count++;
 						CurrentFileLine = bufferedReader.readLine();
@@ -157,7 +180,7 @@ public class DataAccess {
 			bufferedWriter.newLine();
 			bufferedWriter.newLine();
 			bufferedWriter.write(">>Start - Player Profiles<<");
-			if (Profiles[0] != null) {
+			if (Profiles[0] != null || Profiles[1] != null || Profiles[2] != null) {
 				bufferedWriter.newLine();
 			}
 			for (int i = 0; Profiles[i] != null; i++) {
@@ -177,11 +200,15 @@ public class DataAccess {
 					bufferedWriter.write("false");
 				}
 				bufferedWriter.newLine();
+				bufferedWriter.write(Integer.toString(Profiles[i].getGameScore(1)));
+				bufferedWriter.newLine();
 				if (Profiles[i].getGameStatus(2)) {
 					bufferedWriter.write("true");
 				} else {
 					bufferedWriter.write("false");
 				}
+				bufferedWriter.newLine();
+				bufferedWriter.write(Integer.toString(Profiles[i].getGameScore(2)));
 				bufferedWriter.newLine();
 				if (Profiles[i].getGameStatus(3)) {
 					bufferedWriter.write("true");
@@ -189,11 +216,18 @@ public class DataAccess {
 					bufferedWriter.write("false");
 				}
 				bufferedWriter.newLine();
+				bufferedWriter.write(Integer.toString(Profiles[i].getGameScore(3)));
+				bufferedWriter.newLine();
+				bufferedWriter.write(Integer.toString(Profiles[i].getGameTime()));
+				bufferedWriter.newLine();
 				bufferedWriter.write(">>End - User<<");
 				bufferedWriter.newLine();
 				if (i == 2) {
 					break;
 				}
+			}
+			if(Profiles[0] == null && Profiles[1] == null && Profiles[2] == null) {
+				bufferedWriter.newLine();
 			}
 			bufferedWriter.write(">>End<<");
 			bufferedWriter.newLine();
@@ -212,9 +246,9 @@ public class DataAccess {
 	}
 
 	public boolean setProfile(int profileNumber, String firstName, String lastName, String nickName, int age,
-			boolean game1, boolean game2, boolean game3) {
+			boolean game1, int score1, boolean game2, int score2, boolean game3, int score3, int gameTime) {
 		if (profileNumber > -1 && profileNumber < 3) {
-			Profiles[profileNumber] = new Profile(firstName, lastName, nickName, age, game1, game2, game3);
+			Profiles[profileNumber] = new Profile(firstName, lastName, nickName, age, game1, score1, game2, score2, game3, score3, gameTime);
 			return true;
 		} else {
 			return false;
