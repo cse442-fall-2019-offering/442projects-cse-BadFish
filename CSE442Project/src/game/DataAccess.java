@@ -146,8 +146,10 @@ public class DataAccess {
 						}
 						if (hitEnd) {
 							Profiles[count] = new Profile(temp[0], temp[1], temp[2], Integer.parseInt(temp[3]),
-									Boolean.parseBoolean(temp[4]), Integer.parseInt(temp[5]), Boolean.parseBoolean(temp[6]), Integer.parseInt(temp[7]), 
-									Boolean.parseBoolean(temp[8]), Integer.parseInt(temp[9]), Integer.parseInt(temp[10]));
+									Boolean.parseBoolean(temp[4]), Integer.parseInt(temp[5]),
+									Boolean.parseBoolean(temp[6]), Integer.parseInt(temp[7]),
+									Boolean.parseBoolean(temp[8]), Integer.parseInt(temp[9]),
+									Integer.parseInt(temp[10]));
 						}
 						count++;
 						CurrentFileLine = bufferedReader.readLine();
@@ -226,7 +228,7 @@ public class DataAccess {
 					break;
 				}
 			}
-			if(Profiles[0] == null && Profiles[1] == null && Profiles[2] == null) {
+			if (Profiles[0] == null && Profiles[1] == null && Profiles[2] == null) {
 				bufferedWriter.newLine();
 			}
 			bufferedWriter.write(">>End<<");
@@ -248,7 +250,8 @@ public class DataAccess {
 	public boolean setProfile(int profileNumber, String firstName, String lastName, String nickName, int age,
 			boolean game1, int score1, boolean game2, int score2, boolean game3, int score3, int gameTime) {
 		if (profileNumber > -1 && profileNumber < 3) {
-			Profiles[profileNumber] = new Profile(firstName, lastName, nickName, age, game1, score1, game2, score2, game3, score3, gameTime);
+			Profiles[profileNumber] = new Profile(firstName, lastName, nickName, age, game1, score1, game2, score2,
+					game3, score3, gameTime);
 			return true;
 		} else {
 			return false;

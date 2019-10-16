@@ -77,7 +77,7 @@ public class Profile {
 			return false;
 		}
 	}
-	
+
 	public int getGameScore(int gameNumber) {
 		if (gameNumber == 1) {
 			return Score1;
@@ -89,7 +89,7 @@ public class Profile {
 			return -1;
 		}
 	}
-	
+
 	public boolean setGameScore(int gameNumber, int score) {
 		if (gameNumber == 1) {
 			Score1 = score;
@@ -105,13 +105,13 @@ public class Profile {
 			return false;
 		}
 	}
-	
+
 	public int getGameTime() {
 		return GameTime;
 	}
-	
+
 	public void setGameTime(int gameTime) {
 		GameTime = gameTime;
 	}
-	
+
 }

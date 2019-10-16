@@ -28,11 +28,6 @@ public class MainApp extends Application {
 		initRootLayout();
 
 		showMenuPanel();
-
-		DataAccess x = new DataAccess();
-//		x.setProfile(1, "joe", "vath", "jose", 21, true, 9, false, 0, false, 0, 999);
-//		System.out.println(x.getProfile(0).getGameScore(1));
-//		x.saveData();
 	}
 
 	/**
