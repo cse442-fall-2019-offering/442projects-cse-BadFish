@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="game.AddNewUserController">
    <children>
       <VBox layoutX="47.0" layoutY="117.0" prefHeight="30.0" prefWidth="105.0">
          <children>
@@ -20,7 +20,7 @@
       </VBox>
       <VBox layoutX="153.0" layoutY="117.0" prefHeight="30.0" prefWidth="190.0">
          <children>
-            <TextField prefHeight="6.0" prefWidth="190.0">
+            <TextField fx:id="firstName" prefHeight="6.0" prefWidth="190.0">
                <font>
                   <Font size="15.0" />
                </font>
@@ -38,7 +38,7 @@
       </VBox>
       <VBox layoutX="153.0" layoutY="175.0" prefHeight="30.0" prefWidth="190.0">
          <children>
-            <TextField prefHeight="6.0" prefWidth="190.0">
+            <TextField fx:id="lastName" prefHeight="6.0" prefWidth="190.0">
                <font>
                   <Font size="15.0" />
                </font>
@@ -56,7 +56,7 @@
       </VBox>
       <VBox layoutX="153.0" layoutY="233.0" prefHeight="30.0" prefWidth="190.0">
          <children>
-            <TextField prefHeight="6.0" prefWidth="190.0">
+            <TextField fx:id="nickName" prefHeight="6.0" prefWidth="190.0">
                <font>
                   <Font size="15.0" />
                </font>
@@ -74,8 +74,27 @@
       </VBox>
       <VBox layoutX="153.0" layoutY="291.0" prefHeight="30.0" prefWidth="190.0">
          <children>
-            <ChoiceBox prefHeight="30.0" prefWidth="192.0" />
+            <TextField fx:id="age" prefHeight="6.0" prefWidth="190.0">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </TextField>
          </children>
       </VBox>
+      <Button fx:id="back" layoutX="15.0" layoutY="525.0" mnemonicParsing="false" onAction="#back" prefHeight="61.0" prefWidth="122.0" text="Back">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <Button fx:id="addUser" layoutX="614.0" layoutY="525.0" mnemonicParsing="false" onAction="#addUser" prefHeight="61.0" prefWidth="122.0" text="Add User">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <Label fx:id="promptBox" alignment="BASELINE_CENTER" layoutX="163.0" layoutY="535.0" prefHeight="41.0" prefWidth="425.0" text="Enter User Info" textAlignment="CENTER">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

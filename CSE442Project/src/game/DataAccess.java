@@ -265,5 +265,14 @@ public class DataAccess {
 			return false;
 		}
 	}
+	
+	public int getEmptyProfile() {
+		for(int i = 0; i < 3; i++) {
+			if(Profiles[i] == null) {
+				return i;
+			}
+		}
+		return -1;
+	}
 
 }
