@@ -30,6 +30,7 @@ public class MainApp extends Application {
 		showMenuPanel();
 
 		DataAccess x = new DataAccess();
+		x.saveData();
 //		System.out.println(x.getProfile(0).getNickName());
 //		x.getProfile(0).setGameStatus(1, true);
 //		x.getProfile(0).setGameStatus(2, true);
