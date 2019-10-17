@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.chart.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
@@ -8,27 +10,84 @@
 
 <AnchorPane prefHeight="650.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label layoutX="357.0" layoutY="29.0" text="Name" />
-      <VBox layoutX="65.0" layoutY="115.0" prefHeight="200.0" prefWidth="196.0">
+      <Label layoutX="328.0" layoutY="69.0" text="Name">
+         <font>
+            <Font size="34.0" />
+         </font></Label>
+      <VBox layoutX="101.0" layoutY="189.0" prefHeight="343.0" prefWidth="227.0">
          <children>
-            <Label text="Total Games: " />
-            <Label text="Game Finished:" />
-            <Label text="Game In Prograss:" />
-            <Label text="You spent        hour" />
+            <Label text="Total Games:">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <VBox.margin>
+                  <Insets bottom="20.0" />
+               </VBox.margin>
+            </Label>
+            <Label layoutX="10.0" layoutY="10.0" text="Game Finished:">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="20.0" />
+               </VBox.margin>
+            </Label>
+            <Label layoutX="10.0" layoutY="44.0" text="Game In Progress: ">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="20.0" />
+               </VBox.margin>
+            </Label>
+            <Label text="You spent        ">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
          </children>
       </VBox>
-      <VBox layoutX="541.0" layoutY="136.0" prefHeight="200.0" prefWidth="100.0">
+      <VBox layoutX="481.0" layoutY="185.0" prefHeight="343.0" prefWidth="227.0">
          <children>
-            <Label text="First: " />
-            <Label layoutX="10.0" layoutY="10.0" text="Second: " />
-            <Label layoutX="10.0" layoutY="27.0" text="Third: " />
+            <Label text="Scores">
+               <font>
+                  <Font size="25.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <VBox.margin>
+                  <Insets bottom="20.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets left="75.0" />
+               </padding>
+            </Label>
+            <Label layoutX="10.0" layoutY="10.0" text="Game1: ">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="20.0" />
+               </VBox.margin>
+            </Label>
+            <Label layoutX="10.0" layoutY="44.0" text="Game2: ">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="20.0" />
+               </VBox.margin>
+            </Label>
+            <Label text="Game3: ">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
          </children>
       </VBox>
-      <MenuButton layoutX="537.0" layoutY="102.0" mnemonicParsing="false" text="Game">
-        <items>
-          <MenuItem mnemonicParsing="false" text="Flap Bird" />
-          <MenuItem mnemonicParsing="false" text="Game 2" />
-        </items>
-      </MenuButton>
    </children>
 </AnchorPane>
