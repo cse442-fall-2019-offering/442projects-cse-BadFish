@@ -19,6 +19,9 @@ public class menucontroller implements Initializable {
 
 	@FXML
 	private Button userprofile;
+	
+	@FXML
+	private Button exit;
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
@@ -45,7 +48,7 @@ public class menucontroller implements Initializable {
 	public void showuser(ActionEvent event) {
 		Parent root;
 		try {
-			root = FXMLLoader.load(getClass().getResource("view/UserProfilePanel.fxml"));
+			root = FXMLLoader.load(getClass().getResource("view/SelectUserProfilePanel.fxml"));
 			Stage stage = new Stage();
 			stage.setScene(new Scene(root));
 			stage.show();
@@ -54,6 +57,11 @@ public class menucontroller implements Initializable {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+	}
+	
+	public void exit(ActionEvent event) {
+		Stage oldstage = (Stage) userprofile.getScene().getWindow();
+		oldstage.close();
 	}
 
 }
