@@ -21,6 +21,9 @@ public class MenuController implements Initializable {
 	private Button userprofile;
 	
 	@FXML
+	private Button rankStatus;
+	
+	@FXML
 	private Button exit;
 
 	@Override
@@ -29,6 +32,7 @@ public class MenuController implements Initializable {
 
 		newplayer.setOnAction(this::adduser);
 		userprofile.setOnAction(this::showuser);
+//		rankStatus.setOnAction(this::rankStatus);
 	}
 
 	public void adduser(ActionEvent event) {
@@ -58,6 +62,20 @@ public class MenuController implements Initializable {
 			e.printStackTrace();
 		}
 	}
+	
+//	public void rankStatus(ActionEvent event) {
+//		Parent root;
+//		try {
+//			root = FXMLLoader.load(getClass().getResource("view/RankPanel.fxml"));
+//			Stage stage = new Stage();
+//			stage.setScene(new Scene(root));
+//			stage.show();
+//			Stage oldstage = (Stage) rankStatus.getScene().getWindow();
+//			oldstage.close();
+//		} catch (IOException e) {
+//			e.printStackTrace();
+//		}
+//	}
 	
 	public void exit(ActionEvent event) {
 		Stage oldstage = (Stage) userprofile.getScene().getWindow();
