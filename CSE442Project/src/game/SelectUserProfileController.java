@@ -16,7 +16,7 @@ public class SelectUserProfileController {
 
 	@FXML
 	private Button profileButton2;
-	
+
 	@FXML
 	private Button profileButton1;
 
@@ -42,13 +42,13 @@ public class SelectUserProfileController {
 	private ProgressBar profileProgress2;
 
 	@FXML
-	private Label profileHours1;
+	private Button profileProgressButton1;
 
 	@FXML
-	private Label profileHours0;
+	private Button profileProgressButton0;
 
 	@FXML
-	private Label profileHours2;
+	private Button profileProgressButton2;
 
 	@FXML
 	private Button back;
@@ -56,66 +56,64 @@ public class SelectUserProfileController {
 	@FXML
 	void initialize() {
 
+		profileButton2.setOnAction(this::profileButton2);
+		profileButton1.setOnAction(this::profileButton1);
+		profileButton0.setOnAction(this::profileButton0);
+
 		DataAccess x = new DataAccess();
 
 		if (x.getProfile(0) != null) {
 			profileName0.setText(x.getProfile(0).getFullName());
 			profileButton0.setText(x.getProfile(0).getNickName());
-			profileHours0.setText("" + x.getProfile(0).getGameTime());
-			
+
 			int progress = 0;
-			for(int i = 0; i < 3; i++) {
-				if(x.getProfile(0).getGameStatus(i)) {
+			for (int i = 0; i < 3; i++) {
+				if (x.getProfile(0).getGameStatus(i)) {
 					progress++;
 				}
 			}
-			
-			profileProgress0.setProgress((double) progress/3);
-			
+
+			profileProgress0.setProgress((double) progress / 3);
+
 		} else {
 			profileName0.setText("Empty");
 			profileButton0.setText("Empty");
-			profileHours0.setText("Empty");
 		}
-		
+
 		if (x.getProfile(1) != null) {
 			profileName1.setText(x.getProfile(1).getFullName());
 			profileButton1.setText(x.getProfile(1).getNickName());
-			profileHours1.setText("" + x.getProfile(1).getGameTime());
 
 			int progress = 0;
-			for(int i = 0; i < 3; i++) {
-				if(x.getProfile(1).getGameStatus(i)) {
+			for (int i = 0; i < 3; i++) {
+				if (x.getProfile(1).getGameStatus(i)) {
 					progress++;
 				}
 			}
-			
-			profileProgress1.setProgress((double) progress/3);
-			
+
+			profileProgress1.setProgress((double) progress / 3);
+
 		} else {
 			profileName1.setText("Empty");
 			profileButton1.setText("Empty");
-			profileHours1.setText("Empty");
 		}
-		
+
 		if (x.getProfile(2) != null) {
 			profileName2.setText(x.getProfile(2).getFullName());
 			profileButton2.setText(x.getProfile(2).getNickName());
-			profileHours2.setText("" + x.getProfile(2).getGameTime());
 
 			int progress = 0;
-			for(int i = 0; i < 3; i++) {
-				if(x.getProfile(2).getGameStatus(i)) {
+			for (int i = 0; i < 3; i++) {
+				if (x.getProfile(2).getGameStatus(i)) {
 					progress++;
 				}
 			}
-			
-			profileProgress2.setProgress((double) progress/3);
-			
+
+			profileProgress2.setProgress((double) progress / 3);
+
 		} else {
 			profileName2.setText("Empty");
 			profileButton2.setText("Empty");
-			profileHours2.setText("Empty");
 		}
 	}
 
@@ -136,17 +134,62 @@ public class SelectUserProfileController {
 
 	@FXML
 	void profileButton0(ActionEvent event) {
-
+		
 	}
 
 	@FXML
 	void profileButton1(ActionEvent event) {
-
+		
 	}
 
 	@FXML
 	void profileButton2(ActionEvent event) {
-
+		
+	}
+	
+	@FXML
+	void profileProgressButton0(ActionEvent event) {
+		Parent root;
+		try {
+			root = FXMLLoader.load(getClass().getResource("view/UserProfilePanel0.fxml"));
+			Stage stage = new Stage();
+			stage.setScene(new Scene(root));
+			stage.show();
+			Stage oldstage = (Stage) profileButton0.getScene().getWindow();
+			oldstage.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	@FXML
+	void profileProgressButton1(ActionEvent event) {
+		Parent root;
+		try {
+			root = FXMLLoader.load(getClass().getResource("view/UserProfilePanel1.fxml"));
+			Stage stage = new Stage();
+			stage.setScene(new Scene(root));
+			stage.show();
+			Stage oldstage = (Stage) profileButton1.getScene().getWindow();
+			oldstage.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	@FXML
+	void profileProgressButton2(ActionEvent event) {
+		Parent root;
+		try {
+			root = FXMLLoader.load(getClass().getResource("view/UserProfilePanel2.fxml"));
+			Stage stage = new Stage();
+			stage.setScene(new Scene(root));
+			stage.show();
+			Stage oldstage = (Stage) profileButton2.getScene().getWindow();
+			oldstage.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 
 }
