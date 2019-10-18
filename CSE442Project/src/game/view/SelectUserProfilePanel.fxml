@@ -39,36 +39,6 @@
                   <Font size="20.0" />
                </font>
             </Label>
-            <Label alignment="CENTER" layoutX="290.0" layoutY="306.0" prefHeight="23.0" prefWidth="133.0" text="Hours Played">
-               <font>
-                  <Font size="20.0" />
-               </font>
-            </Label>
-            <Label alignment="CENTER" layoutX="539.0" layoutY="306.0" prefHeight="23.0" prefWidth="133.0" text="Hours Played">
-               <font>
-                  <Font size="20.0" />
-               </font>
-            </Label>
-            <Label alignment="CENTER" layoutX="41.0" layoutY="306.0" prefHeight="23.0" prefWidth="133.0" text="Hours Played">
-               <font>
-                  <Font size="20.0" />
-               </font>
-            </Label>
-            <Label fx:id="profileHours1" alignment="CENTER" layoutX="291.0" layoutY="364.0" prefHeight="23.0" prefWidth="133.0" text="Label">
-               <font>
-                  <Font size="20.0" />
-               </font>
-            </Label>
-            <Label fx:id="profileHours0" alignment="CENTER" layoutX="41.0" layoutY="364.0" prefHeight="23.0" prefWidth="133.0" text="Label">
-               <font>
-                  <Font size="20.0" />
-               </font>
-            </Label>
-            <Label fx:id="profileHours2" alignment="CENTER" layoutX="539.0" layoutY="364.0" prefHeight="23.0" prefWidth="133.0" text="Label">
-               <font>
-                  <Font size="20.0" />
-               </font>
-            </Label>
             <Label alignment="CENTER" layoutX="279.0" layoutY="208.0" prefHeight="30.0" prefWidth="156.0" text="User Progress">
                <font>
                   <Font size="20.0" />
@@ -79,6 +49,9 @@
                   <Font size="20.0" />
                </font>
             </Label>
+            <Button fx:id="profileProgressButton0" layoutX="29.0" layoutY="307.0" mnemonicParsing="false" onAction="#profileProgressButton0" prefHeight="60.0" prefWidth="156.0" text="Check Progress" />
+            <Button fx:id="profileProgressButton1" layoutX="278.0" layoutY="307.0" mnemonicParsing="false" onAction="#profileProgressButton1" prefHeight="60.0" prefWidth="156.0" text="Check Progress" />
+            <Button fx:id="profileProgressButton2" layoutX="528.0" layoutY="307.0" mnemonicParsing="false" onAction="#profileProgressButton2" prefHeight="60.0" prefWidth="156.0" text="Check Progress" />
          </children>
       </Pane>
       <Label alignment="CENTER" layoutX="191.0" layoutY="40.0" prefHeight="53.0" prefWidth="368.0" text="Select User Profile">
