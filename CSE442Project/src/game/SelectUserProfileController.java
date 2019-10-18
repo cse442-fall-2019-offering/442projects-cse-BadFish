@@ -55,6 +55,10 @@ public class SelectUserProfileController {
 
 	@FXML
 	void initialize() {
+		
+		profileButton2.setOnAction(this::profileButton2);
+		profileButton1.setOnAction(this::profileButton1);
+		profileButton0.setOnAction(this::profileButton0);
 
 		DataAccess x = new DataAccess();
 
@@ -136,17 +140,47 @@ public class SelectUserProfileController {
 
 	@FXML
 	void profileButton0(ActionEvent event) {
-
+		Parent root;
+		try {
+			root = FXMLLoader.load(getClass().getResource("view/UserProfilePanel0.fxml"));
+			Stage stage = new Stage();
+			stage.setScene(new Scene(root));
+			stage.show();
+			Stage oldstage = (Stage) profileButton0.getScene().getWindow();
+			oldstage.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 
 	@FXML
 	void profileButton1(ActionEvent event) {
-
+		Parent root;
+		try {
+			root = FXMLLoader.load(getClass().getResource("view/UserProfilePanel1.fxml"));
+			Stage stage = new Stage();
+			stage.setScene(new Scene(root));
+			stage.show();
+			Stage oldstage = (Stage) profileButton1.getScene().getWindow();
+			oldstage.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 
 	@FXML
 	void profileButton2(ActionEvent event) {
-
+		Parent root;
+		try {
+			root = FXMLLoader.load(getClass().getResource("view/UserProfilePanel2.fxml"));
+			Stage stage = new Stage();
+			stage.setScene(new Scene(root));
+			stage.show();
+			Stage oldstage = (Stage) profileButton2.getScene().getWindow();
+			oldstage.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 
 }

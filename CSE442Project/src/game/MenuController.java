@@ -13,7 +13,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
-public class menucontroller implements Initializable {
+public class MenuController implements Initializable {
 	@FXML
 	private Button newplayer;
 

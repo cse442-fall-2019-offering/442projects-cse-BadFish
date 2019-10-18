@@ -8,15 +8,11 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="650.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="600.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="game.UserProfile0Controller">
    <children>
-      <Label layoutX="328.0" layoutY="69.0" text="Name">
-         <font>
-            <Font size="34.0" />
-         </font></Label>
       <VBox layoutX="101.0" layoutY="189.0" prefHeight="343.0" prefWidth="227.0">
          <children>
-            <Label text="Total Games:">
+            <Label fx:id="totalGames" text="Total Games:">
                <font>
                   <Font size="20.0" />
                </font>
@@ -27,7 +23,7 @@
                   <Insets bottom="20.0" />
                </VBox.margin>
             </Label>
-            <Label layoutX="10.0" layoutY="10.0" text="Game Finished:">
+            <Label fx:id="gameFinished" layoutX="10.0" layoutY="10.0" text="Game Finished:">
                <font>
                   <Font size="20.0" />
                </font>
@@ -35,7 +31,7 @@
                   <Insets bottom="20.0" />
                </VBox.margin>
             </Label>
-            <Label layoutX="10.0" layoutY="44.0" text="Game In Progress: ">
+            <Label fx:id="gameInProgress" layoutX="10.0" layoutY="44.0" text="Game In Progress: ">
                <font>
                   <Font size="20.0" />
                </font>
@@ -43,7 +39,7 @@
                   <Insets bottom="20.0" />
                </VBox.margin>
             </Label>
-            <Label text="You spent        ">
+            <Label fx:id="spendTime" text="You spent        ">
                <font>
                   <Font size="20.0" />
                </font>
@@ -66,7 +62,7 @@
                   <Insets left="75.0" />
                </padding>
             </Label>
-            <Label layoutX="10.0" layoutY="10.0" text="Game1: ">
+            <Label fx:id="score1" layoutX="10.0" layoutY="10.0" text="Game1: ">
                <font>
                   <Font size="20.0" />
                </font>
@@ -74,7 +70,7 @@
                   <Insets bottom="20.0" />
                </VBox.margin>
             </Label>
-            <Label layoutX="10.0" layoutY="44.0" text="Game2: ">
+            <Label fx:id="score2" layoutX="10.0" layoutY="44.0" text="Game2: ">
                <font>
                   <Font size="20.0" />
                </font>
@@ -82,7 +78,22 @@
                   <Insets bottom="20.0" />
                </VBox.margin>
             </Label>
-            <Label text="Game3: ">
+            <Label fx:id="score3" text="Game3: ">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+	  <Button fx:id="back" layoutX="12.0" layoutY="526.0" mnemonicParsing="false" onAction="#back" prefHeight="60.0" prefWidth="99.0" text="Back" />
+      <VBox alignment="TOP_CENTER" layoutX="125.0" layoutY="38.0" prefHeight="121.0" prefWidth="500.0">
+         <children>
+            <Label fx:id="name" alignment="TOP_CENTER" prefHeight="42.0" prefWidth="500.0" text="Name" textAlignment="CENTER" textOverrun="CLIP" wrapText="true">
+               <font>
+                  <Font size="34.0" />
+               </font>
+            </Label>
+            <Label fx:id="nickName" alignment="TOP_CENTER" prefHeight="26.0" prefWidth="500.0" text="Nick Name" textAlignment="CENTER">
                <font>
                   <Font size="20.0" />
                </font>
