@@ -13,36 +13,39 @@ import javafx.stage.Stage;
 
 public class UserProfile0Controller {
 
+	//back button to previous stage
 	@FXML
 	private Button back;
-
+	//name label
 	@FXML
 	private Label name;
-	
+	//nick name label
 	@FXML
 	private Label nickName;
-
+	//total games label
 	@FXML
 	private Label totalGames;
-
+	//label for game completed
 	@FXML
 	private Label gameFinished;
-	
+	//label for game that is in progress
 	@FXML
 	private Label gameInProgress;
-	
+	//label to time spent
 	@FXML
 	private Label spendTime;
-	
+	//score1 label
 	@FXML
 	private Label score1;
-	
+	//score2 label
 	@FXML
 	private Label score2;
-	
+	//score3 label
 	@FXML
 	private Label score3;
-	
+	/**
+	 * initializing the button functionality and initialize profiles
+	 */
 	@FXML
 	void initialize() {
 		
@@ -92,6 +95,10 @@ public class UserProfile0Controller {
 		}
 	}
 	
+	/**
+	 * return to previous stage
+	 * @param event action event
+	 */
 	@FXML
 	public void back(ActionEvent event) {
 		Parent root;
