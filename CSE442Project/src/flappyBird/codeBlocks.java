@@ -3,7 +3,7 @@ package flappyBird;
 import java.util.ArrayList;
 
 
-/*
+/**
  * codeBlocks returns arrayLists contains list of action under certain event 
  * ie. click, run, hit ground, hit obstacle
  * the action will be returned as integer number

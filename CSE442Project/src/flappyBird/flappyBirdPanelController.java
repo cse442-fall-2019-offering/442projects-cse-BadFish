@@ -10,8 +10,17 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.ChoiceBox;
 import javafx.stage.Stage;
 
+
+/**
+ * Class includes functionality of buttons and scenes
+ * 
+ */
 public class flappyBirdPanelController implements Initializable {
 
+	//array that contains buttons as instructions
+	private ArrayList<ChoiceBox<String>> buttonArray= new ArrayList<>();
+	
+	//8 buttons each represents an instruction
     @FXML
     private ChoiceBox<String> instruction0;
     @FXML
@@ -28,11 +37,12 @@ public class flappyBirdPanelController implements Initializable {
     private ChoiceBox<String> instruction6;
     @FXML
     private ChoiceBox<String> instruction7;
-
+    
+    /**
+     * adding the buttons to array in sequence as instructions
+     */
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		// TODO Auto-generated method stub
-		ArrayList<ChoiceBox<String>> buttonArray= new ArrayList<>();
 		buttonArray.add(instruction0);
 		buttonArray.add(instruction1);
 		buttonArray.add(instruction2);
@@ -45,6 +55,10 @@ public class flappyBirdPanelController implements Initializable {
 			choiceMenuInit(buttonArray.get(i));
 		}
 	}
+	/**
+	 * give value of instructions to each button
+	 * @param instruction current instruction that adds to button
+	 */
 	private void choiceMenuInit(ChoiceBox<String> instruction) {
 		instruction.getItems().add("(none)");
 		instruction.getItems().add("flap");

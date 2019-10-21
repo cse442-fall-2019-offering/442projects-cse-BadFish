@@ -14,17 +14,21 @@ import javafx.stage.Stage;
 
 public class gameSelectionPanelController implements Initializable {
 
+	
+	//buttons to open flappy bird game
     @FXML
     private Button flappyButton;
-    
+    //initializing button to attach proper controller function
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		// TODO Auto-generated method stub
-	 
 		 flappyButton.setOnAction(this::startFlappyBird);
 
 	 }
- 
+	/**
+	 * opening flappy bird game
+	 * create a new stage for the game and opens it
+	 * @param event action event
+	 */
 	public void startFlappyBird(ActionEvent event) {
     	Parent root;
     	try {

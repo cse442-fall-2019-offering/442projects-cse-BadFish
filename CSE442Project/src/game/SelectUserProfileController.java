@@ -13,46 +13,49 @@ import javafx.scene.control.ProgressBar;
 import javafx.stage.Stage;
 
 public class SelectUserProfileController {
-
+	//button for open profile2
 	@FXML
 	private Button profileButton2;
-
+	//button for open profile1
 	@FXML
 	private Button profileButton1;
-
+	//button for open profile0
 	@FXML
 	private Button profileButton0;
-
+	//label of profile2 name
 	@FXML
 	private Label profileName2;
-
+	//label of profile1 name
 	@FXML
 	private Label profileName1;
-
+	//label of profile0 name
 	@FXML
 	private Label profileName0;
-
+	//progress player 0
 	@FXML
 	private ProgressBar profileProgress0;
-
+	//progress player 1
 	@FXML
 	private ProgressBar profileProgress1;
-
+	//progress player 2
 	@FXML
 	private ProgressBar profileProgress2;
-
+	//button to open detail progress 1
 	@FXML
 	private Button profileProgressButton1;
-
+	//button to open detail progress 0
 	@FXML
 	private Button profileProgressButton0;
-
+	//button to open detail progress 2
 	@FXML
 	private Button profileProgressButton2;
-
+	//back for return previous stage
 	@FXML
 	private Button back;
-
+	/**
+	 * initialize button to attach proper funtion
+	 * initialize profile status of each player
+	 */
 	@FXML
 	void initialize() {
 
@@ -117,6 +120,10 @@ public class SelectUserProfileController {
 		}
 	}
 
+	/**
+	 * return to previous stage
+	 * @param event action event
+	 */
 	@FXML
 	void back(ActionEvent event) {
 		Parent root;
@@ -131,7 +138,11 @@ public class SelectUserProfileController {
 			e.printStackTrace();
 		}
 	}
-
+	
+	/**
+	 * opens game selections for player 0
+	 * @param event action event
+	 */
 	@FXML
 	void profileButton0(ActionEvent event) {
 		Parent root;
@@ -146,7 +157,10 @@ public class SelectUserProfileController {
 			e.printStackTrace();
 		}
 	}
-
+	/**
+	 * opens game selections for player 1
+	 * @param event action event
+	 */
 	@FXML
 	void profileButton1(ActionEvent event) {
 		Parent root;
@@ -161,7 +175,10 @@ public class SelectUserProfileController {
 			e.printStackTrace();
 		}
 	}
-
+	/**
+	 * opens game selections for player 2
+	 * @param event action event
+	 */
 	@FXML
 	void profileButton2(ActionEvent event) {
 		Parent root;
@@ -177,6 +194,10 @@ public class SelectUserProfileController {
 		}
 	}
 	
+	/**
+	 * opens profile for player0
+	 * @param event action event
+	 */
 	@FXML
 	void profileProgressButton0(ActionEvent event) {
 		Parent root;
@@ -191,7 +212,10 @@ public class SelectUserProfileController {
 			e.printStackTrace();
 		}
 	}
-	
+	/**
+	 * opens profile for player0
+	 * @param event action event
+	 */	
 	@FXML
 	void profileProgressButton1(ActionEvent event) {
 		Parent root;
@@ -206,7 +230,10 @@ public class SelectUserProfileController {
 			e.printStackTrace();
 		}
 	}
-	
+	/**
+	 * opens profile for player0
+	 * @param event action event
+	 */
 	@FXML
 	void profileProgressButton2(ActionEvent event) {
 		Parent root;
