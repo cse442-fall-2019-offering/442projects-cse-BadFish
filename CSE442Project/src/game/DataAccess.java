@@ -24,7 +24,7 @@ public class DataAccess {
 		// Used to open a new Data Storing File to that will be used to Store Program
 		// Data
 
-		FilePath = "data/ProgramData.txt";
+		FilePath = "C:/Data/ProgramData.txt";
 
 		// Defines fileReader
 		try {
@@ -238,7 +238,8 @@ public class DataAccess {
 			ex5.printStackTrace();
 		}
 	}
-
+	
+	//Get Method for Profiles
 	public Profile getProfile(int profileNumber) {
 		if (profileNumber > -1 && profileNumber < 3) {
 			return Profiles[profileNumber];
@@ -247,6 +248,7 @@ public class DataAccess {
 		}
 	}
 
+	//Set Method for Profiles
 	public boolean setProfile(int profileNumber, String firstName, String lastName, String nickName, int age,
 			boolean game1, int score1, boolean game2, int score2, boolean game3, int score3, int gameTime) {
 		if (profileNumber > -1 && profileNumber < 3) {
@@ -258,6 +260,7 @@ public class DataAccess {
 		}
 	}
 
+	//Set Method for Game Status
 	public boolean updateGame(int profileNumber, int gameNumber, boolean TF) {
 		if (profileNumber > -1 && profileNumber < 3) {
 			return Profiles[profileNumber].setGameStatus(gameNumber, TF);
@@ -266,6 +269,7 @@ public class DataAccess {
 		}
 	}
 	
+	//Integer Return for empty profile slot
 	public int getEmptyProfile() {
 		for(int i = 0; i < 3; i++) {
 			if(Profiles[i] == null) {
