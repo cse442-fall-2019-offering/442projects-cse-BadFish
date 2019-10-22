@@ -10,7 +10,7 @@
    <children>
       <ImageView fx:id="startscene" fitHeight="329.0" fitWidth="319.0" layoutX="33.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../../Downloads/fingers-149296_1280.png" />
+            <Image url="@../../../Images/rps.png" />
          </image>
       </ImageView>
       <Button fx:id="startgame" layoutX="182.0" layoutY="283.0" mnemonicParsing="false" onAction="#startrps" text="Start" />
