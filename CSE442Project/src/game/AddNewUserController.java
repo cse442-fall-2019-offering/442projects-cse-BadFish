@@ -12,29 +12,40 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+
+/**
+ * class of controlling adding new user to program
+ *
+ */
 public class AddNewUserController {
 
+	//button stores previous stage
 	@FXML
 	private Button back;
-
+	//button to add user
 	@FXML
 	private Button addUser;
-
+	//text field for type in first name
 	@FXML
 	private TextField firstName;
-
+	//text field to type in last name
 	@FXML
 	private TextField lastName;
-
+	//text field to type in nick name
 	@FXML
 	private TextField nickName;
-
+	//text field for type in age
 	@FXML
 	private TextField age;
-
+	//label of prompt box
 	@FXML
 	private Label promptBox;
 
+	/**
+	 * returns back to previous stage by closing current stage and
+	 * reopen previous stage
+	 * @param event action event
+	 */
 	public void back(ActionEvent event) {
 		Parent root;
 		try {
@@ -48,7 +59,11 @@ public class AddNewUserController {
 			e.printStackTrace();
 		}
 	}
-
+	
+	/**
+	 * adding the new user to the program if space is available
+	 * @param event action event
+	 */
 	public void addUser(ActionEvent event) {
 		String FirstName = firstName.getText();
 		String LastName = lastName.getText();
