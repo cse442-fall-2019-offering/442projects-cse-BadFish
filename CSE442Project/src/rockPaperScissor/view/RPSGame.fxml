@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="800.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rockPaperScissor.RPSGameController">
+   <children>
+      <ImageView fx:id="startscene" fitHeight="329.0" fitWidth="319.0" layoutX="33.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../Downloads/fingers-149296_1280.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="startgame" layoutX="173.0" layoutY="284.0" mnemonicParsing="false" onAction="#startrps" text="Start" />
+      <ComboBox fx:id="left" layoutX="410.0" layoutY="337.0" onAction="#leftchosen" prefWidth="150.0" />
+      <ComboBox fx:id="right" layoutX="410.0" layoutY="400.0" onAction="#rightchosen" prefWidth="150.0" />
+      <Label layoutX="410.0" layoutY="317.0" text="Left:" />
+      <Label layoutX="410.0" layoutY="383.0" text="Right:" />
+      <ImageView fx:id="check" blendMode="SRC_ATOP" fitHeight="150.0" fitWidth="200.0" layoutX="95.0" layoutY="87.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../../../../../../Downloads/tick-305245_1280.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="95.0" layoutY="94.0" pickOnBounds="true" preserveRatio="true" visible="false" fx:id="x">
+         <image>
+            <Image url="@../../../../../../Downloads/cross-296507_1280.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="rrock" fitHeight="80.0" fitWidth="80.0" layoutX="199.0" layoutY="87.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true" rotate="-90.0" visible="false">
+         <image>
+            <Image url="@../../../../../../Desktop/WX20191020-235934_meitu_1.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="lpaper" fitHeight="80.0" fitWidth="80.0" layoutX="43.0" layoutY="92.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../../../../../../Desktop/WX20191020-235957_meitu_3.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="lscissor" fitHeight="80.0" fitWidth="80.0" layoutX="55.0" layoutY="103.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../../../../../../Desktop/WX20191020-235947_meitu_2.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="rpaper" fitHeight="80.0" fitWidth="80.0" layoutX="206.0" layoutY="102.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../../../../../../Desktop/WX20191020-235957_meitu_3.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="rscissor" fitHeight="80.0" fitWidth="80.0" layoutX="217.0" layoutY="103.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../../../../../../Desktop/WX20191020-235947_meitu_2.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="lrock" fitHeight="80.0" fitWidth="80.0" layoutX="43.0" layoutY="97.0" pickOnBounds="true" preserveRatio="true" rotate="90.0" visible="false">
+         <image>
+            <Image url="@../../../../../../Desktop/WX20191020-235934_meitu_1.jpg" />
+         </image>
+      </ImageView>
+      <Label fx:id="l" layoutX="66.0" layoutY="229.0" text="Label" />
+      <Label fx:id="r" layoutX="280.0" layoutY="229.0" text="Label" />
+   </children>
+</AnchorPane>

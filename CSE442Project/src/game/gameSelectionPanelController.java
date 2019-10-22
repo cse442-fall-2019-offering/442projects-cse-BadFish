@@ -32,7 +32,7 @@ public class gameSelectionPanelController implements Initializable {
 	public void startFlappyBird(ActionEvent event) {
     	Parent root;
     	try {
-    		root=FXMLLoader.load(getClass().getResource("/flappyBird/view/flappyBirdPanel.fxml"));
+    		root=FXMLLoader.load(getClass().getResource("/rockPaperScissor/view/RPSGame.fxml"));
     		Stage stage=new Stage();
     		stage.setScene(new Scene(root));
     		stage.show();
