@@ -13,28 +13,34 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
+
 public class MenuController implements Initializable {
+	//button for adding new plyer
 	@FXML
 	private Button newplayer;
 
+	//button for accessing user profile
 	@FXML
 	private Button userprofile;
 	
+	//button to exit current stage
 	@FXML
 	private Button rankstatus;
 	
 	@FXML
 	private Button exit;
-
+	
+	//initializing button to attach proper functionality
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		// TODO Auto-generated method stub
-
 		newplayer.setOnAction(this::adduser);
 		userprofile.setOnAction(this::showuser);
 		rankstatus.setOnAction(this::showrank);
 	}
-
+	/**
+	 * function attach to new user button, opens adding user panel
+	 * @param event
+	 */
 	public void adduser(ActionEvent event) {
 		Parent root;
 		try {
@@ -49,6 +55,10 @@ public class MenuController implements Initializable {
 		}
 	}
 
+	/**
+	 * function attached to show user button, opens show user panel
+	 * @param event action event
+	 */
 	public void showuser(ActionEvent event) {
 		Parent root;
 		try {
