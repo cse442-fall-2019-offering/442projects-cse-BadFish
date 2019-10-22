@@ -19,7 +19,7 @@ public class RankPanelController {
 
 	@FXML
 	private Label game1;
-	
+
 	@FXML
 	private Label game2;
 
@@ -28,19 +28,19 @@ public class RankPanelController {
 
 	@FXML
 	private Label game1First;
-	
+
 	@FXML
 	private Label game1Second;
-	
+
 	@FXML
 	private Label game1Third;
-	
+
 	@FXML
 	private Label game2First;
-	
+
 	@FXML
 	private Label game2Second;
-	
+
 	@FXML
 	private Label game2Third;
 
@@ -52,66 +52,113 @@ public class RankPanelController {
 
 	@FXML
 	private Label game3Third;
-	
+
 	@FXML
 	void initialize() {
-		
-		back.setOnAction(this::back);	
-		
-		ArrayList<String> rank1 = generateRank(1);
-		ArrayList<String> rank2 = generateRank(2);
-		ArrayList<String> rank3 = generateRank(3);
-		
-		if(rank1.size()==1) {
-			game1First.setText(rank1.get(0));
+
+		back.setOnAction(this::back);
+
+		int P10 = 0;
+		int P11 = 0;
+		int P12 = 0;
+
+		DataAccess X = new DataAccess();
+
+		if (X.getProfile(0) != null) {
+			P10 = X.getProfile(0).getGameScore(1);
 		}
-		else if(rank1.size()==2) {
-			game1First.setText(rank1.get(0));
-			game1Second.setText(rank1.get(1));
+
+		if (X.getProfile(1) != null) {
+			P11 = X.getProfile(1).getGameScore(1);
 		}
-		else if(rank1.size()==3) {
-			game1First.setText(rank1.get(0));
-			game1Second.setText(rank1.get(1));
-			game1Third.setText(rank1.get(2));
+
+		if (X.getProfile(2) != null) {
+			P12 = X.getProfile(2).getGameScore(1);
 		}
-		else {
-			
+
+		if (P10 > P11 && P10 > P12) {
+			game1First.setText("" + P10);
+			if(P11 > P12) {
+				game1Second.setText("" + P11);
+				game1Third.setText("" + P12);
+			} else {
+				game1Second.setText("" + P12);
+				game1Third.setText("" + P11);
+			}
+		} else if (P11 > P10 && P11 > P12) {
+			game1First.setText("" + P11);
+			if(P10 > P12) {
+				game1Second.setText("" + P10);
+				game1Third.setText("" + P12);
+			} else {
+				game1Second.setText("" + P12);
+				game1Third.setText("" + P10);
+			}
+		} else {
+			game1First.setText("" + P12);
+			if(P11 > P10) {
+				game1Second.setText("" + P11);
+				game1Third.setText("" + P10);
+			} else {
+				game1Second.setText("" + P10);
+				game1Third.setText("" + P11);
+			}
 		}
-		
-		if(rank2.size()==1) {
-			game2First.setText(rank2.get(0));
-		}
-		else if(rank2.size()==2) {
-			game2First.setText(rank2.get(0));
-			game2Second.setText(rank2.get(1));
-		}
-		else if(rank2.size()==3) {
-			game2First.setText(rank2.get(0));
-			game2Second.setText(rank2.get(1));
-			game2Third.setText(rank2.get(2));
-		}
-		else {
-			
-		}
-		
-		if(rank3.size()==1) {
-			game3First.setText(rank3.get(0));
-		}
-		else if(rank3.size()==2) {
-			game3First.setText(rank3.get(0));
-			game3Second.setText(rank3.get(1));
-		}
-		else if(rank3.size()==3) {
-			game3First.setText(rank3.get(0));
-			game3Second.setText(rank3.get(1));
-			game3Third.setText(rank3.get(2));
-		}
-		else {
-			
-		}
-		
+
+//		ArrayList<String> rank1 = generateRank(1);
+//		ArrayList<String> rank2 = generateRank(2);
+//		ArrayList<String> rank3 = generateRank(3);
+//		
+//		if(rank1.size()==1) {
+//			game1First.setText(rank1.get(0));
+//		}
+//		else if(rank1.size()==2) {
+//			game1First.setText(rank1.get(0));
+//			game1Second.setText(rank1.get(1));
+//		}
+//		else if(rank1.size()==3) {
+//			game1First.setText(rank1.get(0));
+//			game1Second.setText(rank1.get(1));
+//			game1Third.setText(rank1.get(2));
+//		}
+//		else {
+//			
+//		}
+//		
+//		if(rank2.size()==1) {
+//			game2First.setText(rank2.get(0));
+//		}
+//		else if(rank2.size()==2) {
+//			game2First.setText(rank2.get(0));
+//			game2Second.setText(rank2.get(1));
+//		}
+//		else if(rank2.size()==3) {
+//			game2First.setText(rank2.get(0));
+//			game2Second.setText(rank2.get(1));
+//			game2Third.setText(rank2.get(2));
+//		}
+//		else {
+//			
+//		}
+//		
+//		if(rank3.size()==1) {
+//			game3First.setText(rank3.get(0));
+//		}
+//		else if(rank3.size()==2) {
+//			game3First.setText(rank3.get(0));
+//			game3Second.setText(rank3.get(1));
+//		}
+//		else if(rank3.size()==3) {
+//			game3First.setText(rank3.get(0));
+//			game3Second.setText(rank3.get(1));
+//			game3Third.setText(rank3.get(2));
+//		}
+//		else {
+//			
+//		}
+
 	}
-	
+
 	@FXML
 	public void back(ActionEvent event) {
 		Parent root;
@@ -126,79 +173,101 @@ public class RankPanelController {
 			e.printStackTrace();
 		}
 	}
-	
-	public ArrayList<String> generateRank(int gameNumber){
+
+	public ArrayList<String> generateRank(int gameNumber) {
 		ArrayList<String> retVal = new ArrayList<String>();
-		
+
 		DataAccess x = new DataAccess();
-		
+
 		int maxPlayers = 3;
-		
+
 		ArrayList<Profile> inProgressPlayers = new ArrayList<Profile>();
-		
-		for(int i=0; i<maxPlayers; i++) {
-			if(x.getProfile(i).getGameStatus(gameNumber)) {
+
+		for (int i = 0; i < maxPlayers; i++) {
+			if (x.getProfile(i).getGameStatus(gameNumber)) {
 				inProgressPlayers.add(x.getProfile(i));
 			}
 		}
-		
-		if(inProgressPlayers.size()==1) {
-			retVal.add(inProgressPlayers.get(0).getNickName()+" "+Integer.toString(inProgressPlayers.get(0).getGameScore(gameNumber)));
+
+		if (inProgressPlayers.size() == 1) {
+			retVal.add(inProgressPlayers.get(0).getNickName() + " "
+					+ Integer.toString(inProgressPlayers.get(0).getGameScore(gameNumber)));
 			return retVal;
 		}
-		if(inProgressPlayers.size()==2) {
-			if(inProgressPlayers.get(0).getGameScore(gameNumber)>inProgressPlayers.get(1).getGameScore(gameNumber)){
-				retVal.add(inProgressPlayers.get(0).getNickName()+" "+Integer.toString(inProgressPlayers.get(0).getGameScore(gameNumber)));
-				retVal.add(inProgressPlayers.get(1).getNickName()+" "+Integer.toString(inProgressPlayers.get(1).getGameScore(gameNumber)));
+		if (inProgressPlayers.size() == 2) {
+			if (inProgressPlayers.get(0).getGameScore(gameNumber) > inProgressPlayers.get(1).getGameScore(gameNumber)) {
+				retVal.add(inProgressPlayers.get(0).getNickName() + " "
+						+ Integer.toString(inProgressPlayers.get(0).getGameScore(gameNumber)));
+				retVal.add(inProgressPlayers.get(1).getNickName() + " "
+						+ Integer.toString(inProgressPlayers.get(1).getGameScore(gameNumber)));
 				return retVal;
-			}
-			else {
-				retVal.add(inProgressPlayers.get(1).getNickName()+" "+Integer.toString(inProgressPlayers.get(1).getGameScore(gameNumber)));
-				retVal.add(inProgressPlayers.get(0).getNickName()+" "+Integer.toString(inProgressPlayers.get(0).getGameScore(gameNumber)));
+			} else {
+				retVal.add(inProgressPlayers.get(1).getNickName() + " "
+						+ Integer.toString(inProgressPlayers.get(1).getGameScore(gameNumber)));
+				retVal.add(inProgressPlayers.get(0).getNickName() + " "
+						+ Integer.toString(inProgressPlayers.get(0).getGameScore(gameNumber)));
 				return retVal;
 			}
 		}
-		if(inProgressPlayers.size()==3) {
-			if((inProgressPlayers.get(0).getGameScore(gameNumber)>=inProgressPlayers.get(1).getGameScore(gameNumber))&&(inProgressPlayers.get(0).getGameScore(gameNumber)>=inProgressPlayers.get(2).getGameScore(gameNumber))){
-				retVal.add(inProgressPlayers.get(0).getNickName()+" "+Integer.toString(inProgressPlayers.get(0).getGameScore(gameNumber)));
-				if((inProgressPlayers.get(1).getGameScore(gameNumber)>=inProgressPlayers.get(2).getGameScore(gameNumber))) {
-					retVal.add(inProgressPlayers.get(1).getNickName()+" "+Integer.toString(inProgressPlayers.get(1).getGameScore(gameNumber)));
-					retVal.add(inProgressPlayers.get(2).getNickName()+" "+Integer.toString(inProgressPlayers.get(2).getGameScore(gameNumber)));
+		if (inProgressPlayers.size() == 3) {
+			if ((inProgressPlayers.get(0).getGameScore(gameNumber) >= inProgressPlayers.get(1).getGameScore(gameNumber))
+					&& (inProgressPlayers.get(0).getGameScore(gameNumber) >= inProgressPlayers.get(2)
+							.getGameScore(gameNumber))) {
+				retVal.add(inProgressPlayers.get(0).getNickName() + " "
+						+ Integer.toString(inProgressPlayers.get(0).getGameScore(gameNumber)));
+				if ((inProgressPlayers.get(1).getGameScore(gameNumber) >= inProgressPlayers.get(2)
+						.getGameScore(gameNumber))) {
+					retVal.add(inProgressPlayers.get(1).getNickName() + " "
+							+ Integer.toString(inProgressPlayers.get(1).getGameScore(gameNumber)));
+					retVal.add(inProgressPlayers.get(2).getNickName() + " "
+							+ Integer.toString(inProgressPlayers.get(2).getGameScore(gameNumber)));
+					return retVal;
+				} else {
+					retVal.add(inProgressPlayers.get(2).getNickName() + " "
+							+ Integer.toString(inProgressPlayers.get(2).getGameScore(gameNumber)));
+					retVal.add(inProgressPlayers.get(1).getNickName() + " "
+							+ Integer.toString(inProgressPlayers.get(1).getGameScore(gameNumber)));
 					return retVal;
 				}
-				else {
-					retVal.add(inProgressPlayers.get(2).getNickName()+" "+Integer.toString(inProgressPlayers.get(2).getGameScore(gameNumber)));
-					retVal.add(inProgressPlayers.get(1).getNickName()+" "+Integer.toString(inProgressPlayers.get(1).getGameScore(gameNumber)));
+			} else if ((inProgressPlayers.get(1).getGameScore(gameNumber) >= inProgressPlayers.get(0)
+					.getGameScore(gameNumber))
+					&& (inProgressPlayers.get(1).getGameScore(gameNumber) >= inProgressPlayers.get(2)
+							.getGameScore(gameNumber))) {
+				retVal.add(inProgressPlayers.get(1).getNickName() + " "
+						+ Integer.toString(inProgressPlayers.get(1).getGameScore(gameNumber)));
+				if ((inProgressPlayers.get(0).getGameScore(gameNumber) >= inProgressPlayers.get(2)
+						.getGameScore(gameNumber))) {
+					retVal.add(inProgressPlayers.get(0).getNickName() + " "
+							+ Integer.toString(inProgressPlayers.get(0).getGameScore(gameNumber)));
+					retVal.add(inProgressPlayers.get(2).getNickName() + " "
+							+ Integer.toString(inProgressPlayers.get(2).getGameScore(gameNumber)));
+					return retVal;
+				} else {
+					retVal.add(inProgressPlayers.get(2).getNickName() + " "
+							+ Integer.toString(inProgressPlayers.get(2).getGameScore(gameNumber)));
+					retVal.add(inProgressPlayers.get(0).getNickName() + " "
+							+ Integer.toString(inProgressPlayers.get(0).getGameScore(gameNumber)));
 					return retVal;
 				}
-			}
-			else if((inProgressPlayers.get(1).getGameScore(gameNumber)>=inProgressPlayers.get(0).getGameScore(gameNumber))&&(inProgressPlayers.get(1).getGameScore(gameNumber)>=inProgressPlayers.get(2).getGameScore(gameNumber))){
-				retVal.add(inProgressPlayers.get(1).getNickName()+" "+Integer.toString(inProgressPlayers.get(1).getGameScore(gameNumber)));
-				if((inProgressPlayers.get(0).getGameScore(gameNumber)>=inProgressPlayers.get(2).getGameScore(gameNumber))) {
-					retVal.add(inProgressPlayers.get(0).getNickName()+" "+Integer.toString(inProgressPlayers.get(0).getGameScore(gameNumber)));
-					retVal.add(inProgressPlayers.get(2).getNickName()+" "+Integer.toString(inProgressPlayers.get(2).getGameScore(gameNumber)));
+			} else {
+				retVal.add(inProgressPlayers.get(2).getNickName() + " "
+						+ Integer.toString(inProgressPlayers.get(2).getGameScore(gameNumber)));
+				if ((inProgressPlayers.get(0).getGameScore(gameNumber) >= inProgressPlayers.get(1)
+						.getGameScore(gameNumber))) {
+					retVal.add(inProgressPlayers.get(0).getNickName() + " "
+							+ Integer.toString(inProgressPlayers.get(0).getGameScore(gameNumber)));
+					retVal.add(inProgressPlayers.get(1).getNickName() + " "
+							+ Integer.toString(inProgressPlayers.get(1).getGameScore(gameNumber)));
 					return retVal;
-				}
-				else {
-					retVal.add(inProgressPlayers.get(2).getNickName()+" "+Integer.toString(inProgressPlayers.get(2).getGameScore(gameNumber)));
-					retVal.add(inProgressPlayers.get(0).getNickName()+" "+Integer.toString(inProgressPlayers.get(0).getGameScore(gameNumber)));
-					return retVal;
-				}
-			}
-			else {
-				retVal.add(inProgressPlayers.get(2).getNickName()+" "+Integer.toString(inProgressPlayers.get(2).getGameScore(gameNumber)));
-				if((inProgressPlayers.get(0).getGameScore(gameNumber)>=inProgressPlayers.get(1).getGameScore(gameNumber))) {
-					retVal.add(inProgressPlayers.get(0).getNickName()+" "+Integer.toString(inProgressPlayers.get(0).getGameScore(gameNumber)));
-					retVal.add(inProgressPlayers.get(1).getNickName()+" "+Integer.toString(inProgressPlayers.get(1).getGameScore(gameNumber)));
-					return retVal;
-				}
-				else {
-					retVal.add(inProgressPlayers.get(1).getNickName()+" "+Integer.toString(inProgressPlayers.get(1).getGameScore(gameNumber)));
-					retVal.add(inProgressPlayers.get(0).getNickName()+" "+Integer.toString(inProgressPlayers.get(0).getGameScore(gameNumber)));
+				} else {
+					retVal.add(inProgressPlayers.get(1).getNickName() + " "
+							+ Integer.toString(inProgressPlayers.get(1).getGameScore(gameNumber)));
+					retVal.add(inProgressPlayers.get(0).getNickName() + " "
+							+ Integer.toString(inProgressPlayers.get(0).getGameScore(gameNumber)));
 					return retVal;
 				}
 			}
 		}
-		return retVal;	
+		return retVal;
 	}
 }
