@@ -16,9 +16,9 @@
       </Text>
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="34.0" layoutY="69.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../Images/flappybird.jpg" />
+            <Image url="@../../../Images/rps.jpg" />
          </image>
       </ImageView>
-      <Button fx:id="flappyButton" layoutX="31.0" layoutY="182.0" mnemonicParsing="false" onAction="#startFlappyBird" text="Click to Build Your Own Flappy Bird!" />
+      <Button fx:id="flappyButton" layoutX="30.0" layoutY="143.0" mnemonicParsing="false" onAction="#startFlappyBird" text="Start Your Rock Paper Scissor Game!" />
    </children>
 </AnchorPane>
