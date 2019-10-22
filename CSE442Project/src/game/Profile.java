@@ -1,7 +1,5 @@
 package game;
 
-import java.util.ArrayList;
-
 public class Profile {
 
 	private String FirstName;
@@ -78,43 +76,6 @@ public class Profile {
 			// Invalid game number Input
 			return false;
 		}
-	}
-	
-	
-	public ArrayList<String> generateRank(int gameNumber){
-		ArrayList<String> retVal = new ArrayList<String>();
-		DataAccess x = new DataAccess();
-		
-		Profile profile0 = x.getProfile(0);
-		Profile profile1 = x.getProfile(1);
-		Profile profile2 = x.getProfile(2);
-
-		ArrayList<Integer> gameScores = new ArrayList<Integer>();
-		
-		int maxGames = 3;
-		int maxPlayers = 3;
-		
-		for(int i=0; i<maxGames; i++) {
-			for(int j=0; j<maxPlayers; j++) {
-				if(x.getProfile(j).getGameStatus(i)) {
-					gameScores.add(j+(i*maxPlayers),x.getProfile(j).getGameScore(i));
-				}
-				else {
-					gameScores.add(j+(i*maxPlayers),-1);
-				}
-			}
-		}
-	
-		for(int i=0; i<gameScores.size(); i++) {
-			int count = 0;
-			while(i / maxPlayers == count && count < maxGames) {
-				int min = Integer.MIN_VALUE;
-				
-				count++;
-			}
-		}
-
-		return null;	
 	}
 
 	public int getGameScore(int gameNumber) {

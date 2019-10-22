@@ -24,7 +24,7 @@
                   <Insets top="30.0" />
                </VBox.margin>
             </Button>
-            <Button fx:id="newplayer1" layoutX="10.0" layoutY="20.0" mnemonicParsing="false" onAction="#adduser" prefHeight="80.0" prefWidth="230.0" text="Rank Status">
+            <Button fx:id="rankstatus" layoutX="10.0" layoutY="20.0" mnemonicParsing="false" onAction="#showrank" prefHeight="80.0" prefWidth="230.0" text="Rank Status">
                <VBox.margin>
                   <Insets top="30.0" />
                </VBox.margin>

@@ -6,21 +6,20 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="game.RankPanelController">
    <children>
       <HBox alignment="TOP_CENTER" layoutX="79.0" layoutY="122.0" prefHeight="300.0" prefWidth="600.0" AnchorPane.bottomAnchor="175.0" AnchorPane.leftAnchor="75.0" AnchorPane.rightAnchor="75.0" AnchorPane.topAnchor="125.0">
          <children>
             <VBox alignment="TOP_CENTER" prefHeight="300.0" prefWidth="180.0">
                <children>
-                  <Label text="Game1">
+                  <Label fx:id="game1" text="Game1">
                      <font>
                         <Font size="26.0" />
                      </font>
                   </Label>
                   <VBox prefHeight="300.0" prefWidth="180.0">
                      <children>
-                        <Label text="First: ">
+                        <Label fx:id="game1First" text="First: Waiting ">
                            <font>
                               <Font size="20.0" />
                            </font>
@@ -28,7 +27,7 @@
                               <Insets bottom="20.0" top="50.0" />
                            </VBox.margin>
                         </Label>
-                        <Label text="Second:">
+                        <Label fx:id="game1Second" text="Second: Waiting">
                            <font>
                               <Font size="20.0" />
                            </font>
@@ -36,7 +35,7 @@
                               <Insets bottom="20.0" />
                            </VBox.margin>
                         </Label>
-                        <Label text="Third: ">
+                        <Label fx:id="game1Third" text="Third: Waiting">
                            <font>
                               <Font size="20.0" />
                            </font>
@@ -53,14 +52,14 @@
             </VBox>
             <VBox alignment="TOP_CENTER" layoutX="10.0" layoutY="10.0" prefHeight="300.0" prefWidth="180.0">
                <children>
-                  <Label text="Game2">
+                  <Label fx:id="game2" text="Game2">
                      <font>
                         <Font size="26.0" />
                      </font>
                   </Label>
-                  <VBox prefHeight="300.0" prefWidth="173.0">
+                  <VBox prefHeight="300.0" prefWidth="180.0">
                      <children>
-                        <Label text="First: ">
+                        <Label fx:id="game2First" text="First: Waiting ">
                            <font>
                               <Font size="20.0" />
                            </font>
@@ -68,7 +67,7 @@
                               <Insets bottom="20.0" top="50.0" />
                            </VBox.margin>
                         </Label>
-                        <Label text="Second:">
+                        <Label fx:id="game2Second" text="Second: Waiting">
                            <font>
                               <Font size="20.0" />
                            </font>
@@ -76,7 +75,7 @@
                               <Insets bottom="20.0" />
                            </VBox.margin>
                         </Label>
-                        <Label text="Third: ">
+                        <Label fx:id="game2Third" text="Third: Waiting">
                            <font>
                               <Font size="20.0" />
                            </font>
@@ -93,14 +92,14 @@
             </VBox>
             <VBox alignment="TOP_CENTER" layoutX="10.0" layoutY="10.0" prefHeight="300.0" prefWidth="180.0">
                <children>
-                  <Label text="Game3">
+                  <Label fx:id="game3" text="Game3">
                      <font>
                         <Font size="26.0" />
                      </font>
                   </Label>
-                  <VBox prefHeight="300.0" prefWidth="173.0">
+                  <VBox prefHeight="300.0" prefWidth="180.0">
                      <children>
-                        <Label text="First: ">
+                        <Label fx:id="game3First" text="First: Waiting ">
                            <font>
                               <Font size="20.0" />
                            </font>
@@ -108,7 +107,7 @@
                               <Insets bottom="20.0" top="50.0" />
                            </VBox.margin>
                         </Label>
-                        <Label text="Second:">
+                        <Label fx:id="game3Second" text="Second: Waiting">
                            <font>
                               <Font size="20.0" />
                            </font>
@@ -116,7 +115,7 @@
                               <Insets bottom="20.0" />
                            </VBox.margin>
                         </Label>
-                        <Label text="Third: ">
+                        <Label fx:id="game3Third" text="Third: Waiting">
                            <font>
                               <Font size="20.0" />
                            </font>
@@ -132,6 +131,6 @@
             <Font size="34.0" />
          </font>
       </Label>
-      <Button layoutX="15.0" layoutY="525.0" mnemonicParsing="false" prefHeight="61.0" prefWidth="122.0" text="Button" />
+      <Button fx:id="back" layoutX="15.0" layoutY="525.0" mnemonicParsing="false" onAction="#back" prefHeight="61.0" prefWidth="122.0" text="Back" />
    </children>
 </AnchorPane>
