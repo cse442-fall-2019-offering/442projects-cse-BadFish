@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -18,6 +22,11 @@
                </VBox.margin>
             </Button>
             <Button fx:id="userprofile" mnemonicParsing="false" onAction="#showuser" prefHeight="80.0" prefWidth="230.0" text="User Profile">
+               <VBox.margin>
+                  <Insets top="30.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="rankstatus" layoutX="10.0" layoutY="20.0" mnemonicParsing="false" onAction="#showrank" prefHeight="80.0" prefWidth="230.0" text="Rank Status">
                <VBox.margin>
                   <Insets top="30.0" />
                </VBox.margin>
