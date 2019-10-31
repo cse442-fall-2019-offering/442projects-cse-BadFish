@@ -47,46 +47,44 @@ public class rpsController implements Initializable{
     //option of scissor
     @FXML
     private RadioButton selScissor;
-    //array that contains all instruction if opponent's move is rock
-    @FXML
-    private ChoiceBox<String> ifRock0;
-    //choice box for if rock
-    @FXML
-    private ChoiceBox<String> ifRock1;
 
     @FXML
-    private ChoiceBox<String> ifRock2;
-    //choice box for ifpaper
-    @FXML
-    private ChoiceBox<String> ifPaper0;
+    private ChoiceBox<String> opp1;
 
     @FXML
-    private ChoiceBox<String> ifPaper1;
+    private ChoiceBox<String> wchWin1;
 
     @FXML
-    private ChoiceBox<String> ifPaper2;
-    //choice box or if scissor
-    @FXML
-    private ChoiceBox<String> ifScissor0;
+    private ChoiceBox<String> winState1;
 
     @FXML
-    private ChoiceBox<String> ifScissor1;
+    private ChoiceBox<String> opp2;
 
     @FXML
-    private ChoiceBox<String> ifScissor2;
+    private ChoiceBox<String> wchWin2;
+
+    @FXML
+    private ChoiceBox<String> winState2;
+
+    @FXML
+    private ChoiceBox<String> opp3;
+
+    @FXML
+    private ChoiceBox<String> wchWin3;
+
+    @FXML
+    private ChoiceBox<String> winState3;
+
+
     //winning state, win if 1, tie if 0, lose if -1, initialized to 9 as nothing happened yet
     private int winGame=9;
     
-    //instructions as strings will be passed to array
-    private String state0="Rock to win";
-    private String state1="Paper to win";
-    private String state2="Scissor to win";
-    private String state3="Rock to lose";
-    private String state4="Paper to lose";
-    private String state5="Scissor to lose";
-    private String state6="Rock for the tie";
-    private String state7="Paper for the tie";
-    private String state8="Scissor for the tie";
+    private String rock="rock";
+    private String paper="paper";
+    private String scissor="scissor";
+    private String win="win";
+    private String lose="lose";
+    private String tie="tie";
 
     //image view of opponenet's move
     private ImageView oppV;
@@ -97,9 +95,9 @@ public class rpsController implements Initializable{
     //oppoenent's move in integer form
     private int oMove;
     //array that contains all instruction if opponent's move is paper/rock/scissor
-    private ArrayList<ChoiceBox<String>> ifRockArr=new ArrayList<>();
-    private ArrayList<ChoiceBox<String>> ifPaperArr=new ArrayList<>();
-    private ArrayList<ChoiceBox<String>> ifScissorArr=new ArrayList<>();
+    private ArrayList<ChoiceBox<String>> if1=new ArrayList<>();
+    private ArrayList<ChoiceBox<String>> if2=new ArrayList<>();
+    private ArrayList<ChoiceBox<String>> if3=new ArrayList<>();
     
     /**
      * initializing button function and instruction functionality
@@ -206,28 +204,29 @@ public class rpsController implements Initializable{
 	 * attach functionalities to each buttons
 	 */
 	private void addInstToButton() {
-		ifRockArr.add(ifRock0);
-		ifRockArr.add(ifRock1);
-		ifRockArr.add(ifRock2);
-		ifPaperArr.add(ifPaper0);
-		ifPaperArr.add(ifPaper1);
-		ifPaperArr.add(ifPaper2);
-		ifScissorArr.add(ifScissor0);
-		ifScissorArr.add(ifScissor1);
-		ifScissorArr.add(ifScissor2);
-		//attaching functionality to buttons
-		for(int i=0;i<3;i++) {
-			ifRockArr.get(i).getItems().setAll("None",state0, state1, state2, state3, state4
-					,state5,state6,state7,state8);	
-			ifPaperArr.get(i).getItems().setAll("None",state0, state1, state2, state3, state4
-					,state5,state6,state7,state8);	
-			ifScissorArr.get(i).getItems().setAll("None",state0, state1, state2, state3, state4
-					,state5,state6,state7,state8);	
-			ifRockArr.get(i).setValue("None");
-			ifPaperArr.get(i).setValue("None");
-			ifScissorArr.get(i).setValue("None");
+		if1.add(opp1);
+		if1.add(wchWin1);
+		if1.add(winState1);
+		if2.add(opp2);
+		if2.add(wchWin2);
+		if2.add(winState2);
+		if3.add(opp3);
+		if3.add(wchWin3);
+		if3.add(winState3);
+		if1.get(0).getItems().setAll("none", rock, paper, scissor);
+		if2.get(0).getItems().setAll("none", rock, paper, scissor);
+		if3.get(0).getItems().setAll("none", rock, paper, scissor);
+		if1.get(1).getItems().setAll("none", rock, paper, scissor);
+		if2.get(1).getItems().setAll("none", rock, paper, scissor);
+		if3.get(1).getItems().setAll("none", rock, paper, scissor);
+		if1.get(2).getItems().setAll("none", win, lose, tie);
+		if2.get(2).getItems().setAll("none", win, lose, tie);
+		if3.get(2).getItems().setAll("none", win, lose, tie);
+		for(int i=0;i<if1.size();i++) {
+			if1.get(i).setValue("none");
+			if2.get(i).setValue("none");
+			if3.get(i).setValue("none");
 		}
-		
 	}
 	/**
 	 * checking the moves and instructions selected
@@ -236,287 +235,144 @@ public class rpsController implements Initializable{
 	private void checkStates() {
 		switch(oMove) {
 			case 1:
-				for(int i=0;i<ifRockArr.size();i++) {
-					if(ifRockArr.get(i).getValue()==state0) {
-						if(uMove==1) {
-							winGame=1;
+				if(if1.get(0).getValue()!=rock&&if2.get(0).getValue()!=rock&&if3.get(0).getValue()!=rock) {
+					break;
+				}
+				if(if1.get(0).getValue()==rock) {
+					if(uMove==1) {
+						if(if1.get(1).getValue()==rock) {
+							if(if1.get(2).getValue()==win||if2.get(2).getValue()==win||if3.get(2).getValue()==win) {
+								winGame=1;
+							}
+							else if(if1.get(2).getValue()==lose||if2.get(2).getValue()==lose||if3.get(2).getValue()==lose) {
+								winGame=-1;
+							}
+							else if(if1.get(2).getValue()==tie||if2.get(2).getValue()==tie||if3.get(2).getValue()==tie) {
+								winGame=0;
+							}
 						}
 					}
-					else if(ifRockArr.get(i).getValue()==state1) {
-						if(uMove==2) {
-							winGame=1;
+					else if(uMove==2) {
+						if(if1.get(1).getValue()==paper) {
+							if(if1.get(2).getValue()==win||if2.get(2).getValue()==win||if3.get(2).getValue()==win) {
+								winGame=1;
+							}
+							else if(if1.get(2).getValue()==lose||if2.get(2).getValue()==lose||if3.get(2).getValue()==lose) {
+								winGame=-1;
+							}
+							else if(if1.get(2).getValue()==tie||if2.get(2).getValue()==tie||if3.get(2).getValue()==tie) {
+								winGame=0;
+							}
 						}
 					}
-					else if(ifRockArr.get(i).getValue()==state2) {
-						if(uMove==3) {
-							winGame=1;
+					else if(uMove==3) {
+						if(if1.get(1).getValue()==scissor) {
+							if(if1.get(2).getValue()==win||if2.get(2).getValue()==win||if3.get(2).getValue()==win) {
+								winGame=1;
+							}
+							else if(if1.get(2).getValue()==lose||if2.get(2).getValue()==lose||if3.get(2).getValue()==lose) {
+								winGame=-1;
+							}
+							else if(if1.get(2).getValue()==tie||if2.get(2).getValue()==tie||if3.get(2).getValue()==tie) {
+								winGame=0;
+							}
 						}
 					}
-					else if(ifRockArr.get(i).getValue()==state3) {
-						if(uMove==1) {
-							winGame=-1;
-						}
-					}
-					else if(ifRockArr.get(i).getValue()==state4) {
-						if(uMove==2) {
-							winGame=-1;
-						}
-					}
-					else if(ifRockArr.get(i).getValue()==state5) {
-						if(uMove==3) {
-							winGame=-1;
-						}
-					}
-					else if(ifRockArr.get(i).getValue()==state6) {
-						if(uMove==1) {
-							winGame=0;
-						}
-					}
-					else if(ifRockArr.get(i).getValue()==state7) {
-						if(uMove==2) {
-							winGame=0;
-						}
-					}
-					else if(ifRockArr.get(i).getValue()==state8) {
-						if(uMove==3) {
-							winGame=0;
-						}
-					}
-					else winGame=9;
 				}
 				break;
 			case 2:
-				for(int i=0;i<ifPaperArr.size();i++) {
-					if(ifPaperArr.get(i).getValue()==state0) {
-						if(uMove==1) {
-							winGame=1;
+				if(if1.get(0).getValue()!=paper&&if2.get(0).getValue()!=paper&&if3.get(0).getValue()!=paper) {
+					break;
+				}
+				if(if1.get(0).getValue()==rock) {
+					if(uMove==1) {
+						if(if1.get(1).getValue()==rock) {
+							if(if1.get(2).getValue()==win||if2.get(2).getValue()==win||if3.get(2).getValue()==win) {
+								winGame=1;
+							}
+							else if(if1.get(2).getValue()==lose||if2.get(2).getValue()==lose||if3.get(2).getValue()==lose) {
+								winGame=-1;
+							}
+							else if(if1.get(2).getValue()==tie||if2.get(2).getValue()==tie||if3.get(2).getValue()==tie) {
+								winGame=0;
+							}
 						}
 					}
-					else if(ifPaperArr.get(i).getValue()==state1) {
-						if(uMove==2) {
-							winGame=1;
+					else if(uMove==2) {
+						if(if1.get(1).getValue()==paper) {
+							if(if1.get(2).getValue()==win||if2.get(2).getValue()==win||if3.get(2).getValue()==win) {
+								winGame=1;
+							}
+							else if(if1.get(2).getValue()==lose||if2.get(2).getValue()==lose||if3.get(2).getValue()==lose) {
+								winGame=-1;
+							}
+							else if(if1.get(2).getValue()==tie||if2.get(2).getValue()==tie||if3.get(2).getValue()==tie) {
+								winGame=0;
+							}
 						}
 					}
-					else if(ifPaperArr.get(i).getValue()==state2) {
-						if(uMove==3) {
-							winGame=1;
+					else if(uMove==3) {
+						if(if1.get(1).getValue()==scissor) {
+							if(if1.get(2).getValue()==win||if2.get(2).getValue()==win||if3.get(2).getValue()==win) {
+								winGame=1;
+							}
+							else if(if1.get(2).getValue()==lose||if2.get(2).getValue()==lose||if3.get(2).getValue()==lose) {
+								winGame=-1;
+							}
+							else if(if1.get(2).getValue()==tie||if2.get(2).getValue()==tie||if3.get(2).getValue()==tie) {
+								winGame=0;
+							}
 						}
 					}
-					else if(ifPaperArr.get(i).getValue()==state3) {
-						if(uMove==1) {
-							winGame=-1;
-						}
-					}
-					else if(ifPaperArr.get(i).getValue()==state4) {
-						if(uMove==2) {
-							winGame=-1;
-						}
-					}
-					else if(ifPaperArr.get(i).getValue()==state5) {
-						if(uMove==3) {
-							winGame=-1;
-						}
-					}
-					else if(ifPaperArr.get(i).getValue()==state6) {
-						if(uMove==1) {
-							winGame=0;
-						}
-					}
-					else if(ifPaperArr.get(i).getValue()==state7) {
-						if(uMove==2) {
-							winGame=0;
-						}
-					}
-					else if(ifPaperArr.get(i).getValue()==state8) {
-						if(uMove==3) {
-							winGame=0;
-						}
-					}
-					else winGame=9;
 				}
 				break;
 			case 3:
-				for(int i=0;i<ifPaperArr.size();i++) {
-					if(ifScissorArr.get(i).getValue()==state0) {
-						if(uMove==1) {
-							winGame=1;
+				if(if1.get(0).getValue()!=scissor&&if2.get(0).getValue()!=scissor&&if3.get(0).getValue()!=scissor) {
+					break;
+				}
+				if(if1.get(0).getValue()==rock) {
+					if(uMove==1) {
+						if(if1.get(1).getValue()==rock) {
+							if(if1.get(2).getValue()==win||if2.get(2).getValue()==win||if3.get(2).getValue()==win) {
+								winGame=1;
+							}
+							else if(if1.get(2).getValue()==lose||if2.get(2).getValue()==lose||if3.get(2).getValue()==lose) {
+								winGame=-1;
+							}
+							else if(if1.get(2).getValue()==tie||if2.get(2).getValue()==tie||if3.get(2).getValue()==tie) {
+								winGame=0;
+							}
 						}
 					}
-					else if(ifScissorArr.get(i).getValue()==state1) {
-						if(uMove==2) {
-							winGame=1;
+					else if(uMove==2) {
+						if(if1.get(1).getValue()==paper) {
+							if(if1.get(2).getValue()==win||if2.get(2).getValue()==win||if3.get(2).getValue()==win) {
+								winGame=1;
+							}
+							else if(if1.get(2).getValue()==lose||if2.get(2).getValue()==lose||if3.get(2).getValue()==lose) {
+								winGame=-1;
+							}
+							else if(if1.get(2).getValue()==tie||if2.get(2).getValue()==tie||if3.get(2).getValue()==tie) {
+								winGame=0;
+							}
 						}
 					}
-					else if(ifScissorArr.get(i).getValue()==state2) {
-						if(uMove==3) {
-							winGame=1;
+					else if(uMove==3) {
+						if(if1.get(1).getValue()==scissor) {
+							if(if1.get(2).getValue()==win||if2.get(2).getValue()==win||if3.get(2).getValue()==win) {
+								winGame=1;
+							}
+							else if(if1.get(2).getValue()==lose||if2.get(2).getValue()==lose||if3.get(2).getValue()==lose) {
+								winGame=-1;
+							}
+							else if(if1.get(2).getValue()==tie||if2.get(2).getValue()==tie||if3.get(2).getValue()==tie) {
+								winGame=0;
+							}
 						}
 					}
-					else if(ifScissorArr.get(i).getValue()==state3) {
-						if(uMove==1) {
-							winGame=-1;
-						}
-					}
-					else if(ifScissorArr.get(i).getValue()==state4) {
-						if(uMove==2) {
-							winGame=-1;
-						}
-					}
-					else if(ifScissorArr.get(i).getValue()==state5) {
-						if(uMove==3) {
-							winGame=-1;
-						}
-					}
-					else if(ifScissorArr.get(i).getValue()==state6) {
-						if(uMove==1) {
-							winGame=0;
-						}
-					}
-					else if(ifScissorArr.get(i).getValue()==state7) {
-						if(uMove==2) {
-							winGame=0;
-						}
-					}
-					else if(ifScissorArr.get(i).getValue()==state8) {
-						if(uMove==3) {
-							winGame=0;
-						}
-					}
-					else winGame=9;
 				}
 				break;
 		}
-		
-//		switch(oMove) {
-//		case 1:
-//			for(int i=0;i<ifRockArr.size();i++) {
-//				switch(uMove) {
-//				case 1:
-//					if(ifRockArr.get(i).getValue()==state0) {
-//						winGame=1;
-//					}
-//					else if(ifRockArr.get(i).getValue()==state3) {
-//						winGame=-1;
-//					}
-//					else if(ifRockArr.get(i).getValue()==state6) {
-//						winGame=0;
-//					}
-//					else winGame=9;
-//					break;
-//				case 2:
-//					if(ifPaperArr.get(i).getValue()==state1) {
-//						winGame=1;
-//					}
-//					else if(ifPaperArr.get(i).getValue()==state4) {
-//						winGame=-1;
-//					}
-//					else if(ifPaperArr.get(i).getValue()==state7) {
-//						winGame=0;
-//					}
-//					else winGame=9;
-//					break;
-//				case 3:
-//					if(ifScissorArr.get(i).getValue()==state2) {
-//						winGame=1;
-//					}
-//					else if(ifScissorArr.get(i).getValue()==state5) {
-//						winGame=-1;
-//					}
-//					else if(ifScissorArr.get(i).getValue()==state8) {
-//						winGame=0;
-//					}
-//					else winGame=9;
-//					break;
-//				}
-//			}
-//			break;
-//		case 2:
-//			for(int i=0;i<ifRockArr.size();i++) {
-//				switch(uMove) {
-//				case 1:
-//					if(ifPaperArr.get(i).getValue()==state0) {
-//						winGame=1;
-//					}
-//					else if(ifPaperArr.get(i).getValue()==state3) {
-//						winGame=-1;
-//					}
-//					else if(ifPaperArr.get(i).getValue()==state6) {
-//						winGame=0;
-//					}
-//					else winGame=9;
-//					break;
-//				case 2:
-//					if(ifPaperArr.get(i).getValue()==state1) {
-//						winGame=1;
-//					}
-//					else if(ifPaperArr.get(i).getValue()==state4) {
-//						winGame=-1;
-//					}
-//					else if(ifPaperArr.get(i).getValue()==state7) {
-//						winGame=0;
-//					}
-//					else winGame=9;
-//					break;
-//				case 3:
-//					if(ifPaperArr.get(i).getValue()==state2) {
-//						winGame=1;
-//					}
-//					else if(ifPaperArr.get(i).getValue()==state5) {
-//						winGame=-1;
-//					}
-//					
-//					else if(ifPaperArr.get(i).getValue()==state8) {
-//						winGame=0;
-//					}
-//					else winGame=9;
-//					break;
-//				}
-//			}
-//			break;
-//		case 3:
-//			for(int i=0;i<ifRockArr.size();i++) {
-//				switch(uMove) {
-//				case 1:
-//					if(ifScissorArr.get(i).getValue()==state0) {
-//						winGame=1;
-//					}
-//					else if(ifScissorArr.get(i).getValue()==state3) {
-//						winGame=-1;
-//					}
-//					else if(ifScissorArr.get(i).getValue()==state6) {
-//						winGame=0;
-//					}
-//					else winGame=9;
-//					break;
-//				case 2:
-//					if(ifScissorArr.get(i).getValue()==state1) {
-//						winGame=1;
-//					}
-//					else if(ifScissorArr.get(i).getValue()==state4) {
-//						winGame=-1;
-//					}
-//					else if(ifScissorArr.get(i).getValue()==state7) {
-//						winGame=0;
-//					}
-//					else winGame=9;
-//					break;
-//				case 3:
-//					if(ifScissorArr.get(i).getValue()==state2) {
-//						winGame=1;
-//					}
-//					else if(ifScissorArr.get(i).getValue()==state5) {
-//						winGame=-1;
-//					}
-//					else if(ifScissorArr.get(i).getValue()==state8) {
-//						winGame=0;
-//					}
-//					else winGame=9;
-//					break;
-//				}
-//			}
-//			break;
-//			
-//		}
 	}
 	
 	
