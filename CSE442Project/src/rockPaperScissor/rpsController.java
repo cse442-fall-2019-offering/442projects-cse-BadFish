@@ -11,6 +11,7 @@ import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import java.io.IOException;
 import java.net.URL;
@@ -55,16 +56,33 @@ public class rpsController implements Initializable{
     private ChoiceBox<String> wchWin1;
 
     @FXML
+    private ChoiceBox<String> wchWin11;
+
+    @FXML
+    private ChoiceBox<String> wchWin12;
+    
+    @FXML
     private ChoiceBox<String> winState1;
+    @FXML
+    private ChoiceBox<String> winState11;
+    @FXML
+    private ChoiceBox<String> winState12;
 
     @FXML
     private ChoiceBox<String> opp2;
 
     @FXML
     private ChoiceBox<String> wchWin2;
-
+    @FXML
+    private ChoiceBox<String> wchWin21;
+    @FXML
+    private ChoiceBox<String> wchWin22;
     @FXML
     private ChoiceBox<String> winState2;
+    @FXML
+    private ChoiceBox<String> winState21;
+    @FXML
+    private ChoiceBox<String> winState22;
 
     @FXML
     private ChoiceBox<String> opp3;
@@ -73,7 +91,18 @@ public class rpsController implements Initializable{
     private ChoiceBox<String> wchWin3;
 
     @FXML
+    private ChoiceBox<String> wchWin31;
+    @FXML
+    private ChoiceBox<String> wchWin32;
+    
+    @FXML
     private ChoiceBox<String> winState3;
+    @FXML
+    private ChoiceBox<String> winState31;
+    @FXML
+    private ChoiceBox<String> winState32;
+    @FXML
+    private VBox isRock;
 
 
     //winning state, win if 1, tie if 0, lose if -1, initialized to 9 as nothing happened yet
@@ -96,8 +125,11 @@ public class rpsController implements Initializable{
     private int oMove;
     //array that contains all instruction if opponent's move is paper/rock/scissor
     private ArrayList<ChoiceBox<String>> if1=new ArrayList<>();
+    private ArrayList<ChoiceBox<String>> if11=new ArrayList<>();
     private ArrayList<ChoiceBox<String>> if2=new ArrayList<>();
+    private ArrayList<ChoiceBox<String>> if21=new ArrayList<>();
     private ArrayList<ChoiceBox<String>> if3=new ArrayList<>();
+    private ArrayList<ChoiceBox<String>> if31=new ArrayList<>();
     
     /**
      * initializing button function and instruction functionality
@@ -204,24 +236,40 @@ public class rpsController implements Initializable{
 	 * attach functionalities to each buttons
 	 */
 	private void addInstToButton() {
-		if1.add(opp1);
 		if1.add(wchWin1);
-		if1.add(winState1);
-		if2.add(opp2);
+		if1.add(wchWin11);
+		if1.add(wchWin12);
+		if11.add(winState1);
+		if11.add(winState11);
+		if11.add(winState12);
 		if2.add(wchWin2);
-		if2.add(winState2);
-		if3.add(opp3);
+		if2.add(wchWin21);
+		if2.add(wchWin22);
+		if21.add(winState2);
+		if21.add(winState21);
+		if21.add(winState22);
 		if3.add(wchWin3);
-		if3.add(winState3);
-		if1.get(0).getItems().setAll("none", rock, paper, scissor);
-		if2.get(0).getItems().setAll("none", rock, paper, scissor);
-		if3.get(0).getItems().setAll("none", rock, paper, scissor);
-		if1.get(1).getItems().setAll("none", rock, paper, scissor);
-		if2.get(1).getItems().setAll("none", rock, paper, scissor);
-		if3.get(1).getItems().setAll("none", rock, paper, scissor);
-		if1.get(2).getItems().setAll("none", win, lose, tie);
-		if2.get(2).getItems().setAll("none", win, lose, tie);
-		if3.get(2).getItems().setAll("none", win, lose, tie);
+		if3.add(wchWin31);
+		if3.add(wchWin32);
+		if31.add(winState3);
+		if31.add(winState31);
+		if31.add(winState32);
+		opp1.getItems().setAll("none", rock, paper, scissor);
+		opp2.getItems().setAll("none", rock, paper, scissor);
+		opp3.getItems().setAll("none", rock, paper, scissor);
+		opp1.setValue("none");
+		opp2.setValue("none");
+		opp3.setValue("none");
+		for(int i=0;i<if1.size();i++) {
+			if11.get(i).getItems().setAll("none", win, lose, tie);
+			if21.get(i).getItems().setAll("none", win, lose, tie);
+			if31.get(i).getItems().setAll("none", win, lose, tie);
+			
+			if1.get(i).getItems().setAll("none", rock, paper, scissor);
+			if2.get(i).getItems().setAll("none", rock, paper, scissor);
+			if3.get(i).getItems().setAll("none", rock, paper, scissor);
+		}
+		
 		for(int i=0;i<if1.size();i++) {
 			if1.get(i).setValue("none");
 			if2.get(i).setValue("none");
@@ -234,144 +282,618 @@ public class rpsController implements Initializable{
 	 */
 	private void checkStates() {
 		switch(oMove) {
-			case 1:
-				if(if1.get(0).getValue()!=rock&&if2.get(0).getValue()!=rock&&if3.get(0).getValue()!=rock) {
-					break;
-				}
-				if(if1.get(0).getValue()==rock) {
-					if(uMove==1) {
-						if(if1.get(1).getValue()==rock) {
-							if(if1.get(2).getValue()==win||if2.get(2).getValue()==win||if3.get(2).getValue()==win) {
-								winGame=1;
-							}
-							else if(if1.get(2).getValue()==lose||if2.get(2).getValue()==lose||if3.get(2).getValue()==lose) {
-								winGame=-1;
-							}
-							else if(if1.get(2).getValue()==tie||if2.get(2).getValue()==tie||if3.get(2).getValue()==tie) {
-								winGame=0;
-							}
-						}
-					}
-					else if(uMove==2) {
-						if(if1.get(1).getValue()==paper) {
-							if(if1.get(2).getValue()==win||if2.get(2).getValue()==win||if3.get(2).getValue()==win) {
-								winGame=1;
-							}
-							else if(if1.get(2).getValue()==lose||if2.get(2).getValue()==lose||if3.get(2).getValue()==lose) {
-								winGame=-1;
-							}
-							else if(if1.get(2).getValue()==tie||if2.get(2).getValue()==tie||if3.get(2).getValue()==tie) {
-								winGame=0;
-							}
-						}
-					}
-					else if(uMove==3) {
-						if(if1.get(1).getValue()==scissor) {
-							if(if1.get(2).getValue()==win||if2.get(2).getValue()==win||if3.get(2).getValue()==win) {
-								winGame=1;
-							}
-							else if(if1.get(2).getValue()==lose||if2.get(2).getValue()==lose||if3.get(2).getValue()==lose) {
-								winGame=-1;
-							}
-							else if(if1.get(2).getValue()==tie||if2.get(2).getValue()==tie||if3.get(2).getValue()==tie) {
-								winGame=0;
-							}
-						}
-					}
-				}
+		case 1:
+			if(opp1.getValue()!=rock&&opp2.getValue()!=rock&&opp3.getValue()!=rock) {
 				break;
-			case 2:
-				if(if1.get(0).getValue()!=paper&&if2.get(0).getValue()!=paper&&if3.get(0).getValue()!=paper) {
-					break;
-				}
-				if(if1.get(0).getValue()==rock) {
-					if(uMove==1) {
-						if(if1.get(1).getValue()==rock) {
-							if(if1.get(2).getValue()==win||if2.get(2).getValue()==win||if3.get(2).getValue()==win) {
-								winGame=1;
+			}
+			if(opp1.getValue()==rock) {
+				if(uMove==1) {
+					for(int i=0;i<if1.size();i++) {
+						if(if1.get(i).getValue()==rock) {
+							if(if11.get(i).getValue()==win) {
+								winGame=1;								
 							}
-							else if(if1.get(2).getValue()==lose||if2.get(2).getValue()==lose||if3.get(2).getValue()==lose) {
-								winGame=-1;
+							else if(if11.get(i).getValue()==lose) {
+								winGame=-1;								
 							}
-							else if(if1.get(2).getValue()==tie||if2.get(2).getValue()==tie||if3.get(2).getValue()==tie) {
-								winGame=0;
-							}
-						}
-					}
-					else if(uMove==2) {
-						if(if1.get(1).getValue()==paper) {
-							if(if1.get(2).getValue()==win||if2.get(2).getValue()==win||if3.get(2).getValue()==win) {
-								winGame=1;
-							}
-							else if(if1.get(2).getValue()==lose||if2.get(2).getValue()==lose||if3.get(2).getValue()==lose) {
-								winGame=-1;
-							}
-							else if(if1.get(2).getValue()==tie||if2.get(2).getValue()==tie||if3.get(2).getValue()==tie) {
-								winGame=0;
-							}
-						}
-					}
-					else if(uMove==3) {
-						if(if1.get(1).getValue()==scissor) {
-							if(if1.get(2).getValue()==win||if2.get(2).getValue()==win||if3.get(2).getValue()==win) {
-								winGame=1;
-							}
-							else if(if1.get(2).getValue()==lose||if2.get(2).getValue()==lose||if3.get(2).getValue()==lose) {
-								winGame=-1;
-							}
-							else if(if1.get(2).getValue()==tie||if2.get(2).getValue()==tie||if3.get(2).getValue()==tie) {
+							else if(if11.get(i).getValue()==tie) {
 								winGame=0;
 							}
 						}
 					}
 				}
+				else if(uMove==2) {
+					for(int i=0;i<if1.size();i++) {
+						if(if1.get(i).getValue()==paper) {
+							if(if11.get(i).getValue()==win) {
+								winGame=1;								
+							}
+							else if(if11.get(i).getValue()==lose) {
+								winGame=-1;								
+							}
+							else if(if11.get(i).getValue()==tie) {
+								winGame=0;
+							}
+						}
+					}
+				}
+				else if(uMove==3) {
+					for(int i=0;i<if1.size();i++) {
+						if(if1.get(i).getValue()==scissor) {
+							if(if11.get(i).getValue()==win) {
+								winGame=1;								
+							}
+							else if(if11.get(i).getValue()==lose) {
+								winGame=-1;								
+							}
+							else if(if11.get(i).getValue()==tie) {
+								winGame=0;
+							}
+						}
+					}
+				}
+			}
+			
+			
+			else if(opp2.getValue()==rock) {
+				if(uMove==1) {
+					for(int i=0;i<if1.size();i++) {
+						if(if2.get(i).getValue()==rock) {
+							if(if21.get(i).getValue()==win) {
+								winGame=1;								
+							}
+							else if(if21.get(i).getValue()==lose) {
+								winGame=-1;								
+							}
+							else if(if21.get(i).getValue()==tie) {
+								winGame=0;
+							}
+						}
+					}
+				}
+				else if(uMove==2) {
+					for(int i=0;i<if1.size();i++) {
+						if(if2.get(i).getValue()==paper) {
+							if(if21.get(i).getValue()==win) {
+								winGame=1;								
+							}
+							else if(if21.get(i).getValue()==lose) {
+								winGame=-1;								
+							}
+							else if(if21.get(i).getValue()==tie) {
+								winGame=0;
+							}
+						}
+					}
+				}
+				else if(uMove==3) {
+					for(int i=0;i<if1.size();i++) {
+						if(if3.get(i).getValue()==rock) {
+							if(if31.get(i).getValue()==win) {
+								winGame=1;								
+							}
+							else if(if31.get(i).getValue()==lose) {
+								winGame=-1;								
+							}
+							else if(if31.get(i).getValue()==tie) {
+								winGame=0;
+							}
+						}
+					}
+				}
+			}
+			else if(opp3.getValue()==rock) {
+				if(uMove==1) {
+					for(int i=0;i<if1.size();i++) {
+						if(if3.get(i).getValue()==rock) {
+							if(if31.get(i).getValue()==win) {
+								winGame=1;								
+							}
+							else if(if31.get(i).getValue()==lose) {
+								winGame=-1;								
+							}
+							else if(if31.get(i).getValue()==tie) {
+								winGame=0;
+							}
+						}
+					}
+				}
+				else if(uMove==2) {
+					for(int i=0;i<if1.size();i++) {
+						if(if3.get(i).getValue()==paper) {
+							if(if31.get(i).getValue()==win) {
+								winGame=1;								
+							}
+							else if(if31.get(i).getValue()==lose) {
+								winGame=-1;								
+							}
+							else if(if31.get(i).getValue()==tie) {
+								winGame=0;
+							}
+						}
+					}
+				}
+				else if(uMove==3) {
+					for(int i=0;i<if1.size();i++) {
+						if(if3.get(i).getValue()==scissor) {
+							if(if31.get(i).getValue()==win) {
+								winGame=1;								
+							}
+							else if(if31.get(i).getValue()==lose) {
+								winGame=-1;								
+							}
+							else if(if31.get(i).getValue()==tie) {
+								winGame=0;
+							}
+						}
+					}
+				}
+			}
+			break;
+		case 2:
+			if(opp1.getValue()!=paper&&opp2.getValue()!=paper&&opp3.getValue()!=paper) {
 				break;
-			case 3:
-				if(if1.get(0).getValue()!=scissor&&if2.get(0).getValue()!=scissor&&if3.get(0).getValue()!=scissor) {
-					break;
-				}
-				if(if1.get(0).getValue()==rock) {
-					if(uMove==1) {
-						if(if1.get(1).getValue()==rock) {
-							if(if1.get(2).getValue()==win||if2.get(2).getValue()==win||if3.get(2).getValue()==win) {
-								winGame=1;
+			}
+			if(opp1.getValue()==paper) {
+				if(uMove==1) {
+					for(int i=0;i<if1.size();i++) {
+						if(if1.get(i).getValue()==rock) {
+							if(if11.get(i).getValue()==win) {
+								winGame=1;								
 							}
-							else if(if1.get(2).getValue()==lose||if2.get(2).getValue()==lose||if3.get(2).getValue()==lose) {
-								winGame=-1;
+							else if(if11.get(i).getValue()==lose) {
+								winGame=-1;								
 							}
-							else if(if1.get(2).getValue()==tie||if2.get(2).getValue()==tie||if3.get(2).getValue()==tie) {
-								winGame=0;
-							}
-						}
-					}
-					else if(uMove==2) {
-						if(if1.get(1).getValue()==paper) {
-							if(if1.get(2).getValue()==win||if2.get(2).getValue()==win||if3.get(2).getValue()==win) {
-								winGame=1;
-							}
-							else if(if1.get(2).getValue()==lose||if2.get(2).getValue()==lose||if3.get(2).getValue()==lose) {
-								winGame=-1;
-							}
-							else if(if1.get(2).getValue()==tie||if2.get(2).getValue()==tie||if3.get(2).getValue()==tie) {
-								winGame=0;
-							}
-						}
-					}
-					else if(uMove==3) {
-						if(if1.get(1).getValue()==scissor) {
-							if(if1.get(2).getValue()==win||if2.get(2).getValue()==win||if3.get(2).getValue()==win) {
-								winGame=1;
-							}
-							else if(if1.get(2).getValue()==lose||if2.get(2).getValue()==lose||if3.get(2).getValue()==lose) {
-								winGame=-1;
-							}
-							else if(if1.get(2).getValue()==tie||if2.get(2).getValue()==tie||if3.get(2).getValue()==tie) {
+							else if(if11.get(i).getValue()==tie) {
 								winGame=0;
 							}
 						}
 					}
 				}
+				else if(uMove==2) {
+					for(int i=0;i<if1.size();i++) {
+						if(if1.get(i).getValue()==paper) {
+							if(if11.get(i).getValue()==win) {
+								winGame=1;								
+							}
+							else if(if11.get(i).getValue()==lose) {
+								winGame=-1;								
+							}
+							else if(if11.get(i).getValue()==tie) {
+								winGame=0;
+							}
+						}
+					}
+				}
+				else if(uMove==3) {
+					for(int i=0;i<if1.size();i++) {
+						if(if1.get(i).getValue()==scissor) {
+							if(if11.get(i).getValue()==win) {
+								winGame=1;								
+							}
+							else if(if11.get(i).getValue()==lose) {
+								winGame=-1;								
+							}
+							else if(if11.get(i).getValue()==tie) {
+								winGame=0;
+							}
+						}
+					}
+				}
+			}
+			
+			
+			else if(opp2.getValue()==paper) {
+				if(uMove==1) {
+					for(int i=0;i<if1.size();i++) {
+						if(if2.get(i).getValue()==rock) {
+							if(if21.get(i).getValue()==win) {
+								winGame=1;								
+							}
+							else if(if21.get(i).getValue()==lose) {
+								winGame=-1;								
+							}
+							else if(if21.get(i).getValue()==tie) {
+								winGame=0;
+							}
+						}
+					}
+				}
+				else if(uMove==2) {
+					for(int i=0;i<if1.size();i++) {
+						if(if2.get(i).getValue()==paper) {
+							if(if21.get(i).getValue()==win) {
+								winGame=1;								
+							}
+							else if(if21.get(i).getValue()==lose) {
+								winGame=-1;								
+							}
+							else if(if21.get(i).getValue()==tie) {
+								winGame=0;
+							}
+						}
+					}
+				}
+				else if(uMove==3) {
+					for(int i=0;i<if1.size();i++) {
+						if(if2.get(i).getValue()==scissor) {
+							if(if21.get(i).getValue()==win) {
+								winGame=1;								
+							}
+							else if(if21.get(i).getValue()==lose) {
+								winGame=-1;								
+							}
+							else if(if21.get(i).getValue()==tie) {
+								winGame=0;
+							}
+						}
+					}
+				}
+			}
+			else if(opp3.getValue()==paper) {
+				if(uMove==1) {
+					for(int i=0;i<if1.size();i++) {
+						if(if3.get(i).getValue()==rock) {
+							if(if31.get(i).getValue()==win) {
+								winGame=1;								
+							}
+							else if(if31.get(i).getValue()==lose) {
+								winGame=-1;								
+							}
+							else if(if31.get(i).getValue()==tie) {
+								winGame=0;
+							}
+						}
+					}
+				}
+				else if(uMove==2) {
+					for(int i=0;i<if1.size();i++) {
+						if(if3.get(i).getValue()==paper) {
+							if(if31.get(i).getValue()==win) {
+								winGame=1;								
+							}
+							else if(if31.get(i).getValue()==lose) {
+								winGame=-1;								
+							}
+							else if(if31.get(i).getValue()==tie) {
+								winGame=0;
+							}
+						}
+					}
+				}
+				else if(uMove==3) {
+					for(int i=0;i<if1.size();i++) {
+						if(if3.get(i).getValue()==scissor) {
+							if(if31.get(i).getValue()==win) {
+								winGame=1;								
+							}
+							else if(if31.get(i).getValue()==lose) {
+								winGame=-1;								
+							}
+							else if(if31.get(i).getValue()==tie) {
+								winGame=0;
+							}
+						}
+					}
+				}
+			}
+			
+			break;
+			
+		case 3:
+			if(opp1.getValue()!=scissor&&opp2.getValue()!=scissor&&opp3.getValue()!=scissor) {
 				break;
+			}
+			if(opp1.getValue()==scissor) {
+				if(uMove==1) {
+					for(int i=0;i<if1.size();i++) {
+						if(if1.get(i).getValue()==rock) {
+							if(if11.get(i).getValue()==win) {
+								winGame=1;								
+							}
+							else if(if11.get(i).getValue()==lose) {
+								winGame=-1;								
+							}
+							else if(if11.get(i).getValue()==tie) {
+								winGame=0;
+							}
+						}
+					}
+				}
+				else if(uMove==2) {
+					for(int i=0;i<if1.size();i++) {
+						if(if1.get(i).getValue()==paper) {
+							if(if11.get(i).getValue()==win) {
+								winGame=1;								
+							}
+							else if(if11.get(i).getValue()==lose) {
+								winGame=-1;								
+							}
+							else if(if11.get(i).getValue()==tie) {
+								winGame=0;
+							}
+						}
+					}
+				}
+				else if(uMove==3) {
+					for(int i=0;i<if1.size();i++) {
+						if(if1.get(i).getValue()==scissor) {
+							if(if11.get(i).getValue()==win) {
+								winGame=1;								
+							}
+							else if(if11.get(i).getValue()==lose) {
+								winGame=-1;								
+							}
+							else if(if11.get(i).getValue()==tie) {
+								winGame=0;
+							}
+						}
+					}
+				}
+			}
+			
+			
+			else if(opp2.getValue()==scissor) {
+				if(uMove==1) {
+					for(int i=0;i<if1.size();i++) {
+						if(if2.get(i).getValue()==rock) {
+							if(if21.get(i).getValue()==win) {
+								winGame=1;								
+							}
+							else if(if21.get(i).getValue()==lose) {
+								winGame=-1;								
+							}
+							else if(if21.get(i).getValue()==tie) {
+								winGame=0;
+							}
+						}
+					}
+				}
+				else if(uMove==2) {
+					for(int i=0;i<if1.size();i++) {
+						if(if2.get(i).getValue()==paper) {
+							if(if21.get(i).getValue()==win) {
+								winGame=1;								
+							}
+							else if(if21.get(i).getValue()==lose) {
+								winGame=-1;								
+							}
+							else if(if21.get(i).getValue()==tie) {
+								winGame=0;
+							}
+						}
+					}
+				}
+				else if(uMove==3) {
+					for(int i=0;i<if1.size();i++) {
+						if(if2.get(i).getValue()==scissor) {
+							if(if21.get(i).getValue()==win) {
+								winGame=1;								
+							}
+							else if(if21.get(i).getValue()==lose) {
+								winGame=-1;								
+							}
+							else if(if21.get(i).getValue()==tie) {
+								winGame=0;
+							}
+						}
+					}
+				}
+			}
+			else if(opp3.getValue()==scissor) {
+				if(uMove==1) {
+					for(int i=0;i<if1.size();i++) {
+						if(if3.get(i).getValue()==rock) {
+							if(if31.get(i).getValue()==win) {
+								winGame=1;								
+							}
+							else if(if31.get(i).getValue()==lose) {
+								winGame=-1;								
+							}
+							else if(if31.get(i).getValue()==tie) {
+								winGame=0;
+							}
+						}
+					}
+				}
+				else if(uMove==2) {
+					for(int i=0;i<if1.size();i++) {
+						if(if3.get(i).getValue()==paper) {
+							if(if31.get(i).getValue()==win) {
+								winGame=1;								
+							}
+							else if(if31.get(i).getValue()==lose) {
+								winGame=-1;								
+							}
+							else if(if31.get(i).getValue()==tie) {
+								winGame=0;
+							}
+						}
+					}
+				}
+				else if(uMove==3) {
+					for(int i=0;i<if1.size();i++) {
+						if(if3.get(i).getValue()==scissor) {
+							if(if31.get(i).getValue()==win) {
+								winGame=1;								
+							}
+							else if(if31.get(i).getValue()==lose) {
+								winGame=-1;								
+							}
+							else if(if31.get(i).getValue()==tie) {
+								winGame=0;
+							}
+						}
+					}
+				}
+			}
+			
+			break;
+//			case 1:
+//				if(if1.get(0).getValue()!=rock&&if2.get(0).getValue()!=rock&&if3.get(0).getValue()!=rock) {
+//					break;
+//				}
+//				if(if1.get(0).getValue()==rock) {
+//					if(uMove==1) {
+//						for(int i=1;i<if1.size();i++) {
+//							if(if1.get(i).getValue()==rock) {
+//								if(if11.get(i).getValue()==win) {
+//									winGame=1;
+//								}
+//								else if(if11.get(i).getValue()==lose) {
+//									winGame=-1;
+//								}
+//								else if(if1.get(i).getValue()==tie) {
+//									winGame=0;
+//								}
+//							}	
+//						}
+//						
+//					}
+//					else if(uMove==2) {
+//						for(int i=1;i<if1.si;i++) {
+//							if(if1.get(i).getValue()==paper) {
+//								if(if1.get(i+3).getValue()==win||if2.get(i+3).getValue()==win||if3.get(i+3).getValue()==win) {
+//									winGame=1;
+//								}
+//								else if(if1.get(i+3).getValue()==lose||if2.get(i+3).getValue()==lose||if3.get(i+3).getValue()==lose) {
+//									winGame=-1;
+//								}
+//								else if(if1.get(i+3).getValue()==tie||if2.get(i+3).getValue()==tie||if3.get(i+3).getValue()==tie) {
+//									winGame=0;
+//								}
+//							}	
+//						}
+//					}
+//					else if(uMove==3) {
+//						for(int i=1;i<4;i++) {
+//							if(if1.get(i).getValue()==scissor) {
+//								if(if1.get(i+3).getValue()==win||if2.get(i+3).getValue()==win||if3.get(i+3).getValue()==win) {
+//									winGame=1;
+//								}
+//								else if(if1.get(i+3).getValue()==lose||if2.get(i+3).getValue()==lose||if3.get(i+3).getValue()==lose) {
+//									winGame=-1;
+//								}
+//								else if(if1.get(i+3).getValue()==tie||if2.get(i+3).getValue()==tie||if3.get(i+3).getValue()==tie) {
+//									winGame=0;
+//								}
+//							}	
+//						}
+//					}
+//				}
+//				break;
+//			case 2:
+//				if(if1.get(0).getValue()!=paper&&if2.get(0).getValue()!=paper&&if3.get(0).getValue()!=paper) {
+//					break;
+//				}
+//				if(if1.get(0).getValue()==rock) {
+//					if(uMove==1) {
+//						for(int i=1;i<4;i++) {
+//							if(if1.get(i).getValue()==rock) {
+//								if(if1.get(i+3).getValue()==win||if2.get(i+3).getValue()==win||if3.get(i+3).getValue()==win) {
+//									winGame=1;
+//								}
+//								else if(if1.get(i+3).getValue()==lose||if2.get(i+3).getValue()==lose||if3.get(i+3).getValue()==lose) {
+//									winGame=-1;
+//								}
+//								else if(if1.get(i+3).getValue()==tie||if2.get(i+1).getValue()==tie||if3.get(i+3).getValue()==tie) {
+//									winGame=0;
+//								}
+//							}	
+//						}
+//					}
+//					else if(uMove==2) {
+//						if(if1.get(1).getValue()==paper) {
+//							for(int i=1;i<4;i++) {
+//								if(if1.get(i).getValue()==paper) {
+//									if(if1.get(i+3).getValue()==win||if2.get(i+3).getValue()==win||if3.get(i+3).getValue()==win) {
+//										winGame=1;
+//									}
+//									else if(if1.get(i+3).getValue()==lose||if2.get(i+3).getValue()==lose||if3.get(i+3).getValue()==lose) {
+//										winGame=-1;
+//									}
+//									else if(if1.get(i+3).getValue()==tie||if2.get(i+3).getValue()==tie||if3.get(i+3).getValue()==tie) {
+//										winGame=0;
+//									}
+//								}	
+//							}
+//						}
+//					}
+//					else if(uMove==3) {
+//						if(if1.get(1).getValue()==scissor) {
+//							for(int i=1;i<4;i++) {
+//								if(if1.get(i).getValue()==scissor) {
+//									if(if1.get(i+3).getValue()==win||if2.get(i+3).getValue()==win||if3.get(i+3).getValue()==win) {
+//										winGame=1;
+//									}
+//									else if(if1.get(i+3).getValue()==lose||if2.get(i+3).getValue()==lose||if3.get(i+3).getValue()==lose) {
+//										winGame=-1;
+//									}
+//									else if(if1.get(i+3).getValue()==tie||if2.get(i+3).getValue()==tie||if3.get(i+3).getValue()==tie) {
+//										winGame=0;
+//									}
+//								}	
+//							}
+//						}
+//					}
+//				}
+//				break;
+//			case 3:
+//				if(if1.get(0).getValue()!=scissor&&if2.get(0).getValue()!=scissor&&if3.get(0).getValue()!=scissor) {
+//					break;
+//				}
+//				if(if1.get(0).getValue()==rock) {
+//					if(uMove==1) {
+//						for(int i=1;i<4;i++) {
+//							if(if1.get(i).getValue()==rock) {
+//								if(if1.get(i+3).getValue()==win||if2.get(i+3).getValue()==win||if3.get(i+3).getValue()==win) {
+//									winGame=1;
+//								}
+//								else if(if1.get(i+3).getValue()==lose||if2.get(i+3).getValue()==lose||if3.get(i+3).getValue()==lose) {
+//									winGame=-1;
+//								}
+//								else if(if1.get(i+3).getValue()==tie||if2.get(i+1).getValue()==tie||if3.get(i+3).getValue()==tie) {
+//									winGame=0;
+//								}
+//							}	
+//						}
+//					}
+//					else if(uMove==2) {
+//						if(if1.get(1).getValue()==paper) {
+//							for(int i=1;i<4;i++) {
+//								if(if1.get(i).getValue()==paper) {
+//									if(if1.get(i+3).getValue()==win||if2.get(i+3).getValue()==win||if3.get(i+3).getValue()==win) {
+//										winGame=1;
+//									}
+//									else if(if1.get(i+3).getValue()==lose||if2.get(i+3).getValue()==lose||if3.get(i+3).getValue()==lose) {
+//										winGame=-1;
+//									}
+//									else if(if1.get(i+3).getValue()==tie||if2.get(i+3).getValue()==tie||if3.get(i+3).getValue()==tie) {
+//										winGame=0;
+//									}
+//								}	
+//							}
+//						}
+//					}
+//					else if(uMove==3) {
+//						if(if1.get(1).getValue()==scissor) {
+//							for(int i=1;i<4;i++) {
+//								if(if1.get(i).getValue()==scissor) {
+//									if(if1.get(i+3).getValue()==win||if2.get(i+3).getValue()==win||if3.get(i+3).getValue()==win) {
+//										winGame=1;
+//									}
+//									else if(if1.get(i+3).getValue()==lose||if2.get(i+3).getValue()==lose||if3.get(i+3).getValue()==lose) {
+//										winGame=-1;
+//									}
+//									else if(if1.get(i+3).getValue()==tie||if2.get(i+3).getValue()==tie||if3.get(i+3).getValue()==tie) {
+//										winGame=0;
+//									}
+//								}	
+//							}
+//						}
+//					}
+//				}
+//				break;
 		}
 	}
 	

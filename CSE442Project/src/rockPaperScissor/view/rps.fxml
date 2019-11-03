@@ -14,7 +14,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="600.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rockPaperScissor.rpsController">
+<AnchorPane prefHeight="700.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rockPaperScissor.rpsController">
    <children>
       <SplitPane dividerPositions="0.5" layoutY="168.0" orientation="VERTICAL" prefHeight="600.0" prefWidth="700.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <items>
@@ -61,9 +61,10 @@
                                 <items>
                                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                                        <children>
-                                          <VBox layoutX="61.0" layoutY="14.0" prefHeight="292.8" prefWidth="188.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <VBox prefHeight="292.8" prefWidth="502.4" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                          <VBox fx:id="isRock" layoutX="61.0" layoutY="14.0" prefHeight="292.8" prefWidth="188.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                              <children>
-                                                <HBox prefHeight="32.0" prefWidth="188.0">
+                                                <HBox prefHeight="17.0" prefWidth="502.0">
                                                    <children>
                                                       <Text fill="#f80606" strokeType="OUTSIDE" strokeWidth="0.0" text="If ">
                                                          <font>
@@ -78,7 +79,7 @@
                                                       <ChoiceBox fx:id="opp1" prefHeight="26.0" prefWidth="118.0" />
                                                    </children>
                                                 </HBox>
-                                                <HBox prefHeight="38.0" prefWidth="326.0">
+                                                <HBox prefHeight="23.0" prefWidth="502.0">
                                                    <children>
                                                       <Text strokeType="OUTSIDE" strokeWidth="0.0" text="      " />
                                                       <Text strokeType="OUTSIDE" strokeWidth="0.0" text="then you want ">
@@ -95,7 +96,41 @@
                                                       <ChoiceBox fx:id="winState1" prefWidth="150.0" />
                                                    </children>
                                                 </HBox>
-                                                <HBox prefHeight="38.0" prefWidth="326.0">
+                                                <HBox layoutX="10.0" layoutY="240.0" prefHeight="9.0" prefWidth="502.0">
+                                                   <children>
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="      " />
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="then you want ">
+                                                         <font>
+                                                            <Font size="16.0" />
+                                                         </font>
+                                                      </Text>
+                                                      <ChoiceBox fx:id="wchWin11" prefHeight="26.0" prefWidth="107.0" />
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text=" to ">
+                                                         <font>
+                                                            <Font size="16.0" />
+                                                         </font>
+                                                      </Text>
+                                                      <ChoiceBox fx:id="winState11" prefWidth="150.0" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox layoutX="10.0" layoutY="266.0" prefHeight="9.0" prefWidth="502.0">
+                                                   <children>
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="      " />
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="then you want ">
+                                                         <font>
+                                                            <Font size="16.0" />
+                                                         </font>
+                                                      </Text>
+                                                      <ChoiceBox fx:id="wchWin12" prefHeight="26.0" prefWidth="107.0" />
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text=" to ">
+                                                         <font>
+                                                            <Font size="16.0" />
+                                                         </font>
+                                                      </Text>
+                                                      <ChoiceBox fx:id="winState12" prefWidth="150.0" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox prefHeight="22.0" prefWidth="502.0">
                                                    <children>
                                                       <Text fill="#0ad142" strokeType="OUTSIDE" strokeWidth="0.0" text="else if ">
                                                          <font>
@@ -110,7 +145,41 @@
                                                       <ChoiceBox fx:id="opp2" prefWidth="150.0" />
                                                    </children>
                                                 </HBox>
-                                                <HBox layoutX="10.0" layoutY="42.0" prefHeight="38.0" prefWidth="502.0">
+                                                <HBox layoutX="10.0" layoutY="42.0" prefHeight="8.0" prefWidth="502.0">
+                                                   <children>
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="      " />
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="then you want ">
+                                                         <font>
+                                                            <Font size="16.0" />
+                                                         </font>
+                                                      </Text>
+                                                      <ChoiceBox fx:id="wchWin21" prefHeight="26.0" prefWidth="107.0" />
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text=" to ">
+                                                         <font>
+                                                            <Font size="16.0" />
+                                                         </font>
+                                                      </Text>
+                                                      <ChoiceBox fx:id="winState21" prefWidth="150.0" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox layoutX="10.0" layoutY="215.0" prefHeight="9.0" prefWidth="502.0">
+                                                   <children>
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="      " />
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="then you want ">
+                                                         <font>
+                                                            <Font size="16.0" />
+                                                         </font>
+                                                      </Text>
+                                                      <ChoiceBox fx:id="wchWin22" prefHeight="26.0" prefWidth="107.0" />
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text=" to ">
+                                                         <font>
+                                                            <Font size="16.0" />
+                                                         </font>
+                                                      </Text>
+                                                      <ChoiceBox fx:id="winState22" prefWidth="150.0" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox layoutX="10.0" layoutY="42.0" prefHeight="11.0" prefWidth="502.0">
                                                    <children>
                                                       <Text strokeType="OUTSIDE" strokeWidth="0.0" text="      " />
                                                       <Text strokeType="OUTSIDE" strokeWidth="0.0" text="then you want ">
@@ -127,7 +196,7 @@
                                                       <ChoiceBox fx:id="winState2" prefWidth="150.0" />
                                                    </children>
                                                 </HBox>
-                                                <HBox layoutX="10.0" layoutY="80.0" prefHeight="38.0" prefWidth="326.0">
+                                                <HBox layoutX="10.0" layoutY="80.0" prefHeight="6.0" prefWidth="502.0">
                                                    <children>
                                                       <Text fill="#270acf" strokeType="OUTSIDE" strokeWidth="0.0" text="else if ">
                                                          <font>
@@ -142,7 +211,7 @@
                                                       <ChoiceBox fx:id="opp3" prefWidth="150.0" />
                                                    </children>
                                                 </HBox>
-                                                <HBox layoutX="10.0" layoutY="119.0" prefHeight="38.0" prefWidth="326.0">
+                                                <HBox layoutX="10.0" layoutY="119.0" prefHeight="12.0" prefWidth="502.0">
                                                    <children>
                                                       <Text strokeType="OUTSIDE" strokeWidth="0.0" text="      " />
                                                       <Text strokeType="OUTSIDE" strokeWidth="0.0" text="then you want ">
@@ -157,6 +226,40 @@
                                                          </font>
                                                       </Text>
                                                       <ChoiceBox fx:id="winState3" prefWidth="150.0" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox layoutX="10.0" layoutY="42.0" prefHeight="9.0" prefWidth="502.0">
+                                                   <children>
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="      " />
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="then you want ">
+                                                         <font>
+                                                            <Font size="16.0" />
+                                                         </font>
+                                                      </Text>
+                                                      <ChoiceBox fx:id="wchWin31" prefHeight="26.0" prefWidth="107.0" />
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text=" to ">
+                                                         <font>
+                                                            <Font size="16.0" />
+                                                         </font>
+                                                      </Text>
+                                                      <ChoiceBox fx:id="winState31" prefWidth="150.0" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox layoutX="10.0" layoutY="189.0" prefHeight="9.0" prefWidth="502.0">
+                                                   <children>
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="      " />
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="then you want ">
+                                                         <font>
+                                                            <Font size="16.0" />
+                                                         </font>
+                                                      </Text>
+                                                      <ChoiceBox fx:id="wchWin32" prefHeight="26.0" prefWidth="107.0" />
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text=" to ">
+                                                         <font>
+                                                            <Font size="16.0" />
+                                                         </font>
+                                                      </Text>
+                                                      <ChoiceBox fx:id="winState32" prefWidth="150.0" />
                                                    </children>
                                                 </HBox>
                                              </children>
