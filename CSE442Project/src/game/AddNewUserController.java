@@ -107,7 +107,7 @@ public class AddNewUserController {
 				DataAccess x = new DataAccess();
 				int slot = x.getEmptyProfile();
 				if (slot == -1) {
-					promptBox.setText("Error: no empty space");
+					promptBox.setText("No Profile Slots Avalible");
 				} else {
 					x.setProfile(slot, FirstName, LastName, NickName, Integer.parseInt(Age), false, 0, false, 0, false,
 							0, 0);

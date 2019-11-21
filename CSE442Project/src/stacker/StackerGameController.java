@@ -1,17 +1,39 @@
 package stacker;
 
+import java.io.File;
 import java.net.URL;
 import java.util.ResourceBundle;
-
+import java.util.concurrent.TimeUnit;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.stage.Stage;
+import javafx.util.Duration;
+import javafx.animation.*;
 
 public class StackerGameController implements Initializable {
+	
+	private boolean playable = false;
+	
+	private boolean gameStart = false;
+	
+	private boolean stopper = false;
+	
+	private int currentRow = 0;
+	
+	private int blockCount = 3;
+
+	private Image darkBlue = new Image((new File("C:\\Users\\tebas\\git\\442projects-cse-BadFish\\CSE442Project\\Images\\Dark Blue.jpg")).toURI().toString());
+	
+	private Image neonBlue = new Image((new File("C:\\Users\\tebas\\git\\442projects-cse-BadFish\\CSE442Project\\Images\\Neon Blue.jpg")).toURI().toString());
+	
+	private Timeline TL = new Timeline();
+	
 	@FXML    
 	private Button button;
 
@@ -345,10 +367,79 @@ public class StackerGameController implements Initializable {
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		instruction.setText("Instructions Go Here:");
-		button.setOnAction(this::buttonFunction);
+		button.setOnAction(arg0 -> {
+			try {
+				buttonFunction(arg0);
+			} catch (NullPointerException | IndexOutOfBoundsException | InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		});
+		
+		//Temporary
+		playable = true;
+
+		
+		KeyFrame KF1 = new KeyFrame(Duration.seconds(2), new KeyValue(zero11.imageProperty(), neonBlue));
+		KeyFrame KF2 = new KeyFrame(Duration.seconds(2));
+		KeyFrame KF3 = new KeyFrame(Duration.seconds(2), new KeyValue(zero11.imageProperty(), darkBlue));
+		TL.getKeyFrames().addAll(KF1, KF2, KF3);
+		
 	}
 	
-	public void buttonFunction(ActionEvent event) throws NullPointerException,IndexOutOfBoundsException {
+	public void buttonFunction(ActionEvent event) throws NullPointerException,IndexOutOfBoundsException,InterruptedException {
+		
+		TL.play();
+		TL.play();
+		TL.play();
 
     }
 }
+
+//if(gameStart) {
+//
+//} else if(playable) {
+//gameStart = true;
+//three11.setImage(neonBlue);
+//four11.setImage(neonBlue);
+//five11.setImage(neonBlue);
+//TimeUnit.SECONDS.sleep(1);
+//while(true) {
+//	two11.setImage(neonBlue);
+//	five11.setImage(darkBlue);
+//	TimeUnit.SECONDS.sleep(1);
+//	one11.setImage(neonBlue);
+//	four11.setImage(darkBlue);
+//	TimeUnit.SECONDS.sleep(1);
+//	zero11.setImage(neonBlue);
+//	three11.setImage(darkBlue);
+//	TimeUnit.SECONDS.sleep(1);
+//	three11.setImage(neonBlue);
+//	zero11.setImage(darkBlue);
+//	TimeUnit.SECONDS.sleep(1);
+//	four11.setImage(neonBlue);
+//	one11.setImage(darkBlue);
+//	TimeUnit.SECONDS.sleep(1);
+//	five11.setImage(neonBlue);
+//	two11.setImage(darkBlue);
+//	TimeUnit.SECONDS.sleep(1);
+//	six11.setImage(neonBlue);
+//	three11.setImage(darkBlue);
+//	TimeUnit.SECONDS.sleep(1);
+//	seven11.setImage(neonBlue);
+//	four11.setImage(darkBlue);
+//	TimeUnit.SECONDS.sleep(1);
+//	eight11.setImage(neonBlue);
+//	five11.setImage(darkBlue);
+//	TimeUnit.SECONDS.sleep(1);
+//	five11.setImage(neonBlue);
+//	eight11.setImage(darkBlue);
+//	TimeUnit.SECONDS.sleep(1);
+//	four11.setImage(neonBlue);
+//	seven11.setImage(darkBlue);
+//	TimeUnit.SECONDS.sleep(1);
+//	three11.setImage(neonBlue);
+//	six11.setImage(darkBlue);
+//	TimeUnit.SECONDS.sleep(1);
+//}
+//}

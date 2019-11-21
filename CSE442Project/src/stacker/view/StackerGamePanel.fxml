@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
-<?import javafx.scene.image.*?>
-<?import java.lang.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="stacker.StackerGameController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="stacker.StackerGameController">
    <children>
       <SplitPane dividerPositions="0.7190635451505016" orientation="VERTICAL" prefHeight="600.0" prefWidth="750.0">
         <items>
@@ -50,435 +54,435 @@
                                  <children>                                    
                                     <ImageView fx:id="eight0" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="8" GridPane.rowIndex="0">
                                        <image>
-                                          <Image url="@../../../Images/blue.png" />
+                                          <Image url="@../../../Images/Dark%20Blue.jpg" />
                                        </image></ImageView>   
                                     <ImageView fx:id="seven0" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.rowIndex="0">
                                        <image>
-                                          <Image url="@../../../Images/blue.png" />
+                                          <Image url="@../../../Images/Dark%20Blue.jpg" />
                                        </image></ImageView>   
                                     <ImageView fx:id="six0" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.rowIndex="0">
                                        <image>
-                                          <Image url="@../../../Images/blue.png" />
+                                          <Image url="@../../../Images/Dark%20Blue.jpg" />
                                        </image></ImageView>   
                                     <ImageView fx:id="five0" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.rowIndex="0">
                                        <image>
-                                          <Image url="@../../../Images/blue.png" />
+                                          <Image url="@../../../Images/Dark%20Blue.jpg" />
                                        </image></ImageView>   
                                     <ImageView fx:id="four0" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="0">
                                        <image>
-                                          <Image url="@../../../Images/blue.png" />
+                                          <Image url="@../../../Images/Dark%20Blue.jpg" />
                                        </image></ImageView>   
                                     <ImageView fx:id="three0" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="0">
                                        <image>
-                                          <Image url="@../../../Images/blue.png" />
+                                          <Image url="@../../../Images/Dark%20Blue.jpg" />
                                        </image></ImageView>   
                                     <ImageView fx:id="two0" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="0">
                                        <image>
-                                          <Image url="@../../../Images/blue.png" />
+                                          <Image url="@../../../Images/Dark%20Blue.jpg" />
                                        </image></ImageView>   
                                     <ImageView fx:id="one0" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="0">
                                        <image>
-                                          <Image url="@../../../Images/blue.png" />
+                                          <Image url="@../../../Images/Dark%20Blue.jpg" />
                                        </image></ImageView>   
-                                    <ImageView fx:id="zero0" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                                    <ImageView fx:id="zero0" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../../../Images/blue.png" />
+                                          <Image url="@../../../Images/Dark%20Blue.jpg" />
                                        </image></ImageView>                                    
                                     <ImageView fx:id="eight1" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="8" GridPane.rowIndex="1">
                                        <image>
-                                          <Image url="@../../../Images/blue.png" />
+                                          <Image url="@../../../Images/Dark%20Blue.jpg" />
                                        </image></ImageView>   
                                     <ImageView fx:id="seven1" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.rowIndex="1">
                                        <image>
-                                          <Image url="@../../../Images/blue.png" />
+                                          <Image url="@../../../Images/Dark%20Blue.jpg" />
                                        </image></ImageView>   
                                     <ImageView fx:id="six1" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.rowIndex="1">
                                        <image>
-                                          <Image url="@../../../Images/blue.png" />
+                                          <Image url="@../../../Images/Dark%20Blue.jpg" />
                                        </image></ImageView>   
                                     <ImageView fx:id="five1" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.rowIndex="1">
                                        <image>
-                                          <Image url="@../../../Images/blue.png" />
+                                          <Image url="@../../../Images/Dark%20Blue.jpg" />
                                        </image></ImageView>   
                                     <ImageView fx:id="four1" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="1">
                                        <image>
-                                          <Image url="@../../../Images/blue.png" />
+                                          <Image url="@../../../Images/Dark%20Blue.jpg" />
                                        </image></ImageView>   
                                     <ImageView fx:id="three1" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="1">
                                        <image>
-                                          <Image url="@../../../Images/blue.png" />
+                                          <Image url="@../../../Images/Dark%20Blue.jpg" />
                                        </image></ImageView>   
                                     <ImageView fx:id="two1" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="1">
                                        <image>
-                                          <Image url="@../../../Images/blue.png" />
+                                          <Image url="@../../../Images/Dark%20Blue.jpg" />
                                        </image></ImageView>   
                                     <ImageView fx:id="one1" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                        <image>
-                                          <Image url="@../../../Images/blue.png" />
+                                          <Image url="@../../../Images/Dark%20Blue.jpg" />
                                        </image></ImageView>   
                                     <ImageView fx:id="zero1" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="0" GridPane.rowIndex="1">
                                        <image>
-                                          <Image url="@../../../Images/blue.png" />
+                                          <Image url="@../../../Images/Dark%20Blue.jpg" />
                                        </image></ImageView>                                    
                                     <ImageView fx:id="eight2" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="8" GridPane.rowIndex="2">
                                        <image>
-                                          <Image url="@../../../Images/blue.png" />
+                                          <Image url="@../../../Images/Dark%20Blue.jpg" />
                                        </image></ImageView>   
                                     <ImageView fx:id="seven2" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.rowIndex="2">
                                        <image>
-                                          <Image url="@../../../Images/blue.png" />
+                                          <Image url="@../../../Images/Dark%20Blue.jpg" />
                                        </image></ImageView>   
                                     <ImageView fx:id="six2" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.rowIndex="2">
                                        <image>
-                                          <Image url="@../../../Images/blue.png" />
+                                          <Image url="@../../../Images/Dark%20Blue.jpg" />
                                        </image></ImageView>   
                                     <ImageView fx:id="five2" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.rowIndex="2">
                                        <image>
-                                          <Image url="@../../../Images/blue.png" />
+                                          <Image url="@../../../Images/Dark%20Blue.jpg" />
                                        </image></ImageView>   
                                     <ImageView fx:id="four2" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="2">
                                        <image>
-                                          <Image url="@../../../Images/blue.png" />
+                                          <Image url="@../../../Images/Dark%20Blue.jpg" />
                                        </image></ImageView>   
                                     <ImageView fx:id="three2" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="2">
                                        <image>
-                                          <Image url="@../../../Images/blue.png" />
+                                          <Image url="@../../../Images/Dark%20Blue.jpg" />
                                        </image></ImageView>   
                                     <ImageView fx:id="two2" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="2">
                                        <image>
-                                          <Image url="@../../../Images/blue.png" />
+                                          <Image url="@../../../Images/Dark%20Blue.jpg" />
                                        </image></ImageView>   
                                     <ImageView fx:id="one2" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="2">
                                        <image>
-                                          <Image url="@../../../Images/blue.png" />
+                                          <Image url="@../../../Images/Dark%20Blue.jpg" />
                                        </image></ImageView>   
                                     <ImageView fx:id="zero2" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="0" GridPane.rowIndex="2">
                                        <image>
-                                          <Image url="@../../../Images/blue.png" />
+                                          <Image url="@../../../Images/Dark%20Blue.jpg" />
                                        </image></ImageView>                                    
                                     <ImageView fx:id="eight3" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="8" GridPane.rowIndex="3">
                                        <image>
-                                          <Image url="@../../../Images/blue.png" />
+                                          <Image url="@../../../Images/Dark%20Blue.jpg" />
                                        </image></ImageView>   
                                     <ImageView fx:id="seven3" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.rowIndex="3">
                                        <image>
-                                          <Image url="@../../../Images/blue.png" />
+                                          <Image url="@../../../Images/Dark%20Blue.jpg" />
                                        </image></ImageView>   
                                     <ImageView fx:id="six3" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.rowIndex="3">
                                        <image>
-                                          <Image url="@../../../Images/blue.png" />
+                                          <Image url="@../../../Images/Dark%20Blue.jpg" />
                                        </image></ImageView>   
                                     <ImageView fx:id="five3" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.rowIndex="3">
                                        <image>
-                                          <Image url="@../../../Images/blue.png" />
+                                          <Image url="@../../../Images/Dark%20Blue.jpg" />
                                        </image></ImageView>   
                                     <ImageView fx:id="four3" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="3">
                                        <image>
-                                          <Image url="@../../../Images/blue.png" />
+                                          <Image url="@../../../Images/Dark%20Blue.jpg" />
                                        </image></ImageView>   
                                     <ImageView fx:id="three3" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="3">
                                        <image>
-                                          <Image url="@../../../Images/blue.png" />
+                                          <Image url="@../../../Images/Dark%20Blue.jpg" />
                                        </image></ImageView>   
                                     <ImageView fx:id="two3" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="3">
                                        <image>
-                                          <Image url="@../../../Images/blue.png" />
+                                          <Image url="@../../../Images/Dark%20Blue.jpg" />
                                        </image></ImageView>   
                                     <ImageView fx:id="one3" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="3">
                                        <image>
-                                          <Image url="@../../../Images/blue.png" />
+                                          <Image url="@../../../Images/Dark%20Blue.jpg" />
                                        </image></ImageView>   
                                     <ImageView fx:id="zero3" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="0" GridPane.rowIndex="3">
                                        <image>
-                                          <Image url="@../../../Images/blue.png" />
+                                          <Image url="@../../../Images/Dark%20Blue.jpg" />
                                        </image></ImageView>                                    
                                     <ImageView fx:id="eight4" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="8" GridPane.rowIndex="4">
                                        <image>
-                                          <Image url="@../../../Images/blue.png" />
+                                          <Image url="@../../../Images/Dark%20Blue.jpg" />
                                        </image></ImageView>   
                                     <ImageView fx:id="seven4" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.rowIndex="4">
                                        <image>
-                                          <Image url="@../../../Images/blue.png" />
+                                          <Image url="@../../../Images/Dark%20Blue.jpg" />
                                        </image></ImageView>   
                                     <ImageView fx:id="six4" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.rowIndex="4">
                                        <image>
-                                          <Image url="@../../../Images/blue.png" />
+                                          <Image url="@../../../Images/Dark%20Blue.jpg" />
                                        </image></ImageView>   
                                     <ImageView fx:id="five4" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.rowIndex="4">
                                        <image>
-                                          <Image url="@../../../Images/blue.png" />
+                                          <Image url="@../../../Images/Dark%20Blue.jpg" />
                                        </image></ImageView>   
                                     <ImageView fx:id="four4" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="4">
                                        <image>
-                                          <Image url="@../../../Images/blue.png" />
+                                          <Image url="@../../../Images/Dark%20Blue.jpg" />
                                        </image></ImageView>   
                                     <ImageView fx:id="three4" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="4">
                                        <image>
-                                          <Image url="@../../../Images/blue.png" />
+                                          <Image url="@../../../Images/Dark%20Blue.jpg" />
                                        </image></ImageView>   
                                     <ImageView fx:id="two4" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="4">
                                        <image>
-                                          <Image url="@../../../Images/blue.png" />
+                                          <Image url="@../../../Images/Dark%20Blue.jpg" />
                                        </image></ImageView>   
                                     <ImageView fx:id="one4" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="4">
                                        <image>
-                                          <Image url="@../../../Images/blue.png" />
+                                          <Image url="@../../../Images/Dark%20Blue.jpg" />
                                        </image></ImageView>   
                                     <ImageView fx:id="zero4" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="0" GridPane.rowIndex="4">
                                        <image>
-                                          <Image url="@../../../Images/blue.png" />
+                                          <Image url="@../../../Images/Dark%20Blue.jpg" />
                                        </image></ImageView>                                    
                                     <ImageView fx:id="eight5" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="8" GridPane.rowIndex="5">
                                        <image>
-                                          <Image url="@../../../Images/blue.png" />
+                                          <Image url="@../../../Images/Dark%20Blue.jpg" />
                                        </image></ImageView>   
                                     <ImageView fx:id="seven5" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.rowIndex="5">
                                        <image>
-                                          <Image url="@../../../Images/blue.png" />
+                                          <Image url="@../../../Images/Dark%20Blue.jpg" />
                                        </image></ImageView>   
                                     <ImageView fx:id="six5" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.rowIndex="5">
                                        <image>
-                                          <Image url="@../../../Images/blue.png" />
+                                          <Image url="@../../../Images/Dark%20Blue.jpg" />
                                        </image></ImageView>   
                                     <ImageView fx:id="five5" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.rowIndex="5">
                                        <image>
-                                          <Image url="@../../../Images/blue.png" />
+                                          <Image url="@../../../Images/Dark%20Blue.jpg" />
                                        </image></ImageView>   
                                     <ImageView fx:id="four5" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="5">
                                        <image>
-                                          <Image url="@../../../Images/blue.png" />
+                                          <Image url="@../../../Images/Dark%20Blue.jpg" />
                                        </image></ImageView>   
                                     <ImageView fx:id="three5" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="5">
                                        <image>
-                                          <Image url="@../../../Images/blue.png" />
+                                          <Image url="@../../../Images/Dark%20Blue.jpg" />
                                        </image></ImageView>   
                                     <ImageView fx:id="two5" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="5">
                                        <image>
-                                          <Image url="@../../../Images/blue.png" />
+                                          <Image url="@../../../Images/Dark%20Blue.jpg" />
                                        </image></ImageView>   
                                     <ImageView fx:id="one5" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="5">
                                        <image>
-                                          <Image url="@../../../Images/blue.png" />
+                                          <Image url="@../../../Images/Dark%20Blue.jpg" />
                                        </image></ImageView>   
                                     <ImageView fx:id="zero5" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="0" GridPane.rowIndex="5">
                                        <image>
-                                          <Image url="@../../../Images/blue.png" />
+                                          <Image url="@../../../Images/Dark%20Blue.jpg" />
                                        </image></ImageView>                                    
                                     <ImageView fx:id="eight6" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="8" GridPane.rowIndex="6">
                                        <image>
-                                          <Image url="@../../../Images/blue.png" />
+                                          <Image url="@../../../Images/Dark%20Blue.jpg" />
                                        </image></ImageView>   
                                     <ImageView fx:id="seven6" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.rowIndex="6">
                                        <image>
-                                          <Image url="@../../../Images/blue.png" />
+                                          <Image url="@../../../Images/Dark%20Blue.jpg" />
                                        </image></ImageView>   
                                     <ImageView fx:id="six6" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.rowIndex="6">
                                        <image>
-                                          <Image url="@../../../Images/blue.png" />
+                                          <Image url="@../../../Images/Dark%20Blue.jpg" />
                                        </image></ImageView>   
                                     <ImageView fx:id="five6" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.rowIndex="6">
                                        <image>
-                                          <Image url="@../../../Images/blue.png" />
+                                          <Image url="@../../../Images/Dark%20Blue.jpg" />
                                        </image></ImageView>   
                                     <ImageView fx:id="four6" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="6">
                                        <image>
-                                          <Image url="@../../../Images/blue.png" />
+                                          <Image url="@../../../Images/Dark%20Blue.jpg" />
                                        </image></ImageView>   
                                     <ImageView fx:id="three6" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="6">
                                        <image>
-                                          <Image url="@../../../Images/blue.png" />
+                                          <Image url="@../../../Images/Dark%20Blue.jpg" />
                                        </image></ImageView>   
                                     <ImageView fx:id="two6" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="6">
                                        <image>
-                                          <Image url="@../../../Images/blue.png" />
+                                          <Image url="@../../../Images/Dark%20Blue.jpg" />
                                        </image></ImageView>   
                                     <ImageView fx:id="one6" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="6">
                                        <image>
-                                          <Image url="@../../../Images/blue.png" />
+                                          <Image url="@../../../Images/Dark%20Blue.jpg" />
                                        </image></ImageView>   
                                     <ImageView fx:id="zero6" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="0" GridPane.rowIndex="6">
                                        <image>
-                                          <Image url="@../../../Images/blue.png" />
+                                          <Image url="@../../../Images/Dark%20Blue.jpg" />
                                        </image></ImageView>                                    
                                     <ImageView fx:id="eight7" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="8" GridPane.rowIndex="7">
                                        <image>
-                                          <Image url="@../../../Images/blue.png" />
+                                          <Image url="@../../../Images/Dark%20Blue.jpg" />
                                        </image></ImageView>   
                                     <ImageView fx:id="seven7" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.rowIndex="7">
                                        <image>
-                                          <Image url="@../../../Images/blue.png" />
+                                          <Image url="@../../../Images/Dark%20Blue.jpg" />
                                        </image></ImageView>   
                                     <ImageView fx:id="six7" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.rowIndex="7">
                                        <image>
-                                          <Image url="@../../../Images/blue.png" />
+                                          <Image url="@../../../Images/Dark%20Blue.jpg" />
                                        </image></ImageView>   
                                     <ImageView fx:id="five7" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.rowIndex="7">
                                        <image>
-                                          <Image url="@../../../Images/blue.png" />
+                                          <Image url="@../../../Images/Dark%20Blue.jpg" />
                                        </image></ImageView>   
                                     <ImageView fx:id="four7" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="7">
                                        <image>
-                                          <Image url="@../../../Images/blue.png" />
+                                          <Image url="@../../../Images/Dark%20Blue.jpg" />
                                        </image></ImageView>   
                                     <ImageView fx:id="three7" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="7">
                                        <image>
-                                          <Image url="@../../../Images/blue.png" />
+                                          <Image url="@../../../Images/Dark%20Blue.jpg" />
                                        </image></ImageView>   
                                     <ImageView fx:id="two7" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="7">
                                        <image>
-                                          <Image url="@../../../Images/blue.png" />
+                                          <Image url="@../../../Images/Dark%20Blue.jpg" />
                                        </image></ImageView>   
                                     <ImageView fx:id="one7" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="7">
                                        <image>
-                                          <Image url="@../../../Images/blue.png" />
+                                          <Image url="@../../../Images/Dark%20Blue.jpg" />
                                        </image></ImageView>   
                                     <ImageView fx:id="zero7" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="0" GridPane.rowIndex="7">
                                        <image>
-                                          <Image url="@../../../Images/blue.png" />
+                                          <Image url="@../../../Images/Dark%20Blue.jpg" />
                                        </image></ImageView>                                    
                                     <ImageView fx:id="eight8" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="8" GridPane.rowIndex="8">
                                        <image>
-                                          <Image url="@../../../Images/blue.png" />
+                                          <Image url="@../../../Images/Dark%20Blue.jpg" />
                                        </image></ImageView>   
                                     <ImageView fx:id="seven8" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.rowIndex="8">
                                        <image>
-                                          <Image url="@../../../Images/blue.png" />
+                                          <Image url="@../../../Images/Dark%20Blue.jpg" />
                                        </image></ImageView>   
                                     <ImageView fx:id="six8" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.rowIndex="8">
                                        <image>
-                                          <Image url="@../../../Images/blue.png" />
+                                          <Image url="@../../../Images/Dark%20Blue.jpg" />
                                        </image></ImageView>   
                                     <ImageView fx:id="five8" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.rowIndex="8">
                                        <image>
-                                          <Image url="@../../../Images/blue.png" />
+                                          <Image url="@../../../Images/Dark%20Blue.jpg" />
                                        </image></ImageView>   
                                     <ImageView fx:id="four8" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="8">
                                        <image>
-                                          <Image url="@../../../Images/blue.png" />
+                                          <Image url="@../../../Images/Dark%20Blue.jpg" />
                                        </image></ImageView>   
                                     <ImageView fx:id="three8" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="8">
                                        <image>
-                                          <Image url="@../../../Images/blue.png" />
+                                          <Image url="@../../../Images/Dark%20Blue.jpg" />
                                        </image></ImageView>   
                                     <ImageView fx:id="two8" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="8">
                                        <image>
-                                          <Image url="@../../../Images/blue.png" />
+                                          <Image url="@../../../Images/Dark%20Blue.jpg" />
                                        </image></ImageView>   
                                     <ImageView fx:id="one8" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="8">
                                        <image>
-                                          <Image url="@../../../Images/blue.png" />
+                                          <Image url="@../../../Images/Dark%20Blue.jpg" />
                                        </image></ImageView>   
                                     <ImageView fx:id="zero8" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="0" GridPane.rowIndex="8">
                                        <image>
-                                          <Image url="@../../../Images/blue.png" />
+                                          <Image url="@../../../Images/Dark%20Blue.jpg" />
                                        </image></ImageView>                                    
                                     <ImageView fx:id="eight9" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="8" GridPane.rowIndex="9">
                                        <image>
-                                          <Image url="@../../../Images/blue.png" />
+                                          <Image url="@../../../Images/Dark%20Blue.jpg" />
                                        </image></ImageView>   
                                     <ImageView fx:id="seven9" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.rowIndex="9">
                                        <image>
-                                          <Image url="@../../../Images/blue.png" />
+                                          <Image url="@../../../Images/Dark%20Blue.jpg" />
                                        </image></ImageView>   
                                     <ImageView fx:id="six9" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.rowIndex="9">
                                        <image>
-                                          <Image url="@../../../Images/blue.png" />
+                                          <Image url="@../../../Images/Dark%20Blue.jpg" />
                                        </image></ImageView>   
                                     <ImageView fx:id="five9" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.rowIndex="9">
                                        <image>
-                                          <Image url="@../../../Images/blue.png" />
+                                          <Image url="@../../../Images/Dark%20Blue.jpg" />
                                        </image></ImageView>   
                                     <ImageView fx:id="four9" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="9">
                                        <image>
-                                          <Image url="@../../../Images/blue.png" />
+                                          <Image url="@../../../Images/Dark%20Blue.jpg" />
                                        </image></ImageView>   
                                     <ImageView fx:id="three9" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="9">
                                        <image>
-                                          <Image url="@../../../Images/blue.png" />
+                                          <Image url="@../../../Images/Dark%20Blue.jpg" />
                                        </image></ImageView>   
                                     <ImageView fx:id="two9" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="9">
                                        <image>
-                                          <Image url="@../../../Images/blue.png" />
+                                          <Image url="@../../../Images/Dark%20Blue.jpg" />
                                        </image></ImageView>   
                                     <ImageView fx:id="one9" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="9">
                                        <image>
-                                          <Image url="@../../../Images/blue.png" />
+                                          <Image url="@../../../Images/Dark%20Blue.jpg" />
                                        </image></ImageView>   
                                     <ImageView fx:id="zero9" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="0" GridPane.rowIndex="9">
                                        <image>
-                                          <Image url="@../../../Images/blue.png" />
+                                          <Image url="@../../../Images/Dark%20Blue.jpg" />
                                        </image></ImageView>                                    
                                     <ImageView fx:id="eight10" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="8" GridPane.rowIndex="10">
                                        <image>
-                                          <Image url="@../../../Images/blue.png" />
+                                          <Image url="@../../../Images/Dark%20Blue.jpg" />
                                        </image></ImageView>   
                                     <ImageView fx:id="seven10" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.rowIndex="10">
                                        <image>
-                                          <Image url="@../../../Images/blue.png" />
+                                          <Image url="@../../../Images/Dark%20Blue.jpg" />
                                        </image></ImageView>   
                                     <ImageView fx:id="six10" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.rowIndex="10">
                                        <image>
-                                          <Image url="@../../../Images/blue.png" />
+                                          <Image url="@../../../Images/Dark%20Blue.jpg" />
                                        </image></ImageView>   
                                     <ImageView fx:id="five10" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.rowIndex="10">
                                        <image>
-                                          <Image url="@../../../Images/blue.png" />
+                                          <Image url="@../../../Images/Dark%20Blue.jpg" />
                                        </image></ImageView>   
                                     <ImageView fx:id="four10" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="10">
                                        <image>
-                                          <Image url="@../../../Images/blue.png" />
+                                          <Image url="@../../../Images/Dark%20Blue.jpg" />
                                        </image></ImageView>   
                                     <ImageView fx:id="three10" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="10">
                                        <image>
-                                          <Image url="@../../../Images/blue.png" />
+                                          <Image url="@../../../Images/Dark%20Blue.jpg" />
                                        </image></ImageView>   
                                     <ImageView fx:id="two10" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="10">
                                        <image>
-                                          <Image url="@../../../Images/blue.png" />
+                                          <Image url="@../../../Images/Dark%20Blue.jpg" />
                                        </image></ImageView>   
                                     <ImageView fx:id="one10" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="10">
                                        <image>
-                                          <Image url="@../../../Images/blue.png" />
+                                          <Image url="@../../../Images/Dark%20Blue.jpg" />
                                        </image></ImageView>   
                                     <ImageView fx:id="zero10" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="0" GridPane.rowIndex="10">
                                        <image>
-                                          <Image url="@../../../Images/blue.png" />
+                                          <Image url="@../../../Images/Dark%20Blue.jpg" />
                                        </image></ImageView>                                    
                                     <ImageView fx:id="eight11" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="8" GridPane.rowIndex="11">
                                        <image>
-                                          <Image url="@../../../Images/blue.png" />
+                                          <Image url="@../../../Images/Dark%20Blue.jpg" />
                                        </image></ImageView>   
                                     <ImageView fx:id="seven11" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.rowIndex="11">
                                        <image>
-                                          <Image url="@../../../Images/blue.png" />
+                                          <Image url="@../../../Images/Dark%20Blue.jpg" />
                                        </image></ImageView>   
                                     <ImageView fx:id="six11" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.rowIndex="11">
                                        <image>
-                                          <Image url="@../../../Images/blue.png" />
+                                          <Image url="@../../../Images/Dark%20Blue.jpg" />
                                        </image></ImageView>   
                                     <ImageView fx:id="five11" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.rowIndex="11">
                                        <image>
-                                          <Image url="@../../../Images/blue.png" />
+                                          <Image url="@../../../Images/Dark%20Blue.jpg" />
                                        </image></ImageView>   
                                     <ImageView fx:id="four11" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="11">
                                        <image>
-                                          <Image url="@../../../Images/blue.png" />
+                                          <Image url="@../../../Images/Dark%20Blue.jpg" />
                                        </image></ImageView>   
                                     <ImageView fx:id="three11" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="11">
                                        <image>
-                                          <Image url="@../../../Images/blue.png" />
+                                          <Image url="@../../../Images/Dark%20Blue.jpg" />
                                        </image></ImageView>   
                                     <ImageView fx:id="two11" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="11">
                                        <image>
-                                          <Image url="@../../../Images/blue.png" />
+                                          <Image url="@../../../Images/Dark%20Blue.jpg" />
                                        </image></ImageView>   
                                     <ImageView fx:id="one11" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="11">
                                        <image>
-                                          <Image url="@../../../Images/blue.png" />
+                                          <Image url="@../../../Images/Dark%20Blue.jpg" />
                                        </image></ImageView>   
                                     <ImageView fx:id="zero11" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="0" GridPane.rowIndex="11">
                                        <image>
-                                          <Image url="@../../../Images/blue.png" />
+                                          <Image url="@../../../Images/Dark%20Blue.jpg" />
                                        </image></ImageView>                                
                                  </children>
                               </GridPane>
