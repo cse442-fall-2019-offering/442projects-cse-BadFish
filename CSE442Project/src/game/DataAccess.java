@@ -24,7 +24,7 @@ public class DataAccess {
 		// Used to open a new Data Storing File to that will be used to Store Program
 		// Data
 
-		FilePath = "/Users/vickizhang/git/442projects-cse-BadFish/CSE442Project/data/ProgramData.txt";
+		FilePath = "C:\\Users\\yongh\\git\\442projects-cse-BadFish\\CSE442Project\\data\\ProgramData.txt";
 
 		// Defines fileReader
 		try {
