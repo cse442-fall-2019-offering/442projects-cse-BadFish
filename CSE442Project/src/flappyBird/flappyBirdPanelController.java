@@ -8,6 +8,7 @@ import javafx.application.Application;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 
@@ -65,7 +66,6 @@ public class flappyBirdPanelController implements Initializable {
 		instruction.getItems().add("end");
 		instruction.getItems().add("set speed to 10");
 		instruction.setValue("(none)");
-		
 	}
 
     
