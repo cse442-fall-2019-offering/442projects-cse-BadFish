@@ -439,6 +439,7 @@ public class StackerGameController implements Initializable {
         	public void handle(Event event) {
         		grid[0][2].setVisible(false);
         		grid[0][7].setVisible(true);
+        		instruction.setText("show1:");
 //        		new KeyValue(grid[0][2].imageProperty(), darkBlue);
 //        		new KeyValue(grid[0][7].imageProperty(), darkBlue);
         	}});
@@ -446,6 +447,8 @@ public class StackerGameController implements Initializable {
         	public void handle(Event event) {
         		grid[0][3].setVisible(false);
         		grid[0][8].setVisible(true);
+        		instruction.setText("show2:");
+
         	}});
 		KeyFrame KF3 = new KeyFrame(Duration.seconds(1), new EventHandler() {
         	public void handle(Event event) {
