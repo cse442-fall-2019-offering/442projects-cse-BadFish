@@ -462,23 +462,23 @@
                                        </image></ImageView>   
                                     <ImageView fx:id="six11" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.rowIndex="11">
                                        <image>
-                                          <Image url="@../../../Images/Neon%20Blue.jpg" />
+                                          <Image url="@../../../Images/Dark%20Blue.jpg" />
                                        </image></ImageView>   
                                     <ImageView fx:id="five11" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.rowIndex="11">
                                        <image>
-                                          <Image url="@../../../Images/Neon%20Blue.jpg" />
+                                          <Image url="@../../../Images/Dark%20Blue.jpg" />
                                        </image></ImageView>   
                                     <ImageView fx:id="four11" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="11">
                                        <image>
-                                          <Image url="@../../../Images/Neon%20Blue.jpg" />
+                                          <Image url="@../../../Images/Dark%20Blue.jpg" />
                                        </image></ImageView>   
                                     <ImageView fx:id="three11" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="11">
                                        <image>
-                                          <Image url="@../../../Images/Neon%20Blue.jpg" />
+                                          <Image url="@../../../Images/Dark%20Blue.jpg" />
                                        </image></ImageView>   
                                     <ImageView fx:id="two11" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="11">
                                        <image>
-                                          <Image url="@../../../Images/Neon%20Blue.jpg" />
+                                          <Image url="@../../../Images/Dark%20Blue.jpg" />
                                        </image></ImageView>   
                                     <ImageView fx:id="one11" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="11">
                                        <image>
