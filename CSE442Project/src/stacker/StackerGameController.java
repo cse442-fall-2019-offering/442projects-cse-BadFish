@@ -513,7 +513,7 @@ public class StackerGameController implements Initializable {
 			}
 		}
 
-		for(int i=2; i<5; i++) {
+		for(int i=0; i<5; i++) {
 			grid[layer][i].setVisible(true);
 			check[i] = true;
 		}
@@ -589,14 +589,14 @@ public class StackerGameController implements Initializable {
 		
 		int duration = 1;
 		headTail();
-		for(int i = 0; i<(9-(tail-head+1))*2; i++) {
+        timeline = new Timeline();
+		timeline.setCycleCount(Timeline.INDEFINITE);
+		for(int i = 0; i<(9-(tail-head+1)); i++) {
 			KeyFrame KF = new KeyFrame(Duration.seconds(duration), new EventHandler() {
 	        	public void handle(Event event) {
-	        		while(tail+1+i<=8) {
-		        		grid[layer][head+i].setVisible(false);
-		        		grid[layer][tail+1+i].setVisible(true);
-	        		}
-	        		
+		        	grid[layer][i].setVisible(false);
+		        	grid[layer][tail-head+1+i].setVisible(true);
+	        		while(head)
 	        	}});
 		}
 		
