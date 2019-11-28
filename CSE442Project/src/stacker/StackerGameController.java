@@ -1,10 +1,7 @@
 package stacker;
 
-import java.io.File;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.ResourceBundle;
-import java.util.concurrent.TimeUnit;
 
 import javafx.event.ActionEvent;
 import javafx.event.Event;
@@ -13,29 +10,12 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.stage.Stage;
 import javafx.util.Duration;
 import javafx.animation.*;
 
 public class StackerGameController implements Initializable {
 	
-	private boolean playable = false;
-	
-	private boolean gameStart = false;
-	
-	private boolean stopper = false;
-	
-	private int currentRow = 0;
-	
-	private int blockCount = 3;
-
-	private Image darkBlue = new Image((new File("C:\\Users\\tebas\\git\\442projects-cse-BadFish\\CSE442Project\\Images\\Dark Blue.jpg")).toURI().toString());
-	
-	private Image neonBlue = new Image((new File("C:\\Users\\tebas\\git\\442projects-cse-BadFish\\CSE442Project\\Images\\Neon Blue.jpg")).toURI().toString());
-	
-	private Timeline TL = new Timeline();
 	
 	@FXML
 	private Button hitButton;
@@ -370,21 +350,23 @@ public class StackerGameController implements Initializable {
 	@FXML
 	private ImageView eight11;
 	
-	private static final Integer STARTTIME = 0;
     private Timeline timeline;
     private ImageView grid[][] = new ImageView[12][9];
 	private Integer layer = 0;
     private Boolean check[] = new Boolean[9];
-    private Integer head = -1;
-    private Integer tail = -1;
+    private Boolean base[] = new Boolean[9];
+    private Integer head;
+    private Integer tail;
 
     
 	@Override
-	public void initialize(URL location, ResourceBundle resources) {
+	public void initialize(URL location, ResourceBundle resources) {   
+		
         timeline = new Timeline();
-        
+
         for(int i=0; i<check.length; i++) {
         	check[i] = false;
+        	base [i] = true;
         }
 	
 		instruction.setText("Instructions Go Here:");
@@ -517,57 +499,8 @@ public class StackerGameController implements Initializable {
 			grid[layer][i].setVisible(true);
 			check[i] = true;
 		}
-		
-		headTail();
-		
-		timeline.setCycleCount(Timeline.INDEFINITE);
-		KeyFrame KF1 = new KeyFrame(Duration.seconds(1), new EventHandler() {
-        	public void handle(Event event) {
-        		grid[layer][2].setVisible(false);
-        		grid[layer][7].setVisible(true);
-        	}});
-		KeyFrame KF2 = new KeyFrame(Duration.seconds(2), new EventHandler() {
-        	public void handle(Event event) {
-        		
-        		grid[layer][3].setVisible(false);
-        		grid[layer][8].setVisible(true);
-        	}});
-		KeyFrame KF3 = new KeyFrame(Duration.seconds(3), new EventHandler() {
-        	public void handle(Event event) {
-        		grid[layer][8].setVisible(false);
-        		grid[layer][3].setVisible(true);
-        	}});
-		KeyFrame KF4 = new KeyFrame(Duration.seconds(4), new EventHandler() {
-        	public void handle(Event event) {
-        		grid[layer][7].setVisible(false);
-        		grid[layer][2].setVisible(true);
-        	}});
-		KeyFrame KF5 = new KeyFrame(Duration.seconds(5), new EventHandler() {
-        	public void handle(Event event) {
-        		grid[layer][6].setVisible(false);
-        		grid[layer][1].setVisible(true);
-        	}});
-		KeyFrame KF6 = new KeyFrame(Duration.seconds(6), new EventHandler() {
-        	public void handle(Event event) {
-        		grid[layer][5].setVisible(false);
-        		grid[layer][0].setVisible(true);
-        	}});
-		KeyFrame KF7 = new KeyFrame(Duration.seconds(7), new EventHandler() {
-        	public void handle(Event event) {
-        		grid[layer][0].setVisible(false);
-        		grid[layer][5].setVisible(true);
-        	}}); 
-		KeyFrame KF8 = new KeyFrame(Duration.seconds(8), new EventHandler() {
-        	public void handle(Event event) {
-        		grid[layer][1].setVisible(false);
-        		grid[layer][6].setVisible(true);
-        	}});
 
-		timeline.getKeyFrames().addAll(KF1,KF2,KF3,KF4,KF5,KF6,KF7,KF8);
-
-        timeline.playFromStart();
-		move();
-		
+		move(5);
 		
 	}
 	
@@ -577,44 +510,493 @@ public class StackerGameController implements Initializable {
 	public void buttonFunction(ActionEvent event) throws NullPointerException,IndexOutOfBoundsException,InterruptedException {
 		timeline.stop();
 		layer++;
-		head = -1;
-		tail = -1;
-		move();
-        
+		boolean first = true;
+		for(int i=0; i<base.length; i++) {
+			if(first&&base[i]&&check[i]) {
+				head = i;
+				System.out.println(head+"h");
+				first = false;
+			}
+			if(base[i]&&check[i]) {
+				tail = i;
+				System.out.println(tail);
+			}
+		}
+		
+		for(int i=0; i<base.length;i++) {
+			if(check[i]) {
+				base[i]=true;
+			}
+			else {
+				base[i]=false;
+			}
+		}
+		System.out.println(head+"h2");
+		System.out.println(tail+"t1");
+		move(tail-head+1);
+
 
 
     }
 	
-	public void move() {
-		
-		int duration = 1;
-		headTail();
+	public void move(int length) {
+
         timeline = new Timeline();
 		timeline.setCycleCount(Timeline.INDEFINITE);
-		for(int i = 0; i<(9-(tail-head+1)); i++) {
-			KeyFrame KF = new KeyFrame(Duration.seconds(duration), new EventHandler() {
-	        	public void handle(Event event) {
-		        	grid[layer][i].setVisible(false);
-		        	grid[layer][tail-head+1+i].setVisible(true);
-	        		while(head)
-	        	}});
-		}
-		
-		timeline.getKeyFrames().addAll(KF1,KF2,KF3,KF4,KF5,KF6,KF7,KF8);
 
-       
-		timeline.playFromStart();
+		for(int i=0;i<length;i++) {
+			grid[layer][i].setVisible(true);
+		}
+		if(length==5) {
+			KeyFrame KF1 = new KeyFrame(Duration.seconds(0.5), new EventHandler() {
+	        	public void handle(Event event) {
+	        		grid[layer][0].setVisible(false);
+	        		check[0] = false;
+	        		grid[layer][5].setVisible(true);
+	        		check[5] = true;
+	        	}});
+			KeyFrame KF2 = new KeyFrame(Duration.seconds(1), new EventHandler() {
+	        	public void handle(Event event) {        		
+	        		grid[layer][1].setVisible(false);
+	        		check[1] = false;
+	        		grid[layer][6].setVisible(true);
+	        		check[6] = true;
+	        	}});
+			KeyFrame KF3 = new KeyFrame(Duration.seconds(1.5), new EventHandler() {
+	        	public void handle(Event event) {
+	        		grid[layer][2].setVisible(false);
+	        		check[2] = false;
+	        		grid[layer][7].setVisible(true);
+	        		check[7] = true;
+	        	}});
+			KeyFrame KF4 = new KeyFrame(Duration.seconds(2), new EventHandler() {
+	        	public void handle(Event event) {
+	        		grid[layer][3].setVisible(false);
+	        		check[3] = false;
+	        		grid[layer][8].setVisible(true);
+	        		check[8] = true;
+	        	}});
+			KeyFrame KF5 = new KeyFrame(Duration.seconds(2.5), new EventHandler() {
+	        	public void handle(Event event) {
+	        		grid[layer][8].setVisible(false);
+	        		check[8] = false;
+	        		grid[layer][3].setVisible(true);
+	        		check[3] = true;
+	        	}});
+			KeyFrame KF6 = new KeyFrame(Duration.seconds(3), new EventHandler() {
+	        	public void handle(Event event) {
+	        		grid[layer][7].setVisible(false);
+	        		check[7] = false;
+	        		grid[layer][2].setVisible(true);
+	        		check[2] = true;
+	        	}});
+			KeyFrame KF7 = new KeyFrame(Duration.seconds(3.5), new EventHandler() {
+	        	public void handle(Event event) {
+	        		grid[layer][6].setVisible(false);
+	        		check[6] = false;
+	        		grid[layer][1].setVisible(true);
+	        		check[1] = true;
+	        	}}); 
+			KeyFrame KF8 = new KeyFrame(Duration.seconds(4), new EventHandler() {
+	        	public void handle(Event event) {
+	        		grid[layer][5].setVisible(false);
+	        		check[5] = false;
+	        		grid[layer][0].setVisible(true);
+	        		check[0] = true;
+	        	}});
+
+			timeline.getKeyFrames().addAll(KF1,KF2,KF3,KF4,KF5,KF6,KF7,KF8);
+			timeline.playFromStart();
+		}
+		else if(length==4) {
+
+			KeyFrame KF1 = new KeyFrame(Duration.seconds(0.5), new EventHandler() {
+	        	public void handle(Event event) {
+	        		grid[layer][0].setVisible(false);
+	        		check[0] = false;
+	        		grid[layer][4].setVisible(true);
+	        		check[4] = true;
+	        	}});
+			KeyFrame KF2 = new KeyFrame(Duration.seconds(1), new EventHandler() {
+	        	public void handle(Event event) {        		
+	        		grid[layer][1].setVisible(false);
+	        		check[1] = false;
+	        		grid[layer][5].setVisible(true);
+	        		check[5] = true;
+	        	}});
+			KeyFrame KF3 = new KeyFrame(Duration.seconds(1.5), new EventHandler() {
+	        	public void handle(Event event) {
+	        		grid[layer][2].setVisible(false);
+	        		check[2] = false;
+	        		grid[layer][6].setVisible(true);
+	        		check[6] = true;
+	        	}});
+			KeyFrame KF4 = new KeyFrame(Duration.seconds(2), new EventHandler() {
+	        	public void handle(Event event) {
+	        		grid[layer][3].setVisible(false);
+	        		check[3] = false;
+	        		grid[layer][7].setVisible(true);
+	        		check[7] = true;
+	        	}});
+			KeyFrame KF5 = new KeyFrame(Duration.seconds(2.5), new EventHandler() {
+	        	public void handle(Event event) {
+	        		grid[layer][4].setVisible(false);
+	        		check[4] = false;
+	        		grid[layer][8].setVisible(true);
+	        		check[8] = true;
+	        	}});
+			KeyFrame KF6 = new KeyFrame(Duration.seconds(3), new EventHandler() {
+	        	public void handle(Event event) {
+	        		grid[layer][8].setVisible(false);
+	        		check[8] = false;
+	        		grid[layer][4].setVisible(true);
+	        		check[4] = true;
+	        	}});
+			KeyFrame KF7 = new KeyFrame(Duration.seconds(3.5), new EventHandler() {
+	        	public void handle(Event event) {
+	        		grid[layer][7].setVisible(false);
+	        		check[7] = false;
+	        		grid[layer][3].setVisible(true);
+	        		check[3] = true;
+	        	}});
+			KeyFrame KF8 = new KeyFrame(Duration.seconds(4), new EventHandler() {
+	        	public void handle(Event event) {
+	        		grid[layer][6].setVisible(false);
+	        		check[6] = false;
+	        		grid[layer][2].setVisible(true);
+	        		check[2] = true;
+	        	}});
+			KeyFrame KF9 = new KeyFrame(Duration.seconds(4.5), new EventHandler() {
+	        	public void handle(Event event) {
+	        		grid[layer][5].setVisible(false);
+	        		check[5] = false;
+	        		grid[layer][1].setVisible(true);
+	        		check[1] = true;
+	        	}}); 
+			KeyFrame KF10 = new KeyFrame(Duration.seconds(5), new EventHandler() {
+	        	public void handle(Event event) {
+	        		grid[layer][4].setVisible(false);
+	        		check[4] = false;
+	        		grid[layer][0].setVisible(true);
+	        		check[0] = true;
+	        	}});
+
+			timeline.getKeyFrames().addAll(KF1,KF2,KF3,KF4,KF5,KF6,KF7,KF8,KF9,KF10);
+			timeline.playFromStart();
+		}
+		else if(length==3) {
+
+			KeyFrame KF1 = new KeyFrame(Duration.seconds(0.5), new EventHandler() {
+	        	public void handle(Event event) {
+	        		grid[layer][0].setVisible(false);
+	        		check[0] = false;
+	        		grid[layer][3].setVisible(true);
+	        		check[3] = true;
+	        	}});
+			KeyFrame KF2 = new KeyFrame(Duration.seconds(1), new EventHandler() {
+	        	public void handle(Event event) {        		
+	        		grid[layer][1].setVisible(false);
+	        		check[1] = false;
+	        		grid[layer][4].setVisible(true);
+	        		check[4] = true;
+	        	}});
+			KeyFrame KF3 = new KeyFrame(Duration.seconds(1.5), new EventHandler() {
+	        	public void handle(Event event) {
+	        		grid[layer][2].setVisible(false);
+	        		check[2] = false;
+	        		grid[layer][5].setVisible(true);
+	        		check[5] = true;
+	        	}});
+			KeyFrame KF4 = new KeyFrame(Duration.seconds(2), new EventHandler() {
+	        	public void handle(Event event) {
+	        		grid[layer][3].setVisible(false);
+	        		check[3] = false;
+	        		grid[layer][6].setVisible(true);
+	        		check[6] = true;
+	        	}});
+			KeyFrame KF5 = new KeyFrame(Duration.seconds(2.5), new EventHandler() {
+	        	public void handle(Event event) {
+	        		grid[layer][4].setVisible(false);
+	        		check[4] = false;
+	        		grid[layer][7].setVisible(true);
+	        		check[7] = true;
+	        	}});
+			KeyFrame KF6 = new KeyFrame(Duration.seconds(3), new EventHandler() {
+	        	public void handle(Event event) {
+	        		grid[layer][5].setVisible(false);
+	        		check[5] = false;
+	        		grid[layer][8].setVisible(true);
+	        		check[8] = true;
+	        	}});
+			KeyFrame KF7 = new KeyFrame(Duration.seconds(3.5), new EventHandler() {
+	        	public void handle(Event event) {
+	        		grid[layer][8].setVisible(false);
+	        		check[8] = false;
+	        		grid[layer][5].setVisible(true);
+	        		check[5] = true;
+	        	}});
+			KeyFrame KF8 = new KeyFrame(Duration.seconds(4), new EventHandler() {
+	        	public void handle(Event event) {
+	        		grid[layer][7].setVisible(false);
+	        		check[7] = false;
+	        		grid[layer][4].setVisible(true);
+	        		check[4] = true;
+	        	}});
+			KeyFrame KF9 = new KeyFrame(Duration.seconds(4.5), new EventHandler() {
+	        	public void handle(Event event) {
+	        		grid[layer][6].setVisible(false);
+	        		check[6] = false;
+	        		grid[layer][3].setVisible(true);
+	        		check[3] = true;
+	        	}});
+			KeyFrame KF10 = new KeyFrame(Duration.seconds(5), new EventHandler() {
+	        	public void handle(Event event) {
+	        		grid[layer][5].setVisible(false);
+	        		check[5] = false;
+	        		grid[layer][2].setVisible(true);
+	        		check[2] = true;
+	        	}});
+			KeyFrame KF11 = new KeyFrame(Duration.seconds(5.5), new EventHandler() {
+	        	public void handle(Event event) {
+	        		grid[layer][4].setVisible(false);
+	        		check[4] = false;
+	        		grid[layer][1].setVisible(true);
+	        		check[1] = true;
+	        	}}); 
+			KeyFrame KF12 = new KeyFrame(Duration.seconds(6), new EventHandler() {
+	        	public void handle(Event event) {
+	        		grid[layer][3].setVisible(false);
+	        		check[3] = false;
+	        		grid[layer][0].setVisible(true);
+	        		check[0] = true;
+	        	}});
+
+			timeline.getKeyFrames().addAll(KF1,KF2,KF3,KF4,KF5,KF6,KF7,KF8,KF9,KF10,KF11,KF12);
+			timeline.playFromStart();
+		}
+		else if(length==2) {
+
+			KeyFrame KF1 = new KeyFrame(Duration.seconds(0.5), new EventHandler() {
+	        	public void handle(Event event) {
+	        		grid[layer][0].setVisible(false);
+	        		check[0] = false;
+	        		grid[layer][2].setVisible(true);
+	        		check[2] = true;
+	        	}});
+			KeyFrame KF2 = new KeyFrame(Duration.seconds(1), new EventHandler() {
+	        	public void handle(Event event) {        		
+	        		grid[layer][1].setVisible(false);
+	        		check[1] = false;
+	        		grid[layer][3].setVisible(true);
+	        		check[3] = true;
+	        	}});
+			KeyFrame KF3 = new KeyFrame(Duration.seconds(1.5), new EventHandler() {
+	        	public void handle(Event event) {
+	        		grid[layer][2].setVisible(false);
+	        		check[2] = false;
+	        		grid[layer][4].setVisible(true);
+	        		check[4] = true;
+	        	}});
+			KeyFrame KF4 = new KeyFrame(Duration.seconds(2), new EventHandler() {
+	        	public void handle(Event event) {
+	        		grid[layer][3].setVisible(false);
+	        		check[3] = false;
+	        		grid[layer][5].setVisible(true);
+	        		check[5] = true;
+	        	}});
+			KeyFrame KF5 = new KeyFrame(Duration.seconds(2.5), new EventHandler() {
+	        	public void handle(Event event) {
+	        		grid[layer][4].setVisible(false);
+	        		check[4] = false;
+	        		grid[layer][6].setVisible(true);
+	        		check[6] = true;
+	        	}});
+			KeyFrame KF6 = new KeyFrame(Duration.seconds(3), new EventHandler() {
+	        	public void handle(Event event) {
+	        		grid[layer][5].setVisible(false);
+	        		check[5] = false;
+	        		grid[layer][7].setVisible(true);
+	        		check[7] = true;
+	        	}});
+			KeyFrame KF7 = new KeyFrame(Duration.seconds(3.5), new EventHandler() {
+	        	public void handle(Event event) {
+	        		grid[layer][6].setVisible(false);
+	        		check[6] = false;
+	        		grid[layer][8].setVisible(true);
+	        		check[8] = true;
+	        	}});
+			KeyFrame KF8 = new KeyFrame(Duration.seconds(4), new EventHandler() {
+	        	public void handle(Event event) {
+	        		grid[layer][8].setVisible(false);
+	        		check[8] = false;
+	        		grid[layer][6].setVisible(true);
+	        		check[6] = true;
+	        	}});
+			KeyFrame KF9 = new KeyFrame(Duration.seconds(4.5), new EventHandler() {
+	        	public void handle(Event event) {
+	        		grid[layer][7].setVisible(false);
+	        		check[7] = false;
+	        		grid[layer][5].setVisible(true);
+	        		check[5] = true;
+	        	}});
+			KeyFrame KF10 = new KeyFrame(Duration.seconds(5), new EventHandler() {
+	        	public void handle(Event event) {
+	        		grid[layer][6].setVisible(false);
+	        		check[6] = false;
+	        		grid[layer][4].setVisible(true);
+	        		check[4] = true;
+	        	}});
+			KeyFrame KF11 = new KeyFrame(Duration.seconds(5.5), new EventHandler() {
+	        	public void handle(Event event) {
+	        		grid[layer][5].setVisible(false);
+	        		check[5] = false;
+	        		grid[layer][3].setVisible(true);
+	        		check[3] = true;
+	        	}}); 
+			KeyFrame KF12 = new KeyFrame(Duration.seconds(6), new EventHandler() {
+	        	public void handle(Event event) {
+	        		grid[layer][4].setVisible(false);
+	        		check[4] = false;
+	        		grid[layer][2].setVisible(true);
+	        		check[2] = true;
+	        	}});
+			KeyFrame KF13 = new KeyFrame(Duration.seconds(6.5), new EventHandler() {
+	        	public void handle(Event event) {
+	        		grid[layer][3].setVisible(false);
+	        		check[3] = false;
+	        		grid[layer][1].setVisible(true);
+	        		check[1] = true;
+	        	}});
+			KeyFrame KF14 = new KeyFrame(Duration.seconds(7), new EventHandler() {
+	        	public void handle(Event event) {
+	        		grid[layer][2].setVisible(false);
+	        		check[2] = false;
+	        		grid[layer][0].setVisible(true);
+	        		check[0] = true;
+	        	}});
+
+			timeline.getKeyFrames().addAll(KF1,KF2,KF3,KF4,KF5,KF6,KF7,KF8,KF9,KF10,KF11,KF12,KF13,KF14);
+			timeline.playFromStart();
+		}
+		else if(length==1) {
+
+			KeyFrame KF1 = new KeyFrame(Duration.seconds(0.5), new EventHandler() {
+	        	public void handle(Event event) {
+	        		grid[layer][0].setVisible(false);
+	        		check[0] = false;
+	        		grid[layer][1].setVisible(true);
+	        		check[1] = true;
+	        	}});
+			KeyFrame KF2 = new KeyFrame(Duration.seconds(1), new EventHandler() {
+	        	public void handle(Event event) {        		
+	        		grid[layer][1].setVisible(false);
+	        		check[1] = false;
+	        		grid[layer][2].setVisible(true);
+	        		check[2] = true;
+	        	}});
+			KeyFrame KF3 = new KeyFrame(Duration.seconds(1.5), new EventHandler() {
+	        	public void handle(Event event) {
+	        		grid[layer][2].setVisible(false);
+	        		check[2] = false;
+	        		grid[layer][3].setVisible(true);
+	        		check[3] = true;
+	        	}});
+			KeyFrame KF4 = new KeyFrame(Duration.seconds(2), new EventHandler() {
+	        	public void handle(Event event) {
+	        		grid[layer][3].setVisible(false);
+	        		check[3] = false;
+	        		grid[layer][4].setVisible(true);
+	        		check[4] = true;
+	        	}});
+			KeyFrame KF5 = new KeyFrame(Duration.seconds(2.5), new EventHandler() {
+	        	public void handle(Event event) {
+	        		grid[layer][4].setVisible(false);
+	        		check[4] = false;
+	        		grid[layer][5].setVisible(true);
+	        		check[5] = true;
+	        	}});
+			KeyFrame KF6 = new KeyFrame(Duration.seconds(3), new EventHandler() {
+	        	public void handle(Event event) {
+	        		grid[layer][5].setVisible(false);
+	        		check[5] = false;
+	        		grid[layer][6].setVisible(true);
+	        		check[6] = true;
+	        	}});
+			KeyFrame KF7 = new KeyFrame(Duration.seconds(3.5), new EventHandler() {
+	        	public void handle(Event event) {
+	        		grid[layer][6].setVisible(false);
+	        		check[6] = false;
+	        		grid[layer][7].setVisible(true);
+	        		check[7] = true;
+	        	}});
+			KeyFrame KF8 = new KeyFrame(Duration.seconds(4), new EventHandler() {
+	        	public void handle(Event event) {
+	        		grid[layer][7].setVisible(false);
+	        		check[7] = false;
+	        		grid[layer][8].setVisible(true);
+	        		check[8] = true;
+	        	}});
+			KeyFrame KF9 = new KeyFrame(Duration.seconds(4.5), new EventHandler() {
+	        	public void handle(Event event) {
+	        		grid[layer][8].setVisible(false);
+	        		check[8] = false;
+	        		grid[layer][7].setVisible(true);
+	        		check[7] = true;
+	        	}});
+			KeyFrame KF10 = new KeyFrame(Duration.seconds(5), new EventHandler() {
+	        	public void handle(Event event) {
+	        		grid[layer][7].setVisible(false);
+	        		check[7] = false;
+	        		grid[layer][6].setVisible(true);
+	        		check[6] = true;
+	        	}});
+			KeyFrame KF11 = new KeyFrame(Duration.seconds(5.5), new EventHandler() {
+	        	public void handle(Event event) {
+	        		grid[layer][6].setVisible(false);
+	        		check[6] = false;
+	        		grid[layer][5].setVisible(true);
+	        		check[5] = true;
+	        	}}); 
+			KeyFrame KF12 = new KeyFrame(Duration.seconds(6), new EventHandler() {
+	        	public void handle(Event event) {
+	        		grid[layer][5].setVisible(false);
+	        		check[5] = false;
+	        		grid[layer][4].setVisible(true);
+	        		check[4] = true;
+	        	}});
+			KeyFrame KF13 = new KeyFrame(Duration.seconds(6.5), new EventHandler() {
+	        	public void handle(Event event) {
+	        		grid[layer][4].setVisible(false);
+	        		check[4] = false;
+	        		grid[layer][3].setVisible(true);
+	        		check[3] = true;
+	        	}});
+			KeyFrame KF14 = new KeyFrame(Duration.seconds(7), new EventHandler() {
+	        	public void handle(Event event) {
+	        		grid[layer][3].setVisible(false);
+	        		check[3] = false;
+	        		grid[layer][2].setVisible(true);
+	        		check[2] = true;
+	        	}});
+			KeyFrame KF15 = new KeyFrame(Duration.seconds(7.5), new EventHandler() {
+	        	public void handle(Event event) {
+	        		grid[layer][2].setVisible(false);
+	        		check[2] = false;
+	        		grid[layer][1].setVisible(true);
+	        		check[1] = true;
+	        	}});
+			KeyFrame KF16 = new KeyFrame(Duration.seconds(18), new EventHandler() {
+	        	public void handle(Event event) {
+	        		grid[layer][1].setVisible(false);
+	        		check[1] = false;
+	        		grid[layer][0].setVisible(true);
+	        		check[0] = true;
+	        	}});
+			timeline.getKeyFrames().addAll(KF1,KF2,KF3,KF4,KF5,KF6,KF7,KF8,KF9,KF10,KF11,KF12,KF13,KF14,KF15,KF16);
+			timeline.playFromStart();
+		}		
+		
 	}
 	
-	public void headTail() {
-		for(int i=0; i< check.length; i++) {
-			if(head==-1&&check[i]) {
-				head = i;
-			}
-			if(check[i]) {
-				tail = i;
-			}
-		}	
-	}
 }
 
