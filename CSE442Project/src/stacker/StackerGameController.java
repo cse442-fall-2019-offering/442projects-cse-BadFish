@@ -6,6 +6,8 @@ import java.util.ResourceBundle;
 import java.util.concurrent.TimeUnit;
 
 import javafx.event.ActionEvent;
+import javafx.event.Event;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -364,8 +366,18 @@ public class StackerGameController implements Initializable {
 	@FXML
 	private ImageView eight11;
 	
+	private static final Integer STARTTIME = 0;
+    private Timeline timeline;
+//    private Label timerLabel = new Label();
+//    private Integer timeSeconds = STARTTIME;
+//    private Integer startBoxs = 5;
+    private ImageView grid[][] = new ImageView[12][9];
+	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
+        timeline = new Timeline();
+
+		
 		instruction.setText("Instructions Go Here:");
 		button.setOnAction(arg0 -> {
 			try {
@@ -377,21 +389,175 @@ public class StackerGameController implements Initializable {
 		});
 		
 		//Temporary
-		playable = true;
+//		playable = true;
 
 		
-		KeyFrame KF1 = new KeyFrame(Duration.seconds(2), new KeyValue(zero11.imageProperty(), neonBlue));
-		KeyFrame KF2 = new KeyFrame(Duration.seconds(2));
-		KeyFrame KF3 = new KeyFrame(Duration.seconds(2), new KeyValue(zero11.imageProperty(), darkBlue));
-		TL.getKeyFrames().addAll(KF1, KF2, KF3);
+//		KeyFrame KF1 = new KeyFrame(Duration.seconds(2), new KeyValue(zero11.imageProperty(), neonBlue));
+//		KeyFrame KF2 = new KeyFrame(Duration.seconds(2));
+//		KeyFrame KF3 = new KeyFrame(Duration.seconds(2), new KeyValue(zero11.imageProperty(), darkBlue));
+//		TL.getKeyFrames().addAll(KF1, KF2, KF3);
+		
+		grid[0][0] = zero11;
+		grid[0][1] = one11;
+		grid[0][2] = two11;
+		grid[0][3] = three11;
+		grid[0][4] = four11;
+		grid[0][5] = five11;
+		grid[0][6] = six11;
+		grid[0][7] = seven11;
+		grid[0][8] = eight11;
+		grid[0][0].setVisible(false);
+		grid[0][1].setVisible(false);
+		grid[0][2].setVisible(true);
+		grid[0][3].setVisible(true);
+		grid[0][4].setVisible(true);
+		grid[0][5].setVisible(true);
+		grid[0][6].setVisible(true);
+		grid[0][7].setVisible(false);
+		grid[0][8].setVisible(false);
+
+
 		
 	}
 	
+	
+	
 	public void buttonFunction(ActionEvent event) throws NullPointerException,IndexOutOfBoundsException,InterruptedException {
 		
-		TL.play();
-		TL.play();
-		TL.play();
+			
+				
+		 
+//        if (timeline != null) {
+//            timeline.stop();
+//        }
+//        timeSeconds = STARTTIME;
+ 
+        // update timerLabel
+//        timerLabel.setText(timeSeconds.toString());
+        timeline.setCycleCount(Timeline.INDEFINITE);
+		KeyFrame KF1 = new KeyFrame(Duration.seconds(1), new EventHandler() {
+        	public void handle(Event event) {
+        		grid[0][2].setVisible(false);
+        		grid[0][7].setVisible(true);
+//        		new KeyValue(grid[0][2].imageProperty(), darkBlue);
+//        		new KeyValue(grid[0][7].imageProperty(), darkBlue);
+        	}});
+		KeyFrame KF2 = new KeyFrame(Duration.seconds(1), new EventHandler() {
+        	public void handle(Event event) {
+        		grid[0][3].setVisible(false);
+        		grid[0][8].setVisible(true);
+        	}});
+		KeyFrame KF3 = new KeyFrame(Duration.seconds(1), new EventHandler() {
+        	public void handle(Event event) {
+        		grid[0][8].setVisible(false);
+        		grid[0][3].setVisible(true);
+        	}});
+		KeyFrame KF4 = new KeyFrame(Duration.seconds(1), new EventHandler() {
+        	public void handle(Event event) {
+        		grid[0][7].setVisible(false);
+        		grid[0][2].setVisible(true);
+        	}});
+		KeyFrame KF5 = new KeyFrame(Duration.seconds(1), new EventHandler() {
+        	public void handle(Event event) {
+        		grid[0][6].setVisible(false);
+        		grid[0][1].setVisible(true);
+        	}});
+		KeyFrame KF6 = new KeyFrame(Duration.seconds(1), new EventHandler() {
+        	public void handle(Event event) {
+        		grid[0][5].setVisible(false);
+        		grid[0][0].setVisible(true);
+        	}});
+		KeyFrame KF7 = new KeyFrame(Duration.seconds(1), new EventHandler() {
+        	public void handle(Event event) {
+        		grid[0][0].setVisible(false);
+        		grid[0][5].setVisible(true);
+        	}}); 
+		KeyFrame KF8 = new KeyFrame(Duration.seconds(1), new EventHandler() {
+        	public void handle(Event event) {
+        		grid[0][1].setVisible(false);
+        		grid[0][6].setVisible(true);
+        	}});
+		timeline.getKeyFrames().addAll(KF1,KF2,KF3,KF4,KF5,KF6,KF7,KF8);
+//                new KeyFrame(Duration.seconds(1),
+//                  new EventHandler() {
+//                    // KeyFrame event handler
+//                    public void handle(Event event) {
+//                		grid[0][3].setImage(neonBlue);
+//                		grid[0][8].setImage(darkBlue);
+////                        timeSeconds++;
+//                        // update timerLabel
+////                        timerLabel.setText(
+////                              timeSeconds.toString());
+////                        if (timeSeconds <= 0) {
+////                            timeline.stop();
+////                        }
+//                      }
+//
+//
+//                }));
+//        timeline.getKeyFrames().add(
+//                new KeyFrame(Duration.seconds(1),
+//                        new EventHandler() {
+//                	public void handle(Event event) {
+//                		grid[0][3].setImage(darkBlue);
+//                		grid[0][8].setImage(neonBlue);
+////                    	new KeyValue(grid[0][3].setImage(darkBlue));
+////                    	new KeyValue(grid[0][8].imageProperty(), neonBlue);
+//                	}
+//                }));
+//        timeline.getKeyFrames().add(
+//                new KeyFrame(Duration.seconds(1),
+//                        new EventHandler() {
+//                	public void handle(Event event) {
+//                		grid[0][8].setImage(darkBlue);
+//                		grid[0][3].setImage(neonBlue);
+//                	}
+//                }));
+//        timeline.getKeyFrames().add(
+//                new KeyFrame(Duration.seconds(1),
+//                        new EventHandler() {
+//                	public void handle(Event event) {
+//                		grid[0][3].setImage(darkBlue);
+//                		grid[0][8].setImage(neonBlue);
+//                	}
+//                }));
+//        timeline.getKeyFrames().add(
+//                new KeyFrame(Duration.seconds(1),
+//                        new EventHandler() {
+//                	public void handle(Event event) {
+//                		grid[0][8].setImage(darkBlue);
+//                		grid[0][3].setImage(neonBlue);
+//                	}
+//                }));
+//        timeline.getKeyFrames().add(
+//                new KeyFrame(Duration.seconds(1),
+//                        new EventHandler() {
+//                	public void handle(Event event) {
+//                		grid[0][3].setImage(darkBlue);
+//                		grid[0][8].setImage(neonBlue);
+//                	}
+//                }));
+//        timeline.getKeyFrames().add(
+//                new KeyFrame(Duration.seconds(1),
+//                        new EventHandler() {
+//                	public void handle(Event event) {
+//                		instruction.setText("show");
+//                		grid[0][8].setImage(darkBlue);
+//                		grid[0][3].setImage(neonBlue);
+//                	}
+//                }));
+//        timeline.getKeyFrames().add(
+//                new KeyFrame(Duration.seconds(10),
+//                        new EventHandler() {
+//                	public void handle(Event event) {
+//                		grid[0][3].setImage(darkBlue);
+//                		grid[0][8].setImage(neonBlue);
+//                	}
+//                }));
+        timeline.playFromStart();
+//		TL.play();
+//		TL.play();
+//		TL.play();
 
     }
 }

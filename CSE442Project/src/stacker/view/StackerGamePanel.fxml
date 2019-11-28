@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.SplitPane?>
@@ -10,7 +14,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="stacker.StackerGameController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="stacker.StackerGameController">
    <children>
       <SplitPane dividerPositions="0.7190635451505016" orientation="VERTICAL" prefHeight="600.0" prefWidth="750.0">
         <items>
@@ -458,23 +462,23 @@
                                        </image></ImageView>   
                                     <ImageView fx:id="six11" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.rowIndex="11">
                                        <image>
-                                          <Image url="@../../../Images/Dark%20Blue.jpg" />
+                                          <Image url="@../../../Images/Neon%20Blue.jpg" />
                                        </image></ImageView>   
                                     <ImageView fx:id="five11" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.rowIndex="11">
                                        <image>
-                                          <Image url="@../../../Images/Dark%20Blue.jpg" />
+                                          <Image url="@../../../Images/Neon%20Blue.jpg" />
                                        </image></ImageView>   
                                     <ImageView fx:id="four11" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="11">
                                        <image>
-                                          <Image url="@../../../Images/Dark%20Blue.jpg" />
+                                          <Image url="@../../../Images/Neon%20Blue.jpg" />
                                        </image></ImageView>   
                                     <ImageView fx:id="three11" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="11">
                                        <image>
-                                          <Image url="@../../../Images/Dark%20Blue.jpg" />
+                                          <Image url="@../../../Images/Neon%20Blue.jpg" />
                                        </image></ImageView>   
                                     <ImageView fx:id="two11" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="11">
                                        <image>
-                                          <Image url="@../../../Images/Dark%20Blue.jpg" />
+                                          <Image url="@../../../Images/Neon%20Blue.jpg" />
                                        </image></ImageView>   
                                     <ImageView fx:id="one11" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="11">
                                        <image>
