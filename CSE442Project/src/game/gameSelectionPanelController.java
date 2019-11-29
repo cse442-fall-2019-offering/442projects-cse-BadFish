@@ -41,5 +41,18 @@ public class gameSelectionPanelController implements Initializable {
     		e.printStackTrace();
     	}
     }
+	
+	public void startChopsticks(ActionEvent event) {
+    	Parent root;
+    	try {
+    		root=FXMLLoader.load(getClass().getResource("/rockPaperScissor/view/Chopsticks.fxml"));
+    		Stage stage=new Stage();
+    		stage.setScene(new Scene(root));
+    		stage.show();
+    	}
+    	catch(IOException e) {
+    		e.printStackTrace();
+    	}
+    }
 
 }
