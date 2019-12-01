@@ -17,22 +17,43 @@ public class gameSelectionPanelController implements Initializable {
 	
 	//buttons to open flappy bird game
     @FXML
-    private Button flappyButton;
+    private Button rpsButton;
+	//buttons to open stacker game
+    @FXML
+    private Button stackerButton;
     //initializing button to attach proper controller function
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		 flappyButton.setOnAction(this::startFlappyBird);
-
+		 rpsButton.setOnAction(this::startRPS);
+		 stackerButton.setOnAction(this::startStacker);
 	 }
+//	/**
+//	 * opening flappy bird game
+//	 * create a new stage for the game and opens it
+//	 * @param event action event
+//	 */
+//	public void startFlappyBird(ActionEvent event) {
+//    	Parent root;
+//    	try {
+//    		root=FXMLLoader.load(getClass().getResource("/rockPaperScissor/view/RPSGame.fxml"));
+//    		Stage stage=new Stage();
+//    		stage.setScene(new Scene(root));
+//    		stage.show();
+//    	}
+//    	catch(IOException e) {
+//    		e.printStackTrace();
+//    	}
+//    }
+	
 	/**
-	 * opening flappy bird game
+	 * opening stacker game
 	 * create a new stage for the game and opens it
 	 * @param event action event
 	 */
-	public void startFlappyBird(ActionEvent event) {
+	public void startRPS(ActionEvent event) {
     	Parent root;
     	try {
-    		root=FXMLLoader.load(getClass().getResource("/rockPaperScissor/view/RPSGame.fxml"));
+    		root=FXMLLoader.load(getClass().getResource("/rockPaperScissor/view/rps.fxml"));
     		Stage stage=new Stage();
     		stage.setScene(new Scene(root));
     		stage.show();
@@ -41,5 +62,26 @@ public class gameSelectionPanelController implements Initializable {
     		e.printStackTrace();
     	}
     }
-
+	
+	
+	/**
+	 * opening stacker game
+	 * create a new stage for the game and opens it
+	 * @param event action event
+	 */
+	public void startStacker(ActionEvent event) {
+    	Parent root;
+    	try {
+    		root=FXMLLoader.load(getClass().getResource("/stacker/view/StackerGamePanel.fxml"));
+    		Stage stage=new Stage();
+    		stage.setScene(new Scene(root));
+    		stage.show();
+    	}
+    	catch(IOException e) {
+    		e.printStackTrace();
+    	}
+    }
+	
+	
+	
 }
