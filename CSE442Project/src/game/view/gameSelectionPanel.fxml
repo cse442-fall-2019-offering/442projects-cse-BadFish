@@ -52,6 +52,6 @@
             <Font name="Charter Bold" size="27.0" />
          </font>
       </Label>
-      <Button layoutX="11.0" layoutY="360.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="196.0" style="-fx-background-color: brown;" text="START" textFill="#f1e8e8" />
+      <Button fx:id="cpButton" layoutX="11.0" layoutY="360.0" mnemonicParsing="false" onAction="#startcp" prefHeight="27.0" prefWidth="196.0" style="-fx-background-color: brown;" text="START" textFill="#f1e8e8" />
    </children>
 </AnchorPane>

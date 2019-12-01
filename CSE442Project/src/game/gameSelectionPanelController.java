@@ -21,6 +21,10 @@ public class gameSelectionPanelController implements Initializable {
 	//buttons to open stacker game
     @FXML
     private Button stackerButton;
+    
+    @FXML
+    private Button cpButton;
+    
     //initializing button to attach proper controller function
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
@@ -46,7 +50,7 @@ public class gameSelectionPanelController implements Initializable {
 //    }
 	
 	/**
-	 * opening stacker game
+	 * opening rps game
 	 * create a new stage for the game and opens it
 	 * @param event action event
 	 */
@@ -62,6 +66,26 @@ public class gameSelectionPanelController implements Initializable {
     		e.printStackTrace();
     	}
     }
+	
+	
+	/**
+	 * opening chopsticks game
+	 * create a new stage for the game and opens it
+	 * @param event action event
+	 */
+	public void startcp(ActionEvent event) {
+    	Parent root;
+    	try {
+    		root=FXMLLoader.load(getClass().getResource("/chopsticks/view/Chopsticks.fxml"));
+    		Stage stage=new Stage();
+    		stage.setScene(new Scene(root));
+    		stage.show();
+    	}
+    	catch(IOException e) {
+    		e.printStackTrace();
+    	}
+    }
+	
 	
 	
 	/**
