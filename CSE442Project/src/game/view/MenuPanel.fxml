@@ -49,7 +49,7 @@
       </ImageView>
       <ImageView fitHeight="63.0" fitWidth="66.0" layoutX="423.0" layoutY="158.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../../Downloads/fish-2389212_1280.png" />
+            <Image url="@../../../Images/fish.png" />
          </image>
       </ImageView>
       <Button fx:id="rankstatus" layoutX="337.0" layoutY="379.0" mnemonicParsing="false" onAction="#showrank" prefHeight="44.0" prefWidth="151.0" style="-fx-background-color: beige; -fx-border-color: black;" text="Rank Status">
