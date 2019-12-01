@@ -26,6 +26,16 @@
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" style="-fx-background-color: white;">
                <children>
+                  <ImageView fitHeight="60.0" fitWidth="107.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../Images/blackcat.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="67.0" fitWidth="86.0" layoutX="772.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../Images/blackcat.png" />
+                     </image>
+                  </ImageView>
                   <Pane fx:id="you" layoutX="55.0" layoutY="67.0" prefHeight="200.0" prefWidth="200.0" />
                   <Pane fx:id="opp" layoutX="434.0" layoutY="67.0" prefHeight="200.0" prefWidth="200.0" />
                   <Text fill="#e20b0b" layoutX="337.0" layoutY="158.0" strokeType="OUTSIDE" strokeWidth="0.0" text="VS">
