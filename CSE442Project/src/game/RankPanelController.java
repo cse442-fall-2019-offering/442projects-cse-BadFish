@@ -77,13 +77,13 @@ public class RankPanelController {
 		}
 
 		if (P10 > P11 && P10 > P12) {
-			game1First.setText("" + P10);
+			game1First.setText("First:" + P10);
 			if(P11 > P12) {
-				game1Second.setText("" + P11);
-				game1Third.setText("" + P12);
+				game1Second.setText("First:" + P11);
+				game1Third.setText("Third:" + P12);
 			} else {
-				game1Second.setText("" + P12);
-				game1Third.setText("" + P11);
+				game1Second.setText("Second:" + P12);
+				game1Third.setText("Third:" + P11);
 			}
 		} else if (P11 > P10 && P11 > P12) {
 			game1First.setText("" + P11);
@@ -95,7 +95,7 @@ public class RankPanelController {
 				game1Third.setText("" + P10);
 			}
 		} else {
-			game1First.setText("" + P12);
+			game1First.setText("First:" + P12);
 			if(P11 > P10) {
 				game1Second.setText("" + P11);
 				game1Third.setText("" + P10);
