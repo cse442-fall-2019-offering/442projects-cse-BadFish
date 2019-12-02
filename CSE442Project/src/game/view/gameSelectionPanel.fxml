@@ -30,28 +30,28 @@
             <Font name="Nanum Pen Script" size="35.0" />
          </font>
       </Text>
-      <ImageView fitHeight="97.0" fitWidth="192.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="97.0" fitWidth="192.0" layoutX="13.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../Images/rps.jpg" />
          </image>
       </ImageView>
-      <Button fx:id="rpsButton" layoutX="12.0" layoutY="85.0" mnemonicParsing="false" onAction="#startRPS" prefHeight="21.0" prefWidth="196.0" style="-fx-background-color: brown; -fx-border-color: red;" text="START" textFill="#f1e8e8" />
-      <ImageView fitHeight="111.0" fitWidth="196.0" layoutX="11.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true">
+      <Button fx:id="rpsButton" layoutX="12.0" layoutY="76.0" mnemonicParsing="false" onAction="#startRPS" prefHeight="21.0" prefWidth="196.0" style="-fx-background-color: brown; -fx-border-color: red;" text="START" textFill="#f1e8e8" />
+      <ImageView fitHeight="111.0" fitWidth="196.0" layoutX="11.0" layoutY="115.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../Images/stacker.png" />
          </image>
       </ImageView>
-      <Button fx:id="stackerButton" layoutX="11.0" layoutY="226.0" mnemonicParsing="false" onAction="#startStacker" prefHeight="27.0" prefWidth="196.0" style="-fx-background-color: brown;" text="START" textFill="#f1e8e8" />
-      <ImageView fitHeight="97.0" fitWidth="192.0" layoutX="14.0" layoutY="267.0" pickOnBounds="true" preserveRatio="true">
+      <Button fx:id="stackerButton" layoutX="11.0" layoutY="213.0" mnemonicParsing="false" onAction="#startStacker" prefHeight="27.0" prefWidth="196.0" style="-fx-background-color: brown;" text="START" textFill="#f1e8e8" />
+      <ImageView fitHeight="127.0" fitWidth="211.0" layoutX="12.0" layoutY="250.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../Images/pointing.jpg" />
+            <Image url="@../../../Images/fingerimage.png" />
          </image>
       </ImageView>
-      <Label layoutX="13.0" layoutY="267.0" prefHeight="27.0" prefWidth="135.0" text="Chopsticks">
+      <Label layoutX="42.0" layoutY="303.0" prefHeight="27.0" prefWidth="135.0" text="Chopsticks">
          <font>
             <Font name="Charter Bold" size="27.0" />
          </font>
       </Label>
-      <Button fx:id="cpButton" layoutX="11.0" layoutY="360.0" mnemonicParsing="false" onAction="#startcp" prefHeight="27.0" prefWidth="196.0" style="-fx-background-color: brown;" text="START" textFill="#f1e8e8" />
+      <Button fx:id="cpButton" layoutX="11.0" layoutY="373.0" mnemonicParsing="false" onAction="#startcp" prefHeight="27.0" prefWidth="196.0" style="-fx-background-color: brown;" text="START" textFill="#f1e8e8" />
    </children>
 </AnchorPane>
