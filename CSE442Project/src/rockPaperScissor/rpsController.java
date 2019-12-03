@@ -155,17 +155,22 @@ public class rpsController implements Initializable{
     	getWin.setText(String.valueOf(uMove)+" "+String.valueOf(oMove));
     	switch(oMove) {
     	case 1:
+
     		oppV=new ImageView("Images/rock.jpg");
+
     		oppV.setFitHeight(opp.getPrefHeight());
     		oppV.setFitWidth(opp.getPrefWidth());
     		break;
     	case 2:
     		oppV=new ImageView("Images/paper.jpg");
+
     		oppV.setFitHeight(opp.getPrefHeight());
     		oppV.setFitWidth(opp.getPrefWidth());
     		break;
     	case 3:
+
     		oppV=new ImageView("Images/scissors.jpg");
+
     		oppV.setFitHeight(opp.getPrefHeight());
     		oppV.setFitWidth(opp.getPrefWidth());
     		break;
@@ -212,6 +217,7 @@ public class rpsController implements Initializable{
 	 */
 	private void showRock() {
 		youV=new ImageView("Images/rock.jpg");
+
     	youV.setFitHeight(opp.getPrefHeight());
     	youV.setFitWidth(opp.getPrefWidth());
 	}
@@ -220,6 +226,7 @@ public class rpsController implements Initializable{
 	 */
 	private void showPaper() {
 		youV=new ImageView("Images/paper.jpg");
+
     	youV.setFitHeight(opp.getPrefHeight());
     	youV.setFitWidth(opp.getPrefWidth());		
 	}
