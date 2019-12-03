@@ -17,17 +17,17 @@ import javafx.scene.image.ImageView;
 
 public class ChopsticksController implements Initializable{
 	
-	private Image finger0 = new Image((new File("/Images/fingers/finger0.png")).toURI().toString());
+	private Image finger0 = new Image((new File("/Users/markbalazon/git/442projects-cse-BadFish/CSE442Project/Images/fingers/finger0.png")).toURI().toString());
 	
-	private Image finger1 = new Image((new File("Images/fingers/one.png")).toURI().toString());
+	private Image finger1 = new Image((new File("/Users/markbalazon/git/442projects-cse-BadFish/CSE442Project/Images/fingers/one.png")).toURI().toString());
 	
-	private Image finger2 = new Image((new File("/Images/fingers/two.png")).toURI().toString());
+	private Image finger2 = new Image((new File("/Users/markbalazon/git/442projects-cse-BadFish/CSE442Project/Images/fingers/two.png")).toURI().toString());
 	
-	private Image finger3 = new Image((new File("/Images/fingers/three.png")).toURI().toString());
+	private Image finger3 = new Image((new File("/Users/markbalazon/git/442projects-cse-BadFish/CSE442Project/Images/fingers/three.png")).toURI().toString());
 	
-	private Image finger4 = new Image((new File("/Images/fingers/four.png")).toURI().toString());
+	private Image finger4 = new Image((new File("/Users/markbalazon/git/442projects-cse-BadFish/CSE442Project/Images/fingers/four.png")).toURI().toString());
 	
-	private Image finger5 = new Image((new File("/Images/fingers/five.png")).toURI().toString());
+	private Image finger5 = new Image((new File("/Users/markbalazon/git/442projects-cse-BadFish/CSE442Project/Images/fingers/five.png")).toURI().toString());
 
 	@FXML
 	private Label Turn;
