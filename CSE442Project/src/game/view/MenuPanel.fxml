@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
 <?import java.lang.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
@@ -10,36 +11,54 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-
-<AnchorPane prefHeight="600.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="game.MenuController">
+<AnchorPane prefHeight="600.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="game.MenuController">
    
    <children>
-      <VBox layoutX="15.0" layoutY="20.0" prefHeight="580.0" prefWidth="240.0">
-         <children>
-            <Button fx:id="newplayer" layoutX="10.0" layoutY="20.0" mnemonicParsing="false" onAction="#adduser" prefHeight="80.0" prefWidth="230.0" text="New Player">
-               <VBox.margin>
-                  <Insets top="10.0" />
-               </VBox.margin>
-            </Button>
-            <Button fx:id="userprofile" mnemonicParsing="false" onAction="#showuser" prefHeight="80.0" prefWidth="230.0" text="User Profile">
-               <VBox.margin>
-                  <Insets top="30.0" />
-               </VBox.margin>
-            </Button>
-            <Button fx:id="rankstatus" layoutX="10.0" layoutY="20.0" mnemonicParsing="false" onAction="#showrank" prefHeight="80.0" prefWidth="230.0" text="Rank Status">
-               <VBox.margin>
-                  <Insets top="30.0" />
-               </VBox.margin>
-            </Button>
-            <Button fx:id="exit" mnemonicParsing="false" onAction="#exit" prefHeight="80.0" prefWidth="230.0" text="Exit">
-               <VBox.margin>
-                  <Insets top="30.0" />
-               </VBox.margin>
-            </Button>
-         </children>
-         <opaqueInsets>
-            <Insets />
-         </opaqueInsets>
-      </VBox>
+      <ImageView fitHeight="589.0" fitWidth="750.0" layoutY="11.0" pickOnBounds="true">
+         <image>
+            <Image url="@../../../Images/BACK4.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="123.0" fitWidth="195.0" layoutX="217.0" layoutY="93.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../Images/dialog.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="112.0" fitWidth="181.0" layoutX="7.0" layoutY="98.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../Images/dialog.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="112.0" fitWidth="204.0" layoutX="537.0" layoutY="94.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../Images/dialog.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="newplayer" layoutX="249.0" layoutY="128.0" mnemonicParsing="false" onAction="#adduser" prefHeight="44.0" prefWidth="126.0" style="-fx-background-color: white;" text="New Player">
+         <font>
+            <Font name="Nanum Brush Script" size="20.0" />
+         </font></Button>
+      <Button fx:id="userprofile" layoutX="44.0" layoutY="128.0" mnemonicParsing="false" onAction="#showuser" prefHeight="44.0" prefWidth="120.0" style="-fx-background-color: white;" text="User Profile">
+         <font>
+            <Font name="Nanum Brush Script" size="21.0" />
+         </font></Button>
+      <ImageView fitHeight="120.0" fitWidth="164.0" layoutX="379.0" layoutY="142.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../Images/dialog.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="63.0" fitWidth="66.0" layoutX="423.0" layoutY="158.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../Images/fish.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="rankstatus" layoutX="337.0" layoutY="379.0" mnemonicParsing="false" onAction="#showrank" prefHeight="44.0" prefWidth="151.0" style="-fx-background-color: beige; -fx-border-color: black;" text="Rank Status">
+         <font>
+            <Font name="Nanum Brush Script" size="18.0" />
+         </font></Button>
+      <Button fx:id="exit" layoutX="578.0" layoutY="128.0" mnemonicParsing="false" onAction="#exit" prefHeight="44.0" prefWidth="100.0" style="-fx-background-color: white;" text="Exit">
+         <font>
+            <Font name="Nanum Brush Script" size="24.0" />
+         </font></Button>
    </children>
 </AnchorPane>
