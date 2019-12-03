@@ -155,17 +155,22 @@ public class rpsController implements Initializable{
     	getWin.setText(String.valueOf(uMove)+" "+String.valueOf(oMove));
     	switch(oMove) {
     	case 1:
-    		oppV=new ImageView("file:///C:\\Users\\yongh\\git\\442projects-cse-BadFish\\CSE442Project\\Images\\rock.jpg");
+
+    		oppV=new ImageView("Images/rock.jpg");
+
     		oppV.setFitHeight(opp.getPrefHeight());
     		oppV.setFitWidth(opp.getPrefWidth());
     		break;
     	case 2:
-    		oppV=new ImageView("file:///C:\\Users\\yongh\\git\\442projects-cse-BadFish\\CSE442Project\\Images\\paper.jpg");
+    		oppV=new ImageView("Images/paper.jpg");
+
     		oppV.setFitHeight(opp.getPrefHeight());
     		oppV.setFitWidth(opp.getPrefWidth());
     		break;
     	case 3:
-    		oppV=new ImageView("file:///C:\\Users\\yongh\\git\\442projects-cse-BadFish\\CSE442Project\\Images\\scissors.jpg");
+
+    		oppV=new ImageView("Images/scissors.jpg");
+
     		oppV.setFitHeight(opp.getPrefHeight());
     		oppV.setFitWidth(opp.getPrefWidth());
     		break;
@@ -211,7 +216,8 @@ public class rpsController implements Initializable{
 	 * display rock image if player chose rock
 	 */
 	private void showRock() {
-		youV=new ImageView("file:///C:\\Users\\yongh\\git\\442projects-cse-BadFish\\CSE442Project\\Images\\rock.jpg");
+		youV=new ImageView("Images/rock.jpg");
+
     	youV.setFitHeight(opp.getPrefHeight());
     	youV.setFitWidth(opp.getPrefWidth());
 	}
@@ -219,7 +225,8 @@ public class rpsController implements Initializable{
 	 * display paper image if player chose paper
 	 */
 	private void showPaper() {
-		youV=new ImageView("file:///C:\\Users\\yongh\\git\\442projects-cse-BadFish\\CSE442Project\\Images\\paper.jpg");
+		youV=new ImageView("Images/paper.jpg");
+
     	youV.setFitHeight(opp.getPrefHeight());
     	youV.setFitWidth(opp.getPrefWidth());		
 	}
@@ -227,7 +234,7 @@ public class rpsController implements Initializable{
 	 * display scissor image if player chose scissor
 	 */
 	private void showScissor() {
-		youV=new ImageView("file:///C:\\Users\\yongh\\git\\442projects-cse-BadFish\\CSE442Project\\Images\\scissors.jpg");
+		youV=new ImageView("Images/scissors.jpg");
     	youV.setFitHeight(opp.getPrefHeight());
     	youV.setFitWidth(opp.getPrefWidth());
 	}
